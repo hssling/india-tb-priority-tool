@@ -72,8 +72,7 @@ def problems(root: Path = ROOT) -> tuple[list[str], int]:
             ref = (out_dir / name).read_bytes()
             for p in made[name]:
                 if p.read_bytes() != ref:
-                    bad.append(f"outputs/{name} differs from the rerun "
-                               f"({p.parent.name.replace('_', ' ')})")
+                    bad.append(f"outputs/{name} differs from the rerun ({p.parent.name})")
         return bad, len(committed)
 
 
