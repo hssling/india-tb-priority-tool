@@ -175,6 +175,27 @@ def test_output_on_a_merged_side_branch_is_found_over_the_full_history(repo):
     assert all("not a descendant" in b for b in bad)
 
 
+
+def test_output_introduced_by_a_merge_commit_itself_is_flagged(repo):
+    """An evil merge: neither parent has the guarded file; the merge commit adds it."""
+    commit(repo, {"README.md": "r\n"}, "root")
+    git(repo, "checkout", "-q", "-b", "side")
+    commit(repo, {"notes.txt": "n\n"}, "side work")
+    git(repo, "checkout", "-q", "-")
+    commit(repo, {"other.txt": "o\n"}, "main work")
+    git(repo, "merge", "-q", "--no-commit", "--no-ff", "side")
+    out = repo / "outputs"
+    out.mkdir(exist_ok=True)
+    (out / "headline.csv").write_text("a\n", encoding="utf-8")
+    git(repo, "add", "outputs/headline.csv")
+    git(repo, "commit", "-q", "-m", "merge that adds an output")
+    merge = subprocess.run(["git", "-C", str(repo), "rev-parse", "HEAD"], check=True,
+                           capture_output=True, text=True).stdout.strip()
+    reg = commit(repo, {"docs/analysis_plan.md": PLAN}, "plan")
+    bad = check_plan_order.problems(repo, reg)
+    assert any(b.startswith(f"commit {merge[:7]} ") for b in bad)
+
+
 def test_edit_above_section12_is_flagged(repo, capsys):
     reg = commit(repo, {"docs/analysis_plan.md": PLAN}, "plan")
     commit(repo, {"docs/registration_event.json": event(reg)}, "registration event")

@@ -559,3 +559,5 @@ This section lists everything seen before this plan was registered. No estimate 
 ---
 
 ## 12. Deviations (dated)
+
+**12.1 (21 November 2026), a factual correction with no change to any rule or result.** §4 and the data inventory state that Lakshadweep is absent from ITR 2019 Annexure 1.4.a (the 2017 treatment-outcome cohort, used for S3 in data year 2018). Extraction found it printed, as "Lakshwadeep", with public-sector cells, private notified 0 and the other private cells blank. Its Died cell is blank, so under the registered rule a member row with a blank needed cell adds nothing to its merged unit: Kerala S3 2018 is formed from Kerala's row alone and flagged `member_missing:Lakshadweep`, exactly as the plan expected. Only the stated reason differs (printed with a blank cell, not absent). The crosswalk accepts the misspelling "Lakshwadeep" for that table only.

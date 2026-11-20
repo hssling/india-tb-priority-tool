@@ -130,12 +130,14 @@ def guarded_commits(repo: Path, guarded: tuple[str, ...] = GUARDED,
                     allowed: tuple[str, ...] = ALLOWED) -> list[str]:
     """Commits (full history, no simplification, no rename detection) that touch a guarded
     path other than an allowed one."""
-    log = git(repo, "log", "--full-history", "--no-renames", "--name-only", "--format=%x00%H",
-              "--", *guarded).stdout
+    # --diff-merges=separate lists a merge's changes against each parent, so a merge that
+    # itself introduces a guarded file (an "evil merge") is not silently skipped.
+    log = git(repo, "log", "--full-history", "--no-renames", "--diff-merges=separate",
+              "--name-only", "--format=%x00%H", "--", *guarded).stdout
     hits = []
     for block in log.split("\x00")[1:]:
         sha, *names = block.split("\n")
-        if any(n.strip() and n.strip() not in allowed for n in names):
+        if any(n.strip() and n.strip() not in allowed for n in names) and sha.strip() not in hits:
             hits.append(sha.strip())
     return hits
 
