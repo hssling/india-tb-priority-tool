@@ -151,7 +151,7 @@ Column headers are quoted as printed (see `docs/data_inventory.md`). "Total" mea
 - 2023: ITR 2024 Annexure 1.2 "TB case notification", PDF pp. 187–188. Target: "Target of TB patients expected to be notified", Total. Notified: "TB patients notified, n(% of achievement against target)", Total, count part.
 
 **S2 `not_rr_tested`** (2023 only):
-- 2023: ITR 2024 Annexure 4.7 "PMDT case finding in 2023 - I", PDF pp. 260–262. Denominator n: "No. of bacteriological confirmed TB cases among notified", Total, count part. Tested: "No. of bacteriologically confirmed TB cases with valid rapid DRT result for at least rifampicin (RS/RR)", Total, count part. Harm x = n − tested.
+- 2023: ITR 2024 Annexure 4.7 "PMDT case finding in 2023 - I", PDF pp. 260–262. Denominator n: "No. of bacteriological confirmed TB cases among notified", Total, count part. Tested: "No. of bacteriologically confirmed TB cases with valid rapid DRT result for at least rifampicin (RS/RR)", Total, count part. Harm x = n − tested. This bacteriologically confirmed denominator departs from the "notified" of the fixed step table, by the controller's ruling on S2 (§5.1).
 - Not used (definition change; ruling above): ITR 2019 Annexure 1.10 (2018), ITR 2020 Annexure 4.1 (2019), TBAR 2022 Annexure 4.7 (2021), ITR 2023 Annexure 4.7 (2022).
 
 **S3 `died`** (n = cohort notified; x = died):
@@ -223,9 +223,9 @@ All quantities in this section are computed per step and data year, over the uni
 - α = m² / v, bounded to [1, 10⁶] (α = 10⁶ when v ≤ 0); β = α / m.
 - Posterior draws of a_u come from Gamma(α + y_u, rate β + e_u).
 
-**Operational detail: shrinkage "off"** (an axis of the specification grids, §8.5). The empirical-Bayes prior is replaced by the Jeffreys prior. Draws come from Beta(½ + x, ½ + n − x) for S2–S6, and from Gamma(½ + y, rate e) for S1. Everything else is unchanged.
+**Operational detail: shrinkage "off"** (an axis of the specification grids, §8.5). The empirical-Bayes prior is replaced by the Jeffreys prior: α = β = ½ for S2–S6, and α = ½, β = 0 for S1. These values replace α and β in every formula of this plan, including the posterior draws and the posterior means used for benchmarks. Draws therefore come from Beta(½ + x, ½ + n − x) for S2–S6, and from Gamma(½ + y, rate e) for S1. Everything else is unchanged.
 
-**Posterior mean rates:** (α + x_u) / (α + β + n_u) for S2–S6; (α + y_u) / (β + e_u) for S1.
+**Posterior mean rates:** (α + x_u) / (α + β + n_u) for S2–S6; (α + y_u) / (β + e_u) for S1. With shrinkage off these are (½ + x_u) / (1 + n_u) and (½ + y_u) / e_u.
 
 ### 6.2 Benchmark
 
@@ -249,7 +249,7 @@ All quantities in this section are computed per step and data year, over the uni
 - In draw d, r_u is replaced by its posterior draw r_u⁽ᵈ⁾: harm averted⁽ᵈ⁾ = max(0, n_u · (r_u⁽ᵈ⁾ − r_bench)).
 - For S1, notified_u is replaced by a_u⁽ᵈ⁾ · target_u: harm averted⁽ᵈ⁾ = max(0, target_u · (a_bench − a_u⁽ᵈ⁾)). With the observed achievement in place of the draw, this equals the fixed formula.
 - Each unit's harm averted is summarised by the mean of its 10,000 draws (`harm_averted_mean`) and by the 2.5th and 97.5th percentiles (`lo`, `hi`; numpy linear method).
-- Harm averted is never negative. A unit already at or better than the benchmark has harm averted 0.
+- Harm averted is never negative: where the expression is below 0, harm averted is 0 per draw. Because the floor is applied per draw, `harm_averted_mean` can exceed 0 for a unit whose posterior-mean rate is at or better than the benchmark.
 
 ### 6.4 Priority and tiers
 
@@ -259,7 +259,7 @@ All quantities in this section are computed per step and data year, over the uni
 - Tiers: "act now" P ≥ 0.80; "probable priority" 0.50 ≤ P < 0.80; "uncertain" 0.20 ≤ P < 0.50; "lower priority" P < 0.20.
 
 **Operational detail.**
-- In each draw, the units of the step-year are ordered by harm averted⁽ᵈ⁾, and the k largest each score 1. If units are tied at the k-th place (for example, several at 0), the places left are shared equally among the tied units, so that every draw distributes exactly k. P(top-k) is the mean score over the 10,000 draws. Across units, P(top-k) sums to k.
+- In each draw, the units of the step-year are ordered by harm averted⁽ᵈ⁾, and the k largest each score 1. A unit whose harm averted is 0 in a draw scores 0 in that draw. If units with harm averted above 0 are tied at the k-th place, the places left are shared equally among those tied units; units with zero harm get no share of tied top-k places. P(top-k) is the mean score over the 10,000 draws.
 - Tiers are set on P(top-5) from the main specification (benchmark p75, shrinkage on) for data year 2023, separately for each step S1–S6. No combined score across steps is formed.
 - Tiers under k = 3 and k = 8, and under the median and best-decile benchmarks, are reported as sensitivities. Headline tiers use k = 5 and the p75 benchmark.
 
@@ -310,14 +310,14 @@ For each unit, the step with its largest relative gap is reported: (r_u − r_be
 - Loss steps S3, S4 and S6: the transformed rate is the empirical logit L_t = log((x_t + ½) / (n_t − x_t + ½)), with variance V_t = 1/(x_t + ½) + 1/(n_t − x_t + ½).
 - S1: the transformed rate is L_t = log((y_t + ½) / e_t), with variance V_t = 1/(y_t + ½), where y_t is notified and e_t the target.
 - Model: L_t = β₀ + β₁ (t − 2023) + γ · [t = 2021], with weights w_t = 1 / V_t. The term γ is the 2021 year indicator of the fixed values.
-- The slope is β₁. Its variance is the [β₁, β₁] element of (XᵀWX)⁻¹ (known variances; no residual scaling). The 95% CI is β₁ ± 1.96 × SE.
-- A unit-step needs at least 3 data years with non-NA cells. With 2020 dropped, every year counts as a non-2020 year. Otherwise the result is "trend not estimable". Because 2021 has its own indicator, the slope is identified by the years other than 2021.
-- The consequence for S1 is stated here: with data years 2021, 2022 and 2023 and the 2021 indicator, the S1 slope is determined by 2022 and 2023.
+- The slope is β₁. Var(β₁) = φ_s · [(XᵀWX)⁻¹]₁₁, where φ_s = max(1, Σ Pearson χ² ÷ Σ residual df), pooled over all units of step s in the main model (units with 0 residual df contribute nothing to either sum). The 95% CI is β₁ ± 1.96 × SE, with SE = √Var(β₁).
+- A unit-step needs at least 3 data years with non-NA cells. With 2020 dropped, every year counts as a non-2020 year. Otherwise the result is "trend not estimable".
+- The 2021 indicator is fitted only where the unit-step has at least one year before 2021 (S3, S4, S6). For S1, which has no year before 2021, the indicator cannot be separated from the slope. The S1 main model is therefore L_t = β₀ + β₁(t − 2023) over 2021–2023, and its sensitivity is the model with the indicator (the 2022–2023 slope). Where the indicator is fitted, a unit-step needs at least 3 non-NA years other than 2021.
 - Years used: S1 2021–2023; S3 and S6 2018, 2019, 2021, 2022, 2023; S4 2019, 2021, 2022, 2023. S2: "not estimable (definition change)". S5: no trend.
 
 ### 7.3 Sensitivity
 
-"Sensitivity: all years" (§3.2) is the same model without the 2021 indicator, over the same data years. The number of units whose rising flag differs from the main model is reported. Tiers and "watch: rising" use the main model only.
+"Sensitivity: all years" (§3.2) is the same model without the 2021 indicator, over the same data years, for S3, S4 and S6. For S1 the sensitivity is the model with the indicator (§7.2). The number of units whose rising flag differs from the main model is reported. Tiers and "watch: rising" use the main model only.
 
 ---
 
@@ -363,6 +363,7 @@ Also reported for H1: top-5 overlap.
 - **Coarsened units and NTPS units.** Each NTPS unit's member States are mapped to the 33 units of §4. If a coarsened unit's members fall in different NTPS units, the coarsened unit is assigned to the NTPS unit that holds its most populous member. States that the survey does not cover are excluded and listed.
 - **Estimate.** Spearman ρ between this quantity and NTPS prevalence, over the NTPS reporting units (19–20 units; n is stated with the estimate). Ties take average ranks; ρ is the Pearson correlation of the ranks.
 - **Interval** (as in tb_state_score): Fisher-z 95% confidence interval with Fieller's variance for Spearman's ρ: z = atanh(ρ), SE = √(1.06 ÷ (n − 3)), interval tanh(z ± 1.96 × SE). If n ≤ 3, no interval is given.
+- This replaces the raw shortfall because the benchmark and shrinkage axes of the fixed H2 grid have no meaning for it. The signed (target − notified) per 100,000 is reported alongside as a descriptive, unlabelled sensitivity.
 - **Null:** ρ = 0. No direction is assumed: the label (§8.6) uses only the interval and the grid's sign agreement.
 - **"Per target"** (a grid axis): Σ harm averted ÷ Σ target over the member units, in place of population.
 - **Main specification:** benchmark p75, shrinkage on, per population.
@@ -424,8 +425,9 @@ Also reported for H1: top-5 overlap.
 - **Source.** ITR 2019 Annexure 1.13 "District Wise Indicators", PDF pp. 188–220. The units are the district rows as printed (State | District); the row count is verified at extraction. Districts are not coarsened and not linked to later district names.
 - **D1.** n = "Total TB patients Notified$"; initiated = "TB patients initiated on treatment-Total"; x = n − initiated. A district where the number initiated exceeds the number notified is NA for D1 and is listed with that reason.
 - **D2.** The column is "Treatment success rate of TB notified patients (Public sector) 2017 (N&%)", with success count N and printed percentage p.
-  - Cohort n = round(N ÷ (p / 100)); x = n − N.
-  - Every D2 value carries the flag `rounded_from_percent` and the cohort range implied by the rounding of p: from N ÷ ((p + 0.5)/100) to N ÷ ((p − 0.5)/100).
+  - Cohort n = round(N ÷ (p / 100)), rounding half up; x = n − N.
+  - Every D2 value carries the flag `rounded_from_percent` and the cohort range implied by the rounding of p. With h = half of the last printed digit of p (h = 0.5 when p is printed as a whole number), the range runs from N ÷ ((p + h)/100) to N ÷ ((p − h)/100), and its lower bound is clipped at N.
+  - p = 100 gives x = 0.
   - p = 0, or a blank cell, gives NA.
   - The private-sector column is not used.
 - **Estimation.** For each of D1 and D2, across all districts in the country:
@@ -437,7 +439,7 @@ Also reported for H1: top-5 overlap.
 
   There is one data year, so there is no trend, no rising flag and no "watch: rising". There is no district population, so there is no population view.
 - **State-relative funnel.** For each district d in State S, the State's pooled proportion is p_S = Σx ÷ Σn over its districts, and z_d = (p̂_d − p_S) ÷ √(p_S (1 − p_S) / n_d).
-  - **Multiplicative adjustment.** The overdispersion factor φ is the mean of the squared z after 10% winsorisation: values below the 10th percentile and above the 90th are set to those percentiles (Spiegelhalter, Stat Med 2005;24:1185). φ is estimated once from all districts in the country, because many States have too few districts for their own estimate. If φ > 1, the limits are widened by √φ.
+  - **Multiplicative adjustment** (Spiegelhalter, Stat Med 2005;24:1185). The signed z_d are set to their 10th and 90th percentiles (numpy linear) where they lie outside them, and φ = the mean of the squared winsorised z_d. φ is estimated once from all districts in the country, because many States have too few districts for their own estimate. States with one district are excluded from φ, from D and from G. If φ > 1, the limits are widened by √φ.
   - **Additive adjustment (reported separately).** A DerSimonian–Laird between-district variance τ² is estimated with State-specific centres:
     - w_d = n_d ÷ (p_S (1 − p_S));
     - Q = Σ w_d (p̂_d − p_S)²;
@@ -465,7 +467,7 @@ Also reported for H1: top-5 overlap.
 - **Change.** For district d: Δ_d = n24 − n22, with Poisson SE √(n22 + n24). The State's pooled change is R − 1, where R = N24 ÷ N22, the ratio of the State totals summed over its printed districts.
 - **Funnel statistic.** z_d = (Δ_d − n22 (R − 1)) ÷ √(n22 + n24). Dividing the numerator and the denominator by n22 puts the funnel on the scale of relative change: y_d = Δ_d ÷ n22, with SE s_d = √(n22 + n24) ÷ n22, around R − 1.
 - **Overdispersion,** estimated within each State:
-  - multiplicative: φ = the mean of the 10%-winsorised z_d²; if φ > 1, the limits widen by √φ;
+  - multiplicative: the signed z_d are set to their 10th and 90th percentiles (numpy linear) where they lie outside them, and φ = the mean of the squared winsorised z_d; if φ > 1, the limits widen by √φ;
   - additive: w_d = 1 / s_d², Q = Σ w_d (y_d − (R − 1))², τ² = max(0, (Q − (D − 1)) ÷ (Σw_d − Σw_d² ÷ Σw_d)), and the adjusted z = (y_d − (R − 1)) ÷ √(s_d² + τ²).
 - **Flags.** "Fell beyond adjusted limits" or "rose beyond adjusted limits": outside the 99.8% limits (z = 3.09) under the multiplicative adjustment. The 95% limits and the additive adjustment are reported alongside.
 - A district with n22 = 0 is NA and listed. The 2023 column is shown descriptively and is not tested.
@@ -513,7 +515,7 @@ The tool's district command takes a CSV with the required columns `district, yea
 
 - `verification/check_plan_order.py` checks the registration order and the frozen text above §12.
 - An independent standard-library recompute covers:
-  - P(top-5) for the units at each tier boundary of the 2023 S3 step;
+  - P(top-5) for the units at each tier boundary of the 2023 S3 step, from its own standard-library draws (not numpy's), agreeing within |Δ| ≤ 0.02;
   - the H1 and H2 point estimates;
   - the labels, from `outputs/spec_curve.csv`.
 - Further checks:
@@ -521,6 +523,12 @@ The tool's district command takes a CSV with the required columns `district, yea
   - a byte-for-byte rerun of `outputs/`;
   - mutation tests showing that each check fails when its target is altered.
 - Every deviation from this plan is dated and explained in §12. Any analysis not in this plan is labelled exploratory.
+
+### 10.4 Known limitations stated in advance
+
+- With denominators of about 10⁵ patients, P(top-k) mostly reflects binomial noise, so it will be close to 0 or 1. The tiers therefore express little uncertainty beyond sampling.
+- H1 is largely driven by unit size: large units have large harm averted in every year. The Spearman ρ of rate gaps (r_u − r_bench, or a_bench − a_u for S1) between the pre-period and 2023 is therefore reported alongside H1 as a descriptive measure, without a label.
+- H2 may be circular if CTD targets were set from burden estimates that include NTPS.
 
 ---
 
@@ -537,9 +545,11 @@ This section lists everything seen before this plan was registered. No estimate 
    - **tb_state_score** (hssling/india-state-tb-score; the State TB Score study, JPH-26-1883).
      - It extracted State values from ITR 2023 and ITR 2024 for score years 2022 and 2023. These include notifications against targets; UDST testing; HIV status known; treatment success and its cohorts; deaths and loss to follow-up for the 2022 cohort (ITR 2024 Annexure 3.3); DR-TB treatment outcomes; a population derived from Annexure 1.2; and the NTPS State and State-group prevalence values (`ntps_units.csv`, which this study reuses). These are State-level descriptive values of some inputs to S1–S6 for data years 2022 and 2023.
      - Its results, which the author has seen, include State score reconstructions, rank robustness, Spearman correlations between the State TB Score and NTPS prevalence, and overdispersion-adjusted funnels of change in score.
+     - tb_state_score computed and the author saw each State's notified ÷ target and HIV-known proportion for 2022 and 2023 and their changes; these determine the S1 rate and, under the indicator model, the S1 slope. The source tables also print the step rates themselves as percentages.
      - That study did not correlate notified ÷ target with NTPS prevalence (its plan §9.3 excluded it). It did not compute harm averted, a benchmark gap or P(top-k).
    - **tb_acf_campaign** (hssling/india-tb-acf-campaign; the ACF campaign study, submitted to Public Health).
      - It extracted State notification tables from ITR 2020, ITR 2023 and ITR 2024 (Annexure 1.2, including the printed targets of the 2023 and 2024 editions), and State and district figures from parliamentary answers.
+     - It also extracted the State active case-finding (ACF) tables of ITR 2019 (Annexure 1.7 "Active Case Finding", data year 2018) and TBAR 2022 (Annexure 6 "Active Case Finding", data year 2021), and of ITR 2020, ITR 2023 and ITR 2024 (Annexure 6).
      - It analysed active case-finding yield and notification change. Its State notification values for data years 2022 and 2023 were seen.
    - No value from either repository was used in writing this plan. The steps, benchmark, k, thresholds and grids were fixed in the design and implementation plan from the questions, not from these values.
 3. **The AU802 district counts as printed.** Task 1 read both tables of Lok Sabha Unstarred Question 802 in full. It recorded the district names and the number of entries, found the duplicate "Vidisha" entry with identical values, and found no blank or non-numeric value cell. The district notification counts for 2022, 2023 and 2024 were therefore displayed as printed. No change, ratio, pooled change, z-score or funnel position was computed.
