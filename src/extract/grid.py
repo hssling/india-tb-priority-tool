@@ -17,10 +17,9 @@ rows overlap. So each page is read here as positioned tokens:
    a fragment continues the current name while the joined text is the start
    of a printed name of that data year.
 3. A count followed on its line by a percentage is one cell. A percentage
-   printed on a line of its own is joined to the bare count above it (within
-   one row pitch)
-   in the same column (the stacked layout); otherwise it is a cell with a blank
-   count.
+   printed on a line of its own is joined to the bare count above it in the
+   same column, within one row pitch (the stacked layout); otherwise it is a
+   cell with a blank count.
 4. A cell belongs to the row whose name is on its line. A cell on a line
    without a name belongs to the row whose centre (the middle of its name
    lines) is nearest to the cell's centre; it must be clearly nearer to that
