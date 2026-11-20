@@ -1,0 +1,449 @@
+panel,unit,year,step,numerator,denominator,na,reason,source_file,pdf_page,table_id
+state_panel,Gujarat,2021,S1,145744,196600,False,merged:Gujarat+Dadra and Nagar Haveli and Daman and Diu,data_raw/india_tb_report/TBAnnaulReport2022.pdf,89,Annexure 1.2
+state_panel,Jammu and Kashmir,2021,S1,11117,14560,False,merged:Jammu and Kashmir+Ladakh,data_raw/india_tb_report/TBAnnaulReport2022.pdf,89,Annexure 1.2
+state_panel,Kerala,2021,S1,21884,28020,False,merged:Kerala+Lakshadweep,data_raw/india_tb_report/TBAnnaulReport2022.pdf,89,Annexure 1.2
+state_panel,Gujarat,2022,S1,153311,151100,False,merged:Gujarat+Dadra and Nagar Haveli and Daman and Diu,data_raw/india_tb_report/ITR2023.pdf,213,Annexure 1.2
+state_panel,Jammu and Kashmir,2022,S1,12124,14850,False,merged:Jammu and Kashmir+Ladakh,data_raw/india_tb_report/ITR2023.pdf,213,Annexure 1.2
+state_panel,Kerala,2022,S1,23399,24020,False,merged:Kerala+Lakshadweep,data_raw/india_tb_report/ITR2023.pdf,213;214,Annexure 1.2
+state_panel,Gujarat,2023,S1,145674,141200,False,merged:Gujarat+Dadra and Nagar Haveli and Daman and Diu,data_raw/india_tb_report/ITR2024.pdf,187,Annexure 1.2
+state_panel,Jammu and Kashmir,2023,S1,12074,12750,False,merged:Jammu and Kashmir+Ladakh,data_raw/india_tb_report/ITR2024.pdf,187,Annexure 1.2
+state_panel,Kerala,2023,S1,21805,22012,False,merged:Kerala+Lakshadweep,data_raw/india_tb_report/ITR2024.pdf,187,Annexure 1.2
+state_panel,Andaman and Nicobar Islands,2023,S2,152,500,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,260,Annexure 4.7
+state_panel,Andhra Pradesh,2023,S2,7475,46356,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,260,Annexure 4.7
+state_panel,Arunachal Pradesh,2023,S2,349,1459,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,260,Annexure 4.7
+state_panel,Assam,2023,S2,8799,26975,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,260,Annexure 4.7
+state_panel,Bihar,2023,S2,22063,67786,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,260,Annexure 4.7
+state_panel,Chandigarh,2023,S2,228,2511,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,260,Annexure 4.7
+state_panel,Chhattisgarh,2023,S2,3076,16303,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,260,Annexure 4.7
+state_panel,Delhi,2023,S2,8130,45069,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,260,Annexure 4.7
+state_panel,Goa,2023,S2,62,1162,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,260,Annexure 4.7
+state_panel,Gujarat,2023,S2,8768,67894,False,denominator_bacteriologically_confirmed;merged:Gujarat+Dadra and Nagar Haveli and Daman and Diu,data_raw/india_tb_report/ITR2024.pdf,260,Annexure 4.7
+state_panel,Haryana,2023,S2,7493,47270,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,260,Annexure 4.7
+state_panel,Himachal Pradesh,2023,S2,502,10609,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,261,Annexure 4.7
+state_panel,Jammu and Kashmir,2023,S2,1131,6942,False,denominator_bacteriologically_confirmed;merged:Jammu and Kashmir+Ladakh,data_raw/india_tb_report/ITR2024.pdf,261,Annexure 4.7
+state_panel,Jharkhand,2023,S2,11215,32561,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,261,Annexure 4.7
+state_panel,Karnataka,2023,S2,4903,48761,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,261,Annexure 4.7
+state_panel,Kerala,2023,S2,1971,14826,False,denominator_bacteriologically_confirmed;merged:Kerala+Lakshadweep,data_raw/india_tb_report/ITR2024.pdf,261,Annexure 4.7
+state_panel,Madhya Pradesh,2023,S2,17076,86678,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,261,Annexure 4.7
+state_panel,Maharashtra,2023,S2,20006,104322,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,261,Annexure 4.7
+state_panel,Manipur,2023,S2,349,1439,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,261,Annexure 4.7
+state_panel,Meghalaya,2023,S2,600,3124,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,261,Annexure 4.7
+state_panel,Mizoram,2023,S2,89,1317,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,261,Annexure 4.7
+state_panel,Nagaland,2023,S2,431,2311,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,261,Annexure 4.7
+state_panel,Odisha,2023,S2,3424,37123,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,262,Annexure 4.7
+state_panel,Puducherry,2023,S2,96,1122,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,262,Annexure 4.7
+state_panel,Punjab,2023,S2,7572,31911,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,262,Annexure 4.7
+state_panel,Rajasthan,2023,S2,21530,89797,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,262,Annexure 4.7
+state_panel,Sikkim,2023,S2,20,816,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,262,Annexure 4.7
+state_panel,Tamil Nadu,2023,S2,4224,65138,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,262,Annexure 4.7
+state_panel,Telangana,2023,S2,6394,38365,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,262,Annexure 4.7
+state_panel,Tripura,2023,S2,240,2197,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,262,Annexure 4.7
+state_panel,Uttar Pradesh,2023,S2,34982,260119,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,262,Annexure 4.7
+state_panel,Uttarakhand,2023,S2,3992,12089,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,262,Annexure 4.7
+state_panel,West Bengal,2023,S2,13667,70081,False,denominator_bacteriologically_confirmed,data_raw/india_tb_report/ITR2024.pdf,262,Annexure 4.7
+state_panel,Andaman and Nicobar Islands,2018,S3,18,605,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Andhra Pradesh,2018,S3,2866,78569,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Arunachal Pradesh,2018,S3,55,3097,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Assam,2018,S3,1393,40302,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Bihar,2018,S3,1850,96478,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Chandigarh,2018,S3,109,3372,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Chhattisgarh,2018,S3,1455,41839,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Delhi,2018,S3,1006,63670,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Goa,2018,S3,40,1743,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Gujarat,2018,S3,6071,135585,False,cohort_2017;public_plus_private;merged:Gujarat+Dadra and Nagar Haveli+Daman and Diu,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Haryana,2018,S3,1547,41561,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Himachal Pradesh,2018,S3,549,13889,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Jammu and Kashmir,2018,S3,191,9093,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Jharkhand,2018,S3,768,43256,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Karnataka,2018,S3,3914,72885,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Kerala,2018,S3,762,23418,False,cohort_2017;public_plus_private;merged:Kerala+Lakshadweep;member_missing:Lakshadweep,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Madhya Pradesh,2018,S3,3981,131791,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Maharashtra,2018,S3,5066,181897,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Manipur,2018,S3,54,2771,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Meghalaya,2018,S3,94,3553,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Mizoram,2018,S3,49,2445,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Nagaland,2018,S3,46,3137,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,172,Annexure 1.4.a
+state_panel,Odisha,2018,S3,2457,67121,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,173,Annexure 1.4.a
+state_panel,Puducherry,2018,S3,78,1424,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,173,Annexure 1.4.a
+state_panel,Punjab,2018,S3,1566,41829,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,173,Annexure 1.4.a
+state_panel,Rajasthan,2018,S3,3029,107312,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,173,Annexure 1.4.a
+state_panel,Sikkim,2018,S3,25,973,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,173,Annexure 1.4.a
+state_panel,Tamil Nadu,2018,S3,3764,97859,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,173,Annexure 1.4.a
+state_panel,Telangana,2018,S3,1501,44644,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,173,Annexure 1.4.a
+state_panel,Tripura,2018,S3,101,1959,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,173,Annexure 1.4.a
+state_panel,Uttar Pradesh,2018,S3,7535,287373,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,173,Annexure 1.4.a
+state_panel,Uttarakhand,2018,S3,458,17115,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,173,Annexure 1.4.a
+state_panel,West Bengal,2018,S3,3877,93654,False,cohort_2017;public_plus_private,data_raw/india_tb_report/India-TB-Report-2019.pdf,173,Annexure 1.4.a
+state_panel,Andaman and Nicobar Islands,2019,S3,12,523,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Andhra Pradesh,2019,S3,3636,90680,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Arunachal Pradesh,2019,S3,59,2900,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Assam,2019,S3,1562,41676,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Bihar,2019,S3,2577,106189,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Chandigarh,2019,S3,94,3222,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Chhattisgarh,2019,S3,1403,40527,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Delhi,2019,S3,1367,71928,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Goa,2019,S3,71,2240,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Gujarat,2019,S3,6465,149647,False,cohort_2018;merged:Gujarat+Dadra and Nagar Haveli+Daman and Diu,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Haryana,2019,S3,2284,61983,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Himachal Pradesh,2019,S3,661,16595,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Jammu and Kashmir,2019,S3,278,11890,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Jharkhand,2019,S3,1163,48669,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Karnataka,2019,S3,4868,78918,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Kerala,2019,S3,1163,24591,False,cohort_2018;merged:Kerala+Lakshadweep,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Madhya Pradesh,2019,S3,4316,152846,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Maharashtra,2019,S3,7114,191294,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Manipur,2019,S3,72,2862,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Meghalaya,2019,S3,145,4459,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Mizoram,2019,S3,53,2576,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Nagaland,2019,S3,95,4322,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Odisha,2019,S3,2522,48307,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Puducherry,2019,S3,92,1542,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Punjab,2019,S3,2355,52217,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Rajasthan,2019,S3,4178,152547,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Sikkim,2019,S3,32,1340,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Tamil Nadu,2019,S3,4083,101101,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Telangana,2019,S3,1850,51318,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Tripura,2019,S3,127,2702,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Uttar Pradesh,2019,S3,13424,406312,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Uttarakhand,2019,S3,690,20561,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,West Bengal,2019,S3,4571,101033,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Andaman and Nicobar Islands,2021,S3,16,434,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Andhra Pradesh,2021,S3,2490,62914,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Arunachal Pradesh,2021,S3,78,2424,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Assam,2021,S3,1422,34540,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Bihar,2021,S3,3341,99731,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Chandigarh,2021,S3,129,2829,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Chhattisgarh,2021,S3,1380,29104,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Delhi,2021,S3,2008,73390,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Goa,2021,S3,89,1584,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Gujarat,2021,S3,5489,116080,False,cohort_2020;merged:Gujarat+Dadra and Nagar Haveli and Daman and Diu,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Haryana,2021,S3,2638,63036,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Himachal Pradesh,2021,S3,723,13299,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Jammu and Kashmir,2021,S3,328,9043,False,cohort_2020;merged:Jammu and Kashmir+Ladakh,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Jharkhand,2021,S3,1568,45660,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Karnataka,2021,S3,4490,62534,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Kerala,2021,S3,1668,20658,False,cohort_2020;merged:Kerala+Lakshadweep,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Madhya Pradesh,2021,S3,4795,135759,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Maharashtra,2021,S3,6988,147420,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Manipur,2021,S3,55,1564,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Meghalaya,2021,S3,185,3864,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Mizoram,2021,S3,50,1988,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Nagaland,2021,S3,97,3518,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Odisha,2021,S3,2506,44995,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Puducherry,2021,S3,80,1220,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Punjab,2021,S3,2667,46491,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Rajasthan,2021,S3,4616,133460,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Sikkim,2021,S3,45,1139,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Tamil Nadu,2021,S3,4050,68943,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Telangana,2021,S3,1876,60857,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Tripura,2021,S3,159,2137,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Uttar Pradesh,2021,S3,14913,363664,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Uttarakhand,2021,S3,743,19681,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,West Bengal,2021,S3,4320,77477,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Andaman and Nicobar Islands,2022,S3,13,480,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Andhra Pradesh,2022,S3,2223,85200,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Arunachal Pradesh,2022,S3,73,2726,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Assam,2022,S3,1649,37553,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Bihar,2022,S3,4881,133418,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Chandigarh,2022,S3,117,3145,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Chhattisgarh,2022,S3,1846,32184,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Delhi,2022,S3,2297,82277,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Goa,2022,S3,175,1948,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Gujarat,2022,S3,6876,138800,False,cohort_2021;merged:Gujarat+Dadra and Nagar Haveli and Daman and Diu,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Haryana,2022,S3,3065,69595,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Himachal Pradesh,2022,S3,891,14532,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Jammu and Kashmir,2022,S3,439,11229,False,cohort_2021;merged:Jammu and Kashmir+Ladakh,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Jharkhand,2022,S3,1826,52793,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Karnataka,2022,S3,5236,69405,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Kerala,2022,S3,1780,21906,False,cohort_2021;merged:Kerala+Lakshadweep,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Madhya Pradesh,2022,S3,6643,166098,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Maharashtra,2022,S3,7809,182554,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Manipur,2022,S3,73,1815,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Meghalaya,2022,S3,180,3916,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Mizoram,2022,S3,72,1670,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Nagaland,2022,S3,113,3636,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Odisha,2022,S3,2973,51788,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Puducherry,2022,S3,74,1369,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Punjab,2022,S3,2619,52253,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Rajasthan,2022,S3,4852,147937,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Sikkim,2022,S3,47,1187,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Tamil Nadu,2022,S3,4966,82684,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Telangana,2022,S3,1759,59615,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Tripura,2022,S3,167,2729,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Uttar Pradesh,2022,S3,16500,453494,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Uttarakhand,2022,S3,863,23231,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,West Bengal,2022,S3,4963,89277,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Andaman and Nicobar Islands,2023,S3,14,508,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Andhra Pradesh,2023,S3,1484,90840,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Arunachal Pradesh,2023,S3,64,2859,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Assam,2023,S3,1750,47404,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Bihar,2023,S3,5158,163263,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Chandigarh,2023,S3,149,3687,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Chhattisgarh,2023,S3,2096,38788,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Delhi,2023,S3,1944,85017,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Goa,2023,S3,171,1996,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Gujarat,2023,S3,5999,145580,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility;merged:Gujarat+Dadra and Nagar Haveli and Daman and Diu,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Haryana,2023,S3,2980,76051,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Himachal Pradesh,2023,S3,923,16168,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Jammu and Kashmir,2023,S3,451,12145,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility;merged:Jammu and Kashmir+Ladakh,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Jharkhand,2023,S3,1560,58996,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Karnataka,2023,S3,5115,76687,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Kerala,2023,S3,1950,23156,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility;merged:Kerala+Lakshadweep,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Madhya Pradesh,2023,S3,6557,186709,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Maharashtra,2023,S3,8559,219216,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Manipur,2023,S3,85,2584,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Meghalaya,2023,S3,197,4639,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Mizoram,2023,S3,85,1993,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Nagaland,2023,S3,96,4142,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Odisha,2023,S3,2646,59656,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Puducherry,2023,S3,115,1485,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Punjab,2023,S3,2648,57373,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Rajasthan,2023,S3,4571,166554,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Sikkim,2023,S3,43,1232,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Tamil Nadu,2023,S3,5234,93657,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Telangana,2023,S3,1659,71488,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Tripura,2023,S3,182,3266,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Uttar Pradesh,2023,S3,15178,523101,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Uttarakhand,2023,S3,926,26875,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,West Bengal,2023,S3,4642,92921,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Andaman and Nicobar Islands,2019,S4,18,523,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Andhra Pradesh,2019,S4,1998,90680,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Arunachal Pradesh,2019,S4,167,2900,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Assam,2019,S4,1510,41676,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Bihar,2019,S4,5022,106189,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Chandigarh,2019,S4,96,3222,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Chhattisgarh,2019,S4,788,40527,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Delhi,2019,S4,3353,71928,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Goa,2019,S4,70,2240,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Gujarat,2019,S4,6243,149647,False,cohort_2018;merged:Gujarat+Dadra and Nagar Haveli+Daman and Diu,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Haryana,2019,S4,2602,61983,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Himachal Pradesh,2019,S4,264,16595,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Jammu and Kashmir,2019,S4,242,11890,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Jharkhand,2019,S4,1262,48669,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Karnataka,2019,S4,3670,78918,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Kerala,2019,S4,499,24591,False,cohort_2018;merged:Kerala+Lakshadweep,data_raw/india_tb_report/ITR2020.pdf,224,Annexure 3.3
+state_panel,Madhya Pradesh,2019,S4,6086,152846,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Maharashtra,2019,S4,7543,191294,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Manipur,2019,S4,87,2862,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Meghalaya,2019,S4,120,4459,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Mizoram,2019,S4,45,2576,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Nagaland,2019,S4,158,4322,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Odisha,2019,S4,1484,48307,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Puducherry,2019,S4,53,1542,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Punjab,2019,S4,2140,52217,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Rajasthan,2019,S4,6220,152547,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Sikkim,2019,S4,6,1340,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Tamil Nadu,2019,S4,3435,101101,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Telangana,2019,S4,830,51318,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Tripura,2019,S4,63,2702,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Uttar Pradesh,2019,S4,21025,406312,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Uttarakhand,2019,S4,921,20561,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,West Bengal,2019,S4,3022,101033,False,cohort_2018,data_raw/india_tb_report/ITR2020.pdf,225,Annexure 3.3
+state_panel,Andaman and Nicobar Islands,2021,S4,6,434,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Andhra Pradesh,2021,S4,499,62914,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Arunachal Pradesh,2021,S4,123,2424,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Assam,2021,S4,634,34540,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Bihar,2021,S4,3751,99731,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Chandigarh,2021,S4,104,2829,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Chhattisgarh,2021,S4,685,29104,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Delhi,2021,S4,3448,73390,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Goa,2021,S4,48,1584,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Gujarat,2021,S4,2415,116080,False,cohort_2020;merged:Gujarat+Dadra and Nagar Haveli and Daman and Diu,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Haryana,2021,S4,2005,63036,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Himachal Pradesh,2021,S4,144,13299,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Jammu and Kashmir,2021,S4,124,9043,False,cohort_2020;merged:Jammu and Kashmir+Ladakh,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Jharkhand,2021,S4,2378,45660,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Karnataka,2021,S4,1555,62534,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Kerala,2021,S4,371,20658,False,cohort_2020;merged:Kerala+Lakshadweep,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Madhya Pradesh,2021,S4,6092,135759,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Maharashtra,2021,S4,3088,147420,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Manipur,2021,S4,43,1564,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Meghalaya,2021,S4,148,3864,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Mizoram,2021,S4,31,1988,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Nagaland,2021,S4,90,3518,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Odisha,2021,S4,584,44995,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Puducherry,2021,S4,28,1220,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Punjab,2021,S4,1172,46491,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Rajasthan,2021,S4,5375,133460,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Sikkim,2021,S4,9,1139,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Tamil Nadu,2021,S4,1712,68943,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Telangana,2021,S4,376,60857,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Tripura,2021,S4,50,2137,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Uttar Pradesh,2021,S4,11880,363664,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Uttarakhand,2021,S4,614,19681,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,West Bengal,2021,S4,1556,77477,False,cohort_2020,data_raw/india_tb_report/TBAnnaulReport2022.pdf,102,Annexure 3.3
+state_panel,Andaman and Nicobar Islands,2022,S4,12,480,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Andhra Pradesh,2022,S4,186,85200,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Arunachal Pradesh,2022,S4,180,2726,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Assam,2022,S4,732,37553,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Bihar,2022,S4,5156,133418,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Chandigarh,2022,S4,97,3145,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Chhattisgarh,2022,S4,627,32184,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Delhi,2022,S4,4308,82277,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Goa,2022,S4,61,1948,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Gujarat,2022,S4,2455,138800,False,cohort_2021;merged:Gujarat+Dadra and Nagar Haveli and Daman and Diu,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Haryana,2022,S4,1452,69595,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Himachal Pradesh,2022,S4,150,14532,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Jammu and Kashmir,2022,S4,181,11229,False,cohort_2021;merged:Jammu and Kashmir+Ladakh,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Jharkhand,2022,S4,2513,52793,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Karnataka,2022,S4,1758,69405,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Kerala,2022,S4,481,21906,False,cohort_2021;merged:Kerala+Lakshadweep,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Madhya Pradesh,2022,S4,7336,166098,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,251,Annexure 3.3
+state_panel,Maharashtra,2022,S4,2814,182554,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Manipur,2022,S4,61,1815,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Meghalaya,2022,S4,83,3916,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Mizoram,2022,S4,33,1670,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Nagaland,2022,S4,106,3636,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Odisha,2022,S4,498,51788,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Puducherry,2022,S4,33,1369,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Punjab,2022,S4,1319,52253,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Rajasthan,2022,S4,5070,147937,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Sikkim,2022,S4,18,1187,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Tamil Nadu,2022,S4,2318,82684,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Telangana,2022,S4,428,59615,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Tripura,2022,S4,58,2729,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Uttar Pradesh,2022,S4,11327,453494,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Uttarakhand,2022,S4,566,23231,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,West Bengal,2022,S4,1710,89277,False,cohort_2021,data_raw/india_tb_report/ITR2023.pdf,252,Annexure 3.3
+state_panel,Andaman and Nicobar Islands,2023,S4,16,508,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Andhra Pradesh,2023,S4,64,90840,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Arunachal Pradesh,2023,S4,214,2859,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Assam,2023,S4,681,47404,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Bihar,2023,S4,7389,163263,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Chandigarh,2023,S4,111,3687,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Chhattisgarh,2023,S4,718,38788,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Delhi,2023,S4,3985,85017,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Goa,2023,S4,87,1996,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Gujarat,2023,S4,1945,145580,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility;merged:Gujarat+Dadra and Nagar Haveli and Daman and Diu,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Haryana,2023,S4,1172,76051,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Himachal Pradesh,2023,S4,242,16168,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Jammu and Kashmir,2023,S4,145,12145,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility;merged:Jammu and Kashmir+Ladakh,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Jharkhand,2023,S4,1281,58996,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Karnataka,2023,S4,1603,76687,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Kerala,2023,S4,606,23156,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility;merged:Kerala+Lakshadweep,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Madhya Pradesh,2023,S4,6399,186709,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Maharashtra,2023,S4,2995,219216,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,222,Annexure 3.3
+state_panel,Manipur,2023,S4,108,2584,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Meghalaya,2023,S4,139,4639,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Mizoram,2023,S4,38,1993,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Nagaland,2023,S4,196,4142,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Odisha,2023,S4,490,59656,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Puducherry,2023,S4,40,1485,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Punjab,2023,S4,1433,57373,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Rajasthan,2023,S4,3932,166554,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Sikkim,2023,S4,6,1232,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Tamil Nadu,2023,S4,2386,93657,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Telangana,2023,S4,345,71488,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Tripura,2023,S4,79,3266,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Uttar Pradesh,2023,S4,7247,523101,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Uttarakhand,2023,S4,617,26875,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,West Bengal,2023,S4,1895,92921,False,cohort_2022;note_numerator_initiated_denominator_notified_current_facility,data_raw/india_tb_report/ITR2024.pdf,223,Annexure 3.3
+state_panel,Andaman and Nicobar Islands,2023,S5,4,31,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Andhra Pradesh,2023,S5,221,1089,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Arunachal Pradesh,2023,S5,29,110,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Assam,2023,S5,109,389,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Bihar,2023,S5,669,2239,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Chandigarh,2023,S5,13,56,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Chhattisgarh,2023,S5,110,432,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Delhi,2023,S5,432,1405,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Goa,2023,S5,9,31,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Gujarat,2023,S5,367,1492,False,cohort_2021;merged:Gujarat+Dadra and Nagar Haveli and Daman and Diu,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Haryana,2023,S5,307,1439,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Himachal Pradesh,2023,S5,31,181,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Jammu and Kashmir,2023,S5,22,156,False,cohort_2021;merged:Jammu and Kashmir+Ladakh,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Jharkhand,2023,S5,259,853,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Karnataka,2023,S5,254,848,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Kerala,2023,S5,50,235,False,cohort_2021;merged:Kerala+Lakshadweep;member_missing:Lakshadweep,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Madhya Pradesh,2023,S5,452,1569,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Maharashtra,2023,S5,1546,6580,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,273,Annexure 4.13
+state_panel,Manipur,2023,S5,13,48,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,274,Annexure 4.13
+state_panel,Meghalaya,2023,S5,30,134,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,274,Annexure 4.13
+state_panel,Mizoram,2023,S5,16,98,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,274,Annexure 4.13
+state_panel,Nagaland,2023,S5,28,86,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,274,Annexure 4.13
+state_panel,Odisha,2023,S5,68,415,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,274,Annexure 4.13
+state_panel,Puducherry,2023,S5,3,16,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,274,Annexure 4.13
+state_panel,Punjab,2023,S5,161,585,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,274,Annexure 4.13
+state_panel,Rajasthan,2023,S5,469,1825,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,274,Annexure 4.13
+state_panel,Sikkim,2023,S5,38,166,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,274,Annexure 4.13
+state_panel,Tamil Nadu,2023,S5,299,983,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,274,Annexure 4.13
+state_panel,Telangana,2023,S5,207,955,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,274,Annexure 4.13
+state_panel,Tripura,2023,S5,7,21,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,274,Annexure 4.13
+state_panel,Uttar Pradesh,2023,S5,2071,7271,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,274,Annexure 4.13
+state_panel,Uttarakhand,2023,S5,114,483,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,274,Annexure 4.13
+state_panel,West Bengal,2023,S5,354,1334,False,cohort_2021,data_raw/india_tb_report/ITR2024.pdf,274,Annexure 4.13
+state_panel,Gujarat,2018,S6,33056,153687,False,merged:Gujarat+Dadra and Nagar Haveli+Daman and Diu,data_raw/india_tb_report/India-TB-Report-2019.pdf,169,Annexure 1.2
+state_panel,Kerala,2018,S6,3596,24742,False,merged:Kerala+Lakshadweep,data_raw/india_tb_report/India-TB-Report-2019.pdf,169,Annexure 1.2
+state_panel,Gujarat,2019,S6,18164,157200,False,merged:Gujarat+Dadra and Nagar Haveli+Daman and Diu,data_raw/india_tb_report/ITR2020.pdf,206;211,Annexure 2.1;Annexure 1.4
+state_panel,Kerala,2019,S6,3711,25664,False,merged:Kerala+Lakshadweep,data_raw/india_tb_report/ITR2020.pdf,206;211,Annexure 2.1;Annexure 1.4
+state_panel,Gujarat,2021,S6,3018,142048,False,merged:Gujarat+Dadra and Nagar Haveli and Daman and Diu,data_raw/india_tb_report/TBAnnaulReport2022.pdf,91;94,Annexure 2.1;Annexure 1.4
+state_panel,Jammu and Kashmir,2021,S6,890,11324,False,merged:Jammu and Kashmir+Ladakh,data_raw/india_tb_report/TBAnnaulReport2022.pdf,91;94,Annexure 2.1;Annexure 1.4
+state_panel,Kerala,2021,S6,1505,22044,False,merged:Kerala+Lakshadweep,data_raw/india_tb_report/TBAnnaulReport2022.pdf,91;94,Annexure 2.1;Annexure 1.4
+state_panel,Andaman and Nicobar Islands,2022,S6,19,547,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,221;225,Annexure 2.1;Annexure 1.6
+state_panel,Andhra Pradesh,2022,S6,114,93092,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,221;225,Annexure 2.1;Annexure 1.6
+state_panel,Arunachal Pradesh,2022,S6,220,3014,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,221;225,Annexure 2.1;Annexure 1.6
+state_panel,Assam,2022,S6,3706,47963,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,221;225,Annexure 2.1;Annexure 1.6
+state_panel,Bihar,2022,S6,18368,165821,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,221;225,Annexure 2.1;Annexure 1.6
+state_panel,Chandigarh,2022,S6,115,3786,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,221;225,Annexure 2.1;Annexure 1.6
+state_panel,Chhattisgarh,2022,S6,1276,38741,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,221;225,Annexure 2.1;Annexure 1.6
+state_panel,Delhi,2022,S6,12727,88224,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,221;225,Annexure 2.1;Annexure 1.6
+state_panel,Goa,2022,S6,73,2070,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,221;225,Annexure 2.1;Annexure 1.6
+state_panel,Gujarat,2022,S6,3124,149046,False,denominator_A1.6_sex_sum_plan_12.2;merged:Gujarat+Dadra and Nagar Haveli and Daman and Diu,data_raw/india_tb_report/ITR2023.pdf,221;225,Annexure 2.1;Annexure 1.6
+state_panel,Haryana,2022,S6,2269,78640,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,221;225,Annexure 2.1;Annexure 1.6
+state_panel,Himachal Pradesh,2022,S6,115,16505,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,221;225,Annexure 2.1;Annexure 1.6
+state_panel,Jammu and Kashmir,2022,S6,311,12301,False,denominator_A1.6_sex_sum_plan_12.2;merged:Jammu and Kashmir+Ladakh,data_raw/india_tb_report/ITR2023.pdf,221;225,Annexure 2.1;Annexure 1.6
+state_panel,Jharkhand,2022,S6,2993,58468,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,221;225,Annexure 2.1;Annexure 1.6
+state_panel,Karnataka,2022,S6,1988,79141,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,221;225,Annexure 2.1;Annexure 1.6
+state_panel,Kerala,2022,S6,1166,23551,False,denominator_A1.6_sex_sum_plan_12.2;merged:Kerala+Lakshadweep,data_raw/india_tb_report/ITR2023.pdf,221;225,Annexure 2.1;Annexure 1.6
+state_panel,Madhya Pradesh,2022,S6,8202,188906,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,222;225,Annexure 2.1;Annexure 1.6
+state_panel,Maharashtra,2022,S6,3732,229696,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,222;225,Annexure 2.1;Annexure 1.6
+state_panel,Manipur,2022,S6,425,2621,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,222;225,Annexure 2.1;Annexure 1.6
+state_panel,Meghalaya,2022,S6,834,4961,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,222;225,Annexure 2.1;Annexure 1.6
+state_panel,Mizoram,2022,S6,11,2106,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,222;225,Annexure 2.1;Annexure 1.6
+state_panel,Nagaland,2022,S6,198,4184,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,222;225,Annexure 2.1;Annexure 1.6
+state_panel,Odisha,2022,S6,345,59955,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,222;225,Annexure 2.1;Annexure 1.6
+state_panel,Puducherry,2022,S6,5,1527,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,222;225,Annexure 2.1;Annexure 1.6
+state_panel,Punjab,2022,S6,3009,57562,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,222;225,Annexure 2.1;Annexure 1.6
+state_panel,Rajasthan,2022,S6,7119,170248,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,222;225,Annexure 2.1;Annexure 1.6
+state_panel,Sikkim,2022,S6,29,1415,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,222;225,Annexure 2.1;Annexure 1.6
+state_panel,Tamil Nadu,2022,S6,4165,95968,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,222;225,Annexure 2.1;Annexure 1.6
+state_panel,Telangana,2022,S6,724,73220,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,222;225,Annexure 2.1;Annexure 1.6
+state_panel,Tripura,2022,S6,75,3297,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,222;225,Annexure 2.1;Annexure 1.6
+state_panel,Uttar Pradesh,2022,S6,14223,535854,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,222;225,Annexure 2.1;Annexure 1.6
+state_panel,Uttarakhand,2022,S6,427,27357,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,222;225,Annexure 2.1;Annexure 1.6
+state_panel,West Bengal,2022,S6,3314,101879,False,denominator_A1.6_sex_sum_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,222;225,Annexure 2.1;Annexure 1.6
+state_panel,Gujarat,2023,S6,3640,141485,False,merged:Gujarat+Dadra and Nagar Haveli and Daman and Diu,data_raw/india_tb_report/ITR2024.pdf,191;199,Annexure 2.1;Annexure 1.4
+state_panel,Jammu and Kashmir,2023,S6,481,12093,False,merged:Jammu and Kashmir+Ladakh,data_raw/india_tb_report/ITR2024.pdf,191;199,Annexure 2.1;Annexure 1.4
+state_panel,Kerala,2023,S6,697,21826,False,merged:Kerala+Lakshadweep,data_raw/india_tb_report/ITR2024.pdf,191;199,Annexure 2.1;Annexure 1.4
+state_panel_s6_2022_registered,Andaman and Nicobar Islands,2022,S6,6,534,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Andhra Pradesh,2022,S6,,,True,NA:loss_negative;denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Arunachal Pradesh,2022,S6,69,2863,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Assam,2022,S6,3565,47822,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Bihar,2022,S6,13712,161165,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Chandigarh,2022,S6,2395,6066,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Chhattisgarh,2022,S6,1056,38521,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Delhi,2022,S6,31234,106731,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Goa,2022,S6,94,2091,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Gujarat,2022,S6,7389,153311,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2;merged:Gujarat+Dadra and Nagar Haveli and Daman and Diu,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Haryana,2022,S6,,,True,NA:loss_negative;denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Himachal Pradesh,2022,S6,,,True,NA:loss_negative;denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Jammu and Kashmir,2022,S6,134,12124,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2;merged:Jammu and Kashmir+Ladakh,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Jharkhand,2022,S6,1845,57320,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Karnataka,2022,S6,3263,80416,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Kerala,2022,S6,1014,23399,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2;merged:Kerala+Lakshadweep,data_raw/india_tb_report/ITR2023.pdf,213;214;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Madhya Pradesh,2022,S6,5589,186293,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Maharashtra,2022,S6,8141,234105,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Manipur,2022,S6,358,2554,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Meghalaya,2022,S6,862,4989,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Mizoram,2022,S6,,,True,NA:loss_negative;denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Nagaland,2022,S6,139,4125,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Odisha,2022,S6,762,60372,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Puducherry,2022,S6,2313,3835,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Punjab,2022,S6,597,55150,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Rajasthan,2022,S6,6393,169522,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Sikkim,2022,S6,9,1395,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Tamil Nadu,2022,S6,2076,93879,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Telangana,2022,S6,445,72941,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Tripura,2022,S6,,,True,NA:loss_negative;denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Uttar Pradesh,2022,S6,1219,522850,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,Uttarakhand,2022,S6,623,27553,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2
+state_panel_s6_2022_registered,West Bengal,2022,S6,2407,100972,False,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2

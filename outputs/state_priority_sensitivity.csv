@@ -1,0 +1,793 @@
+unit,step,year,analysis,benchmark,shrinkage,k,harm_averted_mean,p_topk,tier,tier_main,tier_changed,rising
+Andaman and Nicobar Islands,S1,2023,k3,p75,on,3,0.052370769351176544,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S1,2023,k3,p75,on,3,11698.1860751133,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S1,2023,k3,p75,on,3,742.655432637008,0.0,lower priority,lower priority,False,False
+Assam,S1,2023,k3,p75,on,3,8594.000463760314,0.0,lower priority,lower priority,False,False
+Bihar,S1,2023,k3,p75,on,3,52951.50445598342,1.0,act now,act now,False,False
+Chandigarh,S1,2023,k3,p75,on,3,189.98831999316988,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S1,2023,k3,p75,on,3,13847.698758873457,0.0,lower priority,uncertain,True,False
+Delhi,S1,2023,k3,p75,on,3,5046.148556754529,0.0,lower priority,lower priority,False,False
+Goa,S1,2023,k3,p75,on,3,37.45604024714315,0.0,lower priority,lower priority,False,False
+Gujarat,S1,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Haryana,S1,2023,k3,p75,on,3,11640.788973085168,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S1,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S1,2023,k3,p75,on,3,167.2218367686588,0.0,lower priority,lower priority,False,False
+Jharkhand,S1,2023,k3,p75,on,3,5465.3555974627,0.0,lower priority,lower priority,False,False
+Karnataka,S1,2023,k3,p75,on,3,14103.466949582764,0.0,lower priority,probable priority,True,False
+Kerala,S1,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S1,2023,k3,p75,on,3,16855.602202438036,0.4571,uncertain,act now,True,False
+Maharashtra,S1,2023,k3,p75,on,3,12277.026257339367,0.0,lower priority,lower priority,False,False
+Manipur,S1,2023,k3,p75,on,3,849.4350624329802,0.0,lower priority,lower priority,False,False
+Meghalaya,S1,2023,k3,p75,on,3,558.325955814829,0.0,lower priority,lower priority,False,False
+Mizoram,S1,2023,k3,p75,on,3,593.9156655043714,0.0,lower priority,lower priority,False,False
+Nagaland,S1,2023,k3,p75,on,3,507.30672170398964,0.0,lower priority,lower priority,False,False
+Odisha,S1,2023,k3,p75,on,3,101.00966921542876,0.0,lower priority,lower priority,False,False
+Puducherry,S1,2023,k3,p75,on,3,0.002871458633948626,0.0,lower priority,lower priority,False,False
+Punjab,S1,2023,k3,p75,on,3,11951.62456041208,0.0,lower priority,lower priority,False,False
+Rajasthan,S1,2023,k3,p75,on,3,7633.68893022998,0.0,lower priority,lower priority,False,False
+Sikkim,S1,2023,k3,p75,on,3,2.0122399849524024,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S1,2023,k3,p75,on,3,16912.94353677235,0.5429,probable priority,act now,True,False
+Telangana,S1,2023,k3,p75,on,3,1787.3624297326855,0.0,lower priority,lower priority,False,False
+Tripura,S1,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S1,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Uttarakhand,S1,2023,k3,p75,on,3,91.04979653097308,0.0,lower priority,lower priority,False,False
+West Bengal,S1,2023,k3,p75,on,3,22033.727235050028,1.0,act now,act now,False,False
+Andaman and Nicobar Islands,S1,2023,k8,p75,on,8,0.052370769351176544,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S1,2023,k8,p75,on,8,11698.1860751133,0.2701,uncertain,lower priority,True,False
+Arunachal Pradesh,S1,2023,k8,p75,on,8,742.655432637008,0.0,lower priority,lower priority,False,False
+Assam,S1,2023,k8,p75,on,8,8594.000463760314,0.0,lower priority,lower priority,False,False
+Bihar,S1,2023,k8,p75,on,8,52951.50445598342,1.0,act now,act now,False,False
+Chandigarh,S1,2023,k8,p75,on,8,189.98831999316988,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S1,2023,k8,p75,on,8,13847.698758873457,1.0,act now,uncertain,True,False
+Delhi,S1,2023,k8,p75,on,8,5046.148556754529,0.0,lower priority,lower priority,False,False
+Goa,S1,2023,k8,p75,on,8,37.45604024714315,0.0,lower priority,lower priority,False,False
+Gujarat,S1,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Haryana,S1,2023,k8,p75,on,8,11640.788973085168,0.1996,lower priority,lower priority,False,False
+Himachal Pradesh,S1,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S1,2023,k8,p75,on,8,167.2218367686588,0.0,lower priority,lower priority,False,False
+Jharkhand,S1,2023,k8,p75,on,8,5465.3555974627,0.0,lower priority,lower priority,False,False
+Karnataka,S1,2023,k8,p75,on,8,14103.466949582764,1.0,act now,probable priority,True,False
+Kerala,S1,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S1,2023,k8,p75,on,8,16855.602202438036,1.0,act now,act now,False,False
+Maharashtra,S1,2023,k8,p75,on,8,12277.026257339367,0.8362,act now,lower priority,True,False
+Manipur,S1,2023,k8,p75,on,8,849.4350624329802,0.0,lower priority,lower priority,False,False
+Meghalaya,S1,2023,k8,p75,on,8,558.325955814829,0.0,lower priority,lower priority,False,False
+Mizoram,S1,2023,k8,p75,on,8,593.9156655043714,0.0,lower priority,lower priority,False,False
+Nagaland,S1,2023,k8,p75,on,8,507.30672170398964,0.0,lower priority,lower priority,False,False
+Odisha,S1,2023,k8,p75,on,8,101.00966921542876,0.0,lower priority,lower priority,False,False
+Puducherry,S1,2023,k8,p75,on,8,0.002871458633948626,0.0,lower priority,lower priority,False,False
+Punjab,S1,2023,k8,p75,on,8,11951.62456041208,0.6941,probable priority,lower priority,True,False
+Rajasthan,S1,2023,k8,p75,on,8,7633.68893022998,0.0,lower priority,lower priority,False,False
+Sikkim,S1,2023,k8,p75,on,8,2.0122399849524024,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S1,2023,k8,p75,on,8,16912.94353677235,1.0,act now,act now,False,False
+Telangana,S1,2023,k8,p75,on,8,1787.3624297326855,0.0,lower priority,lower priority,False,False
+Tripura,S1,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S1,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Uttarakhand,S1,2023,k8,p75,on,8,91.04979653097308,0.0,lower priority,lower priority,False,False
+West Bengal,S1,2023,k8,p75,on,8,22033.727235050028,1.0,act now,act now,False,False
+Andaman and Nicobar Islands,S1,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S1,2023,benchmark_median,median,on,5,6542.715119116006,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S1,2023,benchmark_median,median,on,5,570.8064007704313,0.0,lower priority,lower priority,False,False
+Assam,S1,2023,benchmark_median,median,on,5,5500.717890161936,0.0,lower priority,lower priority,False,False
+Bihar,S1,2023,benchmark_median,median,on,5,40676.57360837081,1.0,act now,act now,False,False
+Chandigarh,S1,2023,benchmark_median,median,on,5,0.5874616941118188,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S1,2023,benchmark_median,median,on,5,11147.213972398686,1.0,act now,uncertain,True,False
+Delhi,S1,2023,benchmark_median,median,on,5,22.02825434617609,0.0,lower priority,lower priority,False,False
+Goa,S1,2023,benchmark_median,median,on,5,0.7262678946705727,0.0,lower priority,lower priority,False,False
+Gujarat,S1,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Haryana,S1,2023,benchmark_median,median,on,5,6927.215527601926,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S1,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S1,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Jharkhand,S1,2023,benchmark_median,median,on,5,2028.3749601311688,0.0,lower priority,lower priority,False,False
+Karnataka,S1,2023,benchmark_median,median,on,5,9193.494610537722,0.9687,act now,probable priority,True,False
+Kerala,S1,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S1,2023,benchmark_median,median,on,5,6544.660290443446,0.0,lower priority,act now,True,False
+Maharashtra,S1,2023,benchmark_median,median,on,5,193.12518084649895,0.0,lower priority,lower priority,False,False
+Manipur,S1,2023,benchmark_median,median,on,5,677.5860305664037,0.0,lower priority,lower priority,False,False
+Meghalaya,S1,2023,benchmark_median,median,on,5,278.4575324892615,0.0,lower priority,lower priority,False,False
+Mizoram,S1,2023,benchmark_median,median,on,5,446.6164953330202,0.0,lower priority,lower priority,False,False
+Nagaland,S1,2023,benchmark_median,median,on,5,261.8093142352679,0.0,lower priority,lower priority,False,False
+Odisha,S1,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Puducherry,S1,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Punjab,S1,2023,benchmark_median,median,on,5,8514.643923080548,0.0313,lower priority,lower priority,False,False
+Rajasthan,S1,2023,benchmark_median,median,on,5,0.23789376818163047,0.0,lower priority,lower priority,False,False
+Sikkim,S1,2023,benchmark_median,median,on,5,0.0020848027650586377,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S1,2023,benchmark_median,median,on,5,11020.976729918299,1.0,act now,act now,False,False
+Telangana,S1,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Tripura,S1,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S1,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Uttarakhand,S1,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+West Bengal,S1,2023,benchmark_median,median,on,5,15650.763194291472,1.0,act now,act now,False,False
+Andaman and Nicobar Islands,S1,2023,benchmark_p90,p90,on,5,2.8540907199369334,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S1,2023,benchmark_p90,p90,on,5,18899.53351600563,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S1,2023,benchmark_p90,p90,on,5,982.7003473334189,0.0,lower priority,lower priority,False,False
+Assam,S1,2023,benchmark_p90,p90,on,5,12914.80892829571,0.0,lower priority,lower priority,False,False
+Bihar,S1,2023,benchmark_p90,p90,on,5,70097.56979144135,1.0,act now,act now,False,False
+Chandigarh,S1,2023,benchmark_p90,p90,on,5,683.4305956259716,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S1,2023,benchmark_p90,p90,on,5,17619.8331326742,0.0,lower priority,uncertain,True,False
+Delhi,S1,2023,benchmark_p90,p90,on,5,12590.417304356017,0.0,lower priority,lower priority,False,False
+Goa,S1,2023,benchmark_p90,p90,on,5,181.6033565220224,0.0,lower priority,lower priority,False,False
+Gujarat,S1,2023,benchmark_p90,p90,on,5,19.99642287287959,0.0,lower priority,lower priority,False,False
+Haryana,S1,2023,benchmark_p90,p90,on,5,18224.87806190101,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S1,2023,benchmark_p90,p90,on,5,347.57989823830235,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S1,2023,benchmark_p90,p90,on,5,1038.1968775290168,0.0,lower priority,lower priority,False,False
+Jharkhand,S1,2023,benchmark_p90,p90,on,5,10266.25389139092,0.0,lower priority,lower priority,False,False
+Karnataka,S1,2023,benchmark_p90,p90,on,5,20961.893083765935,0.0,lower priority,probable priority,True,False
+Kerala,S1,2023,benchmark_p90,p90,on,5,834.9747309893233,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S1,2023,benchmark_p90,p90,on,5,31258.297084222697,1.0,act now,act now,False,False
+Maharashtra,S1,2023,benchmark_p90,p90,on,5,29423.091592797296,1.0,act now,lower priority,True,False
+Manipur,S1,2023,benchmark_p90,p90,on,5,1089.4799771293913,0.0,lower priority,lower priority,False,False
+Meghalaya,S1,2023,benchmark_p90,p90,on,5,949.2562454632698,0.0,lower priority,lower priority,False,False
+Mizoram,S1,2023,benchmark_p90,p90,on,5,799.6684495298666,0.0,lower priority,lower priority,False,False
+Nagaland,S1,2023,benchmark_p90,p90,on,5,850.2280284131482,0.0,lower priority,lower priority,False,False
+Odisha,S1,2023,benchmark_p90,p90,on,5,4460.6757037473535,0.0,lower priority,lower priority,False,False
+Puducherry,S1,2023,benchmark_p90,p90,on,5,61.61919132741413,0.0,lower priority,lower priority,False,False
+Punjab,S1,2023,benchmark_p90,p90,on,5,16752.522854340295,0.0,lower priority,lower priority,False,False
+Rajasthan,S1,2023,benchmark_p90,p90,on,5,19978.855971759687,0.0,lower priority,lower priority,False,False
+Sikkim,S1,2023,benchmark_p90,p90,on,5,54.52143655156508,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S1,2023,benchmark_p90,p90,on,5,25143.054897792153,1.0,act now,act now,False,False
+Telangana,S1,2023,benchmark_p90,p90,on,5,7274.103337079223,0.0,lower priority,lower priority,False,False
+Tripura,S1,2023,benchmark_p90,p90,on,5,1.7720640738679063,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S1,2023,benchmark_p90,p90,on,5,0.0,0.0,lower priority,lower priority,False,False
+Uttarakhand,S1,2023,benchmark_p90,p90,on,5,1966.1102069919411,0.0,lower priority,lower priority,False,False
+West Bengal,S1,2023,benchmark_p90,p90,on,5,30949.681209488153,1.0,act now,act now,False,False
+Andaman and Nicobar Islands,S2,2023,k3,p75,on,3,99.48012326340587,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S2,2023,k3,p75,on,3,2813.943534029582,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S2,2023,k3,p75,on,3,201.1805806802348,0.0,lower priority,lower priority,False,False
+Assam,S2,2023,k3,p75,on,3,6083.751359622555,0.0,lower priority,lower priority,False,False
+Bihar,S2,2023,k3,p75,on,3,15244.100565785224,1.0,act now,act now,False,False
+Chandigarh,S2,2023,k3,p75,on,3,0.39289643496917054,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S2,2023,k3,p75,on,3,1436.310602913197,0.0,lower priority,lower priority,False,False
+Delhi,S2,2023,k3,p75,on,3,3597.3064045953447,0.0,lower priority,lower priority,False,False
+Goa,S2,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Gujarat,S2,2023,k3,p75,on,3,1939.4937070960243,0.0,lower priority,lower priority,False,False
+Haryana,S2,2023,k3,p75,on,3,2739.923746985296,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S2,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S2,2023,k3,p75,on,3,432.90160825845226,0.0,lower priority,lower priority,False,False
+Jharkhand,S2,2023,k3,p75,on,3,7938.704241232282,0.0,lower priority,lower priority,False,False
+Karnataka,S2,2023,k3,p75,on,3,27.53791845793809,0.0,lower priority,lower priority,False,False
+Kerala,S2,2023,k3,p75,on,3,480.6015740387192,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S2,2023,k3,p75,on,3,8357.69102737824,0.0,lower priority,act now,True,False
+Maharashtra,S2,2023,k3,p75,on,3,9514.319378499282,0.9995,act now,act now,False,False
+Manipur,S2,2023,k3,p75,on,3,203.1939965776582,0.0,lower priority,lower priority,False,False
+Meghalaya,S2,2023,k3,p75,on,3,285.63191391817116,0.0,lower priority,lower priority,False,False
+Mizoram,S2,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Nagaland,S2,2023,k3,p75,on,3,198.6288472378944,0.0,lower priority,lower priority,False,False
+Odisha,S2,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Puducherry,S2,2023,k3,p75,on,3,0.2577112220061611,0.0,lower priority,lower priority,False,False
+Punjab,S2,2023,k3,p75,on,3,4363.073990350929,0.0,lower priority,lower priority,False,False
+Rajasthan,S2,2023,k3,p75,on,3,12495.999600745094,1.0,act now,act now,False,False
+Sikkim,S2,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S2,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Telangana,S2,2023,k3,p75,on,3,2535.782335601094,0.0,lower priority,lower priority,False,False
+Tripura,S2,2023,k3,p75,on,3,20.717664856653183,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S2,2023,k3,p75,on,3,8821.807174385727,0.0005,lower priority,act now,True,False
+Uttarakhand,S2,2023,k3,p75,on,3,2772.5244436135895,0.0,lower priority,lower priority,False,False
+West Bengal,S2,2023,k3,p75,on,3,6618.450718538412,0.0,lower priority,lower priority,False,False
+Andaman and Nicobar Islands,S2,2023,k8,p75,on,8,99.48012326340587,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S2,2023,k8,p75,on,8,2813.943534029582,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S2,2023,k8,p75,on,8,201.1805806802348,0.0,lower priority,lower priority,False,False
+Assam,S2,2023,k8,p75,on,8,6083.751359622555,1.0,act now,lower priority,True,False
+Bihar,S2,2023,k8,p75,on,8,15244.100565785224,1.0,act now,act now,False,False
+Chandigarh,S2,2023,k8,p75,on,8,0.39289643496917054,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S2,2023,k8,p75,on,8,1436.310602913197,0.0,lower priority,lower priority,False,False
+Delhi,S2,2023,k8,p75,on,8,3597.3064045953447,0.0,lower priority,lower priority,False,False
+Goa,S2,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Gujarat,S2,2023,k8,p75,on,8,1939.4937070960243,0.0,lower priority,lower priority,False,False
+Haryana,S2,2023,k8,p75,on,8,2739.923746985296,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S2,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S2,2023,k8,p75,on,8,432.90160825845226,0.0,lower priority,lower priority,False,False
+Jharkhand,S2,2023,k8,p75,on,8,7938.704241232282,1.0,act now,lower priority,True,False
+Karnataka,S2,2023,k8,p75,on,8,27.53791845793809,0.0,lower priority,lower priority,False,False
+Kerala,S2,2023,k8,p75,on,8,480.6015740387192,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S2,2023,k8,p75,on,8,8357.69102737824,1.0,act now,act now,False,False
+Maharashtra,S2,2023,k8,p75,on,8,9514.319378499282,1.0,act now,act now,False,False
+Manipur,S2,2023,k8,p75,on,8,203.1939965776582,0.0,lower priority,lower priority,False,False
+Meghalaya,S2,2023,k8,p75,on,8,285.63191391817116,0.0,lower priority,lower priority,False,False
+Mizoram,S2,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Nagaland,S2,2023,k8,p75,on,8,198.6288472378944,0.0,lower priority,lower priority,False,False
+Odisha,S2,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Puducherry,S2,2023,k8,p75,on,8,0.2577112220061611,0.0,lower priority,lower priority,False,False
+Punjab,S2,2023,k8,p75,on,8,4363.073990350929,0.0,lower priority,lower priority,False,False
+Rajasthan,S2,2023,k8,p75,on,8,12495.999600745094,1.0,act now,act now,False,False
+Sikkim,S2,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S2,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Telangana,S2,2023,k8,p75,on,8,2535.782335601094,0.0,lower priority,lower priority,False,False
+Tripura,S2,2023,k8,p75,on,8,20.717664856653183,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S2,2023,k8,p75,on,8,8821.807174385727,1.0,act now,act now,False,False
+Uttarakhand,S2,2023,k8,p75,on,8,2772.5244436135895,0.0,lower priority,lower priority,False,False
+West Bengal,S2,2023,k8,p75,on,8,6618.450718538412,1.0,act now,lower priority,True,False
+Andaman and Nicobar Islands,S2,2023,benchmark_median,median,on,5,66.43634114314679,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S2,2023,benchmark_median,median,on,5,0.014973082921066461,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S2,2023,benchmark_median,median,on,5,104.75882445331887,0.0,lower priority,lower priority,False,False
+Assam,S2,2023,benchmark_median,median,on,5,4301.039314234578,1.0,act now,lower priority,True,False
+Bihar,S2,2023,benchmark_median,median,on,5,10764.288936177461,1.0,act now,act now,False,False
+Chandigarh,S2,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S2,2023,benchmark_median,median,on,5,358.8850431000301,0.0,lower priority,lower priority,False,False
+Delhi,S2,2023,benchmark_median,median,on,5,618.8059718394326,0.0,lower priority,lower priority,False,False
+Goa,S2,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Gujarat,S2,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Haryana,S2,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S2,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S2,2023,benchmark_median,median,on,5,3.479758781669302,0.0,lower priority,lower priority,False,False
+Jharkhand,S2,2023,benchmark_median,median,on,5,5786.82706199677,1.0,act now,lower priority,True,False
+Karnataka,S2,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Kerala,S2,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S2,2023,benchmark_median,median,on,5,2629.35313413861,0.5209,probable priority,act now,True,False
+Maharashtra,S2,2023,benchmark_median,median,on,5,2619.9325017999486,0.479,uncertain,act now,True,False
+Manipur,S2,2023,benchmark_median,median,on,5,108.09399163555261,0.0,lower priority,lower priority,False,False
+Meghalaya,S2,2023,benchmark_median,median,on,5,79.17436323079252,0.0,lower priority,lower priority,False,False
+Mizoram,S2,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Nagaland,S2,2023,benchmark_median,median,on,5,45.9340068199446,0.0,lower priority,lower priority,False,False
+Odisha,S2,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Puducherry,S2,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Punjab,S2,2023,benchmark_median,median,on,5,2254.153727871754,0.0001,lower priority,lower priority,False,False
+Rajasthan,S2,2023,benchmark_median,median,on,5,6561.534594639288,1.0,act now,act now,False,False
+Sikkim,S2,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S2,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Telangana,S2,2023,benchmark_median,median,on,5,29.36804142607879,0.0,lower priority,lower priority,False,False
+Tripura,S2,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S2,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,act now,True,False
+Uttarakhand,S2,2023,benchmark_median,median,on,5,1973.5918795099658,0.0,lower priority,lower priority,False,False
+West Bengal,S2,2023,benchmark_median,median,on,5,1986.9681289986604,0.0,lower priority,lower priority,False,False
+Andaman and Nicobar Islands,S2,2023,benchmark_p90,p90,on,5,116.91428070582982,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S2,2023,benchmark_p90,p90,on,5,4430.299138831594,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S2,2023,benchmark_p90,p90,on,5,252.053452097228,0.0,lower priority,lower priority,False,False
+Assam,S2,2023,benchmark_p90,p90,on,5,7024.324153641328,0.0,lower priority,lower priority,False,False
+Bihar,S2,2023,benchmark_p90,p90,on,5,17607.684158569526,1.0,act now,act now,False,False
+Chandigarh,S2,2023,benchmark_p90,p90,on,5,64.60276387770904,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S2,2023,benchmark_p90,p90,on,5,2004.7687404808732,0.0,lower priority,lower priority,False,False
+Delhi,S2,2023,benchmark_p90,p90,on,5,5168.786488140557,0.0,lower priority,lower priority,False,False
+Goa,S2,2023,benchmark_p90,p90,on,5,0.25879790847050144,0.0,lower priority,lower priority,False,False
+Gujarat,S2,2023,benchmark_p90,p90,on,5,4306.843077887891,0.0,lower priority,lower priority,False,False
+Haryana,S2,2023,benchmark_p90,p90,on,5,4388.148991592058,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S2,2023,benchmark_p90,p90,on,5,0.0,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S2,2023,benchmark_p90,p90,on,5,674.9574501890669,0.0,lower priority,lower priority,False,False
+Jharkhand,S2,2023,benchmark_p90,p90,on,5,9074.051442197815,0.0,lower priority,lower priority,False,False
+Karnataka,S2,2023,benchmark_p90,p90,on,5,1702.0844125779665,0.0,lower priority,lower priority,False,False
+Kerala,S2,2023,benchmark_p90,p90,on,5,997.5592105214748,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S2,2023,benchmark_p90,p90,on,5,11380.006824967093,1.0,act now,act now,False,False
+Maharashtra,S2,2023,benchmark_p90,p90,on,5,13151.851723916388,1.0,act now,act now,False,False
+Manipur,S2,2023,benchmark_p90,p90,on,5,253.3695016969544,0.0,lower priority,lower priority,False,False
+Meghalaya,S2,2023,benchmark_p90,p90,on,5,394.5605296184362,0.0,lower priority,lower priority,False,False
+Mizoram,S2,2023,benchmark_p90,p90,on,5,6.250149139089834,0.0,lower priority,lower priority,False,False
+Nagaland,S2,2023,benchmark_p90,p90,on,5,279.20952293677806,0.0,lower priority,lower priority,False,False
+Odisha,S2,2023,benchmark_p90,p90,on,5,987.1308590565253,0.0,lower priority,lower priority,False,False
+Puducherry,S2,2023,benchmark_p90,p90,on,5,23.881401863424667,0.0,lower priority,lower priority,False,False
+Punjab,S2,2023,benchmark_p90,p90,on,5,5475.756786641312,0.0,lower priority,lower priority,False,False
+Rajasthan,S2,2023,benchmark_p90,p90,on,5,15627.069672459787,1.0,act now,act now,False,False
+Sikkim,S2,2023,benchmark_p90,p90,on,5,0.0,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S2,2023,benchmark_p90,p90,on,5,6.666150034540461,0.0,lower priority,lower priority,False,False
+Telangana,S2,2023,benchmark_p90,p90,on,5,3873.505236158286,0.0,lower priority,lower priority,False,False
+Tripura,S2,2023,benchmark_p90,p90,on,5,96.81464130860167,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S2,2023,benchmark_p90,p90,on,5,17891.718373917498,1.0,act now,act now,False,False
+Uttarakhand,S2,2023,benchmark_p90,p90,on,5,3194.0475022565165,0.0,lower priority,lower priority,False,False
+West Bengal,S2,2023,benchmark_p90,p90,on,5,9062.057093983442,0.0,lower priority,lower priority,False,False
+Andaman and Nicobar Islands,S3,2023,k3,p75,on,3,1.3713595271524914,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S3,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S3,2023,k3,p75,on,3,0.06579673760755218,0.0,lower priority,lower priority,False,False
+Assam,S3,2023,k3,p75,on,3,374.7457813875364,0.0,lower priority,lower priority,False,False
+Bihar,S3,2023,k3,p75,on,3,422.3003457448332,0.0,lower priority,lower priority,False,False
+Chandigarh,S3,2023,k3,p75,on,3,41.62618806041475,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S3,2023,k3,p75,on,3,968.8545692623856,0.0,lower priority,lower priority,False,False
+Delhi,S3,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Goa,S3,2023,k3,p75,on,3,108.35772824505591,0.0,lower priority,lower priority,False,False
+Gujarat,S3,2023,k3,p75,on,3,1774.126668628566,0.0001,lower priority,act now,True,False
+Haryana,S3,2023,k3,p75,on,3,772.5266609737126,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S3,2023,k3,p75,on,3,451.4375893355528,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S3,2023,k3,p75,on,3,98.37039879556771,0.0,lower priority,lower priority,False,False
+Jharkhand,S3,2023,k3,p75,on,3,0.0003004708324678941,0.0,lower priority,lower priority,False,False
+Karnataka,S3,2023,k3,p75,on,3,2888.5260283323782,1.0,act now,act now,False,False
+Kerala,S3,2023,k3,p75,on,3,1273.12295460852,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S3,2023,k3,p75,on,3,1139.1693131272455,0.0,lower priority,lower priority,False,False
+Maharashtra,S3,2023,k3,p75,on,3,2198.723165460822,0.987,act now,act now,False,False
+Manipur,S3,2023,k3,p75,on,3,10.745976612787551,0.0,lower priority,lower priority,False,False
+Meghalaya,S3,2023,k3,p75,on,3,61.82317356199912,0.0,lower priority,lower priority,False,False
+Mizoram,S3,2023,k3,p75,on,3,26.604902933718495,0.0,lower priority,lower priority,False,False
+Nagaland,S3,2023,k3,p75,on,3,0.044380019903670576,0.0,lower priority,lower priority,False,False
+Odisha,S3,2023,k3,p75,on,3,915.0283672755443,0.0,lower priority,lower priority,False,False
+Puducherry,S3,2023,k3,p75,on,3,67.8421020777615,0.0,lower priority,lower priority,False,False
+Punjab,S3,2023,k3,p75,on,3,981.4732631794056,0.0,lower priority,lower priority,False,False
+Rajasthan,S3,2023,k3,p75,on,3,0.001452806178648829,0.0,lower priority,lower priority,False,False
+Sikkim,S3,2023,k3,p75,on,3,7.681760574512354,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S3,2023,k3,p75,on,3,2513.4165241501987,1.0,act now,act now,False,False
+Telangana,S3,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Tripura,S3,2023,k3,p75,on,3,85.23384532289523,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S3,2023,k3,p75,on,3,49.40772337217832,0.0,lower priority,lower priority,False,False
+Uttarakhand,S3,2023,k3,p75,on,3,146.05249533311644,0.0,lower priority,lower priority,False,False
+West Bengal,S3,2023,k3,p75,on,3,1944.6874183477375,0.0129,lower priority,act now,True,False
+Andaman and Nicobar Islands,S3,2023,k8,p75,on,8,1.3713595271524914,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S3,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S3,2023,k8,p75,on,8,0.06579673760755218,0.0,lower priority,lower priority,False,False
+Assam,S3,2023,k8,p75,on,8,374.7457813875364,0.0,lower priority,lower priority,False,False
+Bihar,S3,2023,k8,p75,on,8,422.3003457448332,0.0,lower priority,lower priority,False,False
+Chandigarh,S3,2023,k8,p75,on,8,41.62618806041475,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S3,2023,k8,p75,on,8,968.8545692623856,0.3867,uncertain,lower priority,True,False
+Delhi,S3,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Goa,S3,2023,k8,p75,on,8,108.35772824505591,0.0,lower priority,lower priority,False,False
+Gujarat,S3,2023,k8,p75,on,8,1774.126668628566,1.0,act now,act now,False,False
+Haryana,S3,2023,k8,p75,on,8,772.5266609737126,0.0002,lower priority,lower priority,False,False
+Himachal Pradesh,S3,2023,k8,p75,on,8,451.4375893355528,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S3,2023,k8,p75,on,8,98.37039879556771,0.0,lower priority,lower priority,False,False
+Jharkhand,S3,2023,k8,p75,on,8,0.0003004708324678941,0.0,lower priority,lower priority,False,False
+Karnataka,S3,2023,k8,p75,on,8,2888.5260283323782,1.0,act now,act now,False,False
+Kerala,S3,2023,k8,p75,on,8,1273.12295460852,1.0,act now,lower priority,True,False
+Madhya Pradesh,S3,2023,k8,p75,on,8,1139.1693131272455,0.9838,act now,lower priority,True,False
+Maharashtra,S3,2023,k8,p75,on,8,2198.723165460822,1.0,act now,act now,False,False
+Manipur,S3,2023,k8,p75,on,8,10.745976612787551,0.0,lower priority,lower priority,False,False
+Meghalaya,S3,2023,k8,p75,on,8,61.82317356199912,0.0,lower priority,lower priority,False,False
+Mizoram,S3,2023,k8,p75,on,8,26.604902933718495,0.0,lower priority,lower priority,False,False
+Nagaland,S3,2023,k8,p75,on,8,0.044380019903670576,0.0,lower priority,lower priority,False,False
+Odisha,S3,2023,k8,p75,on,8,915.0283672755443,0.0899,lower priority,lower priority,False,False
+Puducherry,S3,2023,k8,p75,on,8,67.8421020777615,0.0,lower priority,lower priority,False,False
+Punjab,S3,2023,k8,p75,on,8,981.4732631794056,0.5394,probable priority,lower priority,True,False
+Rajasthan,S3,2023,k8,p75,on,8,0.001452806178648829,0.0,lower priority,lower priority,False,False
+Sikkim,S3,2023,k8,p75,on,8,7.681760574512354,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S3,2023,k8,p75,on,8,2513.4165241501987,1.0,act now,act now,False,False
+Telangana,S3,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Tripura,S3,2023,k8,p75,on,8,85.23384532289523,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S3,2023,k8,p75,on,8,49.40772337217832,0.0,lower priority,lower priority,False,False
+Uttarakhand,S3,2023,k8,p75,on,8,146.05249533311644,0.0,lower priority,lower priority,False,False
+West Bengal,S3,2023,k8,p75,on,8,1944.6874183477375,1.0,act now,act now,False,False
+Andaman and Nicobar Islands,S3,2023,benchmark_median,median,on,5,0.1560634430332918,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Assam,S3,2023,benchmark_median,median,on,5,0.09987475994285187,0.0,lower priority,lower priority,False,False
+Bihar,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Chandigarh,S3,2023,benchmark_median,median,on,5,7.366211878286581,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S3,2023,benchmark_median,median,on,5,579.9868585751701,0.9932,act now,lower priority,True,False
+Delhi,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Goa,S3,2023,benchmark_median,median,on,5,88.34690142924478,0.0,lower priority,lower priority,False,False
+Gujarat,S3,2023,benchmark_median,median,on,5,314.61957050943596,0.0012,lower priority,act now,True,False
+Haryana,S3,2023,benchmark_median,median,on,5,26.70084034922971,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S3,2023,benchmark_median,median,on,5,289.345881941748,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S3,2023,benchmark_median,median,on,5,1.4390313444110368,0.0,lower priority,lower priority,False,False
+Jharkhand,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Karnataka,S3,2023,benchmark_median,median,on,5,2119.7032447531656,1.0,act now,act now,False,False
+Kerala,S3,2023,benchmark_median,median,on,5,1040.9733024307034,1.0,act now,lower priority,True,False
+Madhya Pradesh,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Maharashtra,S3,2023,benchmark_median,median,on,5,37.03025312784735,0.0,lower priority,act now,True,False
+Manipur,S3,2023,benchmark_median,median,on,5,0.19251798119362115,0.0,lower priority,lower priority,False,False
+Meghalaya,S3,2023,benchmark_median,median,on,5,16.127707866276783,0.0,lower priority,lower priority,False,False
+Mizoram,S3,2023,benchmark_median,median,on,5,7.6878283301750345,0.0,lower priority,lower priority,False,False
+Nagaland,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Odisha,S3,2023,benchmark_median,median,on,5,316.9492668126042,0.0001,lower priority,lower priority,False,False
+Puducherry,S3,2023,benchmark_median,median,on,5,52.95428753794211,0.0,lower priority,lower priority,False,False
+Punjab,S3,2023,benchmark_median,median,on,5,406.2822977968747,0.0055,lower priority,lower priority,False,False
+Rajasthan,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Sikkim,S3,2023,benchmark_median,median,on,5,0.7936922677905105,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S3,2023,benchmark_median,median,on,5,1574.4616107792456,1.0,act now,act now,False,False
+Telangana,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Tripura,S3,2023,benchmark_median,median,on,5,52.490678799629116,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Uttarakhand,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+West Bengal,S3,2023,benchmark_median,median,on,5,1013.1112467285061,1.0,act now,act now,False,False
+Andaman and Nicobar Islands,S3,2023,benchmark_p90,p90,on,5,3.2471134271083026,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S3,2023,benchmark_p90,p90,on,5,0.0,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S3,2023,benchmark_p90,p90,on,5,2.625153134634134,0.0,lower priority,lower priority,False,False
+Assam,S3,2023,benchmark_p90,p90,on,5,646.7479266275689,0.0,lower priority,lower priority,False,False
+Bihar,S3,2023,benchmark_p90,p90,on,5,1359.0965283100893,0.0,lower priority,lower priority,False,False
+Chandigarh,S3,2023,benchmark_p90,p90,on,5,62.7820379781432,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S3,2023,benchmark_p90,p90,on,5,1191.4184712447156,0.0,lower priority,lower priority,False,False
+Delhi,S3,2023,benchmark_p90,p90,on,5,5.728627975404061,0.0,lower priority,lower priority,False,False
+Goa,S3,2023,benchmark_p90,p90,on,5,119.81069174811694,0.0,lower priority,lower priority,False,False
+Gujarat,S3,2023,benchmark_p90,p90,on,5,2609.458545770662,0.9049,act now,act now,False,False
+Haryana,S3,2023,benchmark_p90,p90,on,5,1208.9040794964046,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S3,2023,benchmark_p90,p90,on,5,544.2088888934138,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S3,2023,benchmark_p90,p90,on,5,168.0578946596339,0.0,lower priority,lower priority,False,False
+Jharkhand,S3,2023,benchmark_p90,p90,on,5,188.29311230880862,0.0,lower priority,lower priority,False,False
+Karnataka,S3,2023,benchmark_p90,p90,on,5,3328.5527879311962,1.0,act now,act now,False,False
+Kerala,S3,2023,benchmark_p90,p90,on,5,1405.9911023424286,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S3,2023,benchmark_p90,p90,on,5,2210.4976511498003,0.0,lower priority,lower priority,False,False
+Maharashtra,S3,2023,benchmark_p90,p90,on,5,3456.5752933601334,1.0,act now,act now,False,False
+Manipur,S3,2023,benchmark_p90,p90,on,5,25.099087976213468,0.0,lower priority,lower priority,False,False
+Meghalaya,S3,2023,benchmark_p90,p90,on,5,88.44155917858232,0.0,lower priority,lower priority,False,False
+Mizoram,S3,2023,benchmark_p90,p90,on,5,38.03998019281876,0.0,lower priority,lower priority,False,False
+Nagaland,S3,2023,benchmark_p90,p90,on,5,4.236504168547357,0.0,lower priority,lower priority,False,False
+Odisha,S3,2023,benchmark_p90,p90,on,5,1257.3319698499974,0.0,lower priority,lower priority,False,False
+Puducherry,S3,2023,benchmark_p90,p90,on,5,76.3629692130549,0.0,lower priority,lower priority,False,False
+Punjab,S3,2023,benchmark_p90,p90,on,5,1310.6771084004076,0.0,lower priority,lower priority,False,False
+Rajasthan,S3,2023,benchmark_p90,p90,on,5,695.0696302984966,0.0,lower priority,lower priority,False,False
+Sikkim,S3,2023,benchmark_p90,p90,on,5,14.47616968165847,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S3,2023,benchmark_p90,p90,on,5,3050.8164253557024,1.0,act now,act now,False,False
+Telangana,S3,2023,benchmark_p90,p90,on,5,14.235667349803881,0.0,lower priority,lower priority,False,False
+Tripura,S3,2023,benchmark_p90,p90,on,5,103.97401506287383,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S3,2023,benchmark_p90,p90,on,5,3002.9109198864244,1.0,act now,lower priority,True,False
+Uttarakhand,S3,2023,benchmark_p90,p90,on,5,300.2601076300929,0.0,lower priority,lower priority,False,False
+West Bengal,S3,2023,benchmark_p90,p90,on,5,2477.8641827104293,0.0951,lower priority,act now,True,False
+Andaman and Nicobar Islands,S4,2023,k3,p75,on,3,7.967787031346347,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S4,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S4,2023,k3,p75,on,3,168.78004948751257,0.0,lower priority,lower priority,False,False
+Assam,S4,2023,k3,p75,on,3,10.58657053624155,0.0,lower priority,lower priority,False,False
+Bihar,S4,2023,k3,p75,on,3,5039.56125647229,1.0,act now,act now,False,False
+Chandigarh,S4,2023,k3,p75,on,3,57.26170116456267,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S4,2023,k3,p75,on,3,160.64290151303172,0.0,lower priority,lower priority,False,False
+Delhi,S4,2023,k3,p75,on,3,2761.2086940604677,1.0,act now,act now,False,False
+Goa,S4,2023,k3,p75,on,3,56.6049231726781,0.0,lower priority,lower priority,False,False
+Gujarat,S4,2023,k3,p75,on,3,0.004568391572085729,0.0,lower priority,lower priority,False,False
+Haryana,S4,2023,k3,p75,on,3,78.90975163691819,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S4,2023,k3,p75,on,3,12.25073734157476,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S4,2023,k3,p75,on,3,0.05219342093371214,0.0,lower priority,lower priority,False,False
+Jharkhand,S4,2023,k3,p75,on,3,433.3374016614433,0.0,lower priority,lower priority,False,False
+Karnataka,S4,2023,k3,p75,on,3,501.45921164003994,0.0,lower priority,lower priority,False,False
+Kerala,S4,2023,k3,p75,on,3,272.673802332952,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S4,2023,k3,p75,on,3,3713.4147072118712,1.0,act now,act now,False,False
+Maharashtra,S4,2023,k3,p75,on,3,0.03576126520299048,0.0,lower priority,lower priority,False,False
+Manipur,S4,2023,k3,p75,on,3,69.0925380318664,0.0,lower priority,lower priority,False,False
+Meghalaya,S4,2023,k3,p75,on,3,71.67669493292281,0.0,lower priority,lower priority,False,False
+Mizoram,S4,2023,k3,p75,on,3,9.618157594114011,0.0,lower priority,lower priority,False,False
+Nagaland,S4,2023,k3,p75,on,3,134.5092577907901,0.0,lower priority,lower priority,False,False
+Odisha,S4,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Puducherry,S4,2023,k3,p75,on,3,18.04857316789434,0.0,lower priority,lower priority,False,False
+Punjab,S4,2023,k3,p75,on,3,607.3189970820025,0.0,lower priority,lower priority,False,False
+Rajasthan,S4,2023,k3,p75,on,3,1537.607977244508,0.0,lower priority,act now,True,False
+Sikkim,S4,2023,k3,p75,on,3,0.00041695366028013,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S4,2023,k3,p75,on,3,1038.6287205705846,0.0,lower priority,act now,True,False
+Telangana,S4,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Tripura,S4,2023,k3,p75,on,3,31.739482444955303,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S4,2023,k3,p75,on,3,0.040809559642097364,0.0,lower priority,lower priority,False,False
+Uttarakhand,S4,2023,k3,p75,on,3,230.23142055133366,0.0,lower priority,lower priority,False,False
+West Bengal,S4,2023,k3,p75,on,3,559.3790650931622,0.0,lower priority,lower priority,False,False
+Andaman and Nicobar Islands,S4,2023,k8,p75,on,8,7.967787031346347,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S4,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S4,2023,k8,p75,on,8,168.78004948751257,0.0,lower priority,lower priority,False,False
+Assam,S4,2023,k8,p75,on,8,10.58657053624155,0.0,lower priority,lower priority,False,False
+Bihar,S4,2023,k8,p75,on,8,5039.56125647229,1.0,act now,act now,False,False
+Chandigarh,S4,2023,k8,p75,on,8,57.26170116456267,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S4,2023,k8,p75,on,8,160.64290151303172,0.0,lower priority,lower priority,False,False
+Delhi,S4,2023,k8,p75,on,8,2761.2086940604677,1.0,act now,act now,False,False
+Goa,S4,2023,k8,p75,on,8,56.6049231726781,0.0,lower priority,lower priority,False,False
+Gujarat,S4,2023,k8,p75,on,8,0.004568391572085729,0.0,lower priority,lower priority,False,False
+Haryana,S4,2023,k8,p75,on,8,78.90975163691819,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S4,2023,k8,p75,on,8,12.25073734157476,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S4,2023,k8,p75,on,8,0.05219342093371214,0.0,lower priority,lower priority,False,False
+Jharkhand,S4,2023,k8,p75,on,8,433.3374016614433,0.1032,lower priority,lower priority,False,False
+Karnataka,S4,2023,k8,p75,on,8,501.45921164003994,0.9041,act now,lower priority,True,False
+Kerala,S4,2023,k8,p75,on,8,272.673802332952,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S4,2023,k8,p75,on,8,3713.4147072118712,1.0,act now,act now,False,False
+Maharashtra,S4,2023,k8,p75,on,8,0.03576126520299048,0.0,lower priority,lower priority,False,False
+Manipur,S4,2023,k8,p75,on,8,69.0925380318664,0.0,lower priority,lower priority,False,False
+Meghalaya,S4,2023,k8,p75,on,8,71.67669493292281,0.0,lower priority,lower priority,False,False
+Mizoram,S4,2023,k8,p75,on,8,9.618157594114011,0.0,lower priority,lower priority,False,False
+Nagaland,S4,2023,k8,p75,on,8,134.5092577907901,0.0,lower priority,lower priority,False,False
+Odisha,S4,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Puducherry,S4,2023,k8,p75,on,8,18.04857316789434,0.0,lower priority,lower priority,False,False
+Punjab,S4,2023,k8,p75,on,8,607.3189970820025,1.0,act now,lower priority,True,False
+Rajasthan,S4,2023,k8,p75,on,8,1537.607977244508,1.0,act now,act now,False,False
+Sikkim,S4,2023,k8,p75,on,8,0.00041695366028013,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S4,2023,k8,p75,on,8,1038.6287205705846,1.0,act now,act now,False,False
+Telangana,S4,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Tripura,S4,2023,k8,p75,on,8,31.739482444955303,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S4,2023,k8,p75,on,8,0.040809559642097364,0.0,lower priority,lower priority,False,False
+Uttarakhand,S4,2023,k8,p75,on,8,230.23142055133366,0.0,lower priority,lower priority,False,False
+West Bengal,S4,2023,k8,p75,on,8,559.3790650931622,0.9927,act now,lower priority,True,False
+Andaman and Nicobar Islands,S4,2023,benchmark_median,median,on,5,3.825898278560551,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S4,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S4,2023,benchmark_median,median,on,5,144.26590817116747,0.5517,probable priority,lower priority,True,False
+Assam,S4,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Bihar,S4,2023,benchmark_median,median,on,5,3639.6828886057483,1.0,act now,act now,False,False
+Chandigarh,S4,2023,benchmark_median,median,on,5,25.6566021752512,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S4,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Delhi,S4,2023,benchmark_median,median,on,5,2032.2409597856492,1.0,act now,act now,False,False
+Goa,S4,2023,benchmark_median,median,on,5,39.49046844465267,0.0,lower priority,lower priority,False,False
+Gujarat,S4,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Haryana,S4,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S4,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S4,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Jharkhand,S4,2023,benchmark_median,median,on,5,0.27962962221537174,0.0,lower priority,lower priority,False,False
+Karnataka,S4,2023,benchmark_median,median,on,5,0.0003680557646539921,0.0,lower priority,lower priority,False,False
+Kerala,S4,2023,benchmark_median,median,on,5,74.1300825335837,0.0037,lower priority,lower priority,False,False
+Madhya Pradesh,S4,2023,benchmark_median,median,on,5,2112.5015169238445,1.0,act now,act now,False,False
+Maharashtra,S4,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Manipur,S4,2023,benchmark_median,median,on,5,46.936350147488774,0.0,lower priority,lower priority,False,False
+Meghalaya,S4,2023,benchmark_median,median,on,5,31.90381471464524,0.0,lower priority,lower priority,False,False
+Mizoram,S4,2023,benchmark_median,median,on,5,0.38337212980703,0.0,lower priority,lower priority,False,False
+Nagaland,S4,2023,benchmark_median,median,on,5,98.99419191730242,0.0041,lower priority,lower priority,False,False
+Odisha,S4,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Puducherry,S4,2023,benchmark_median,median,on,5,5.866340147222954,0.0,lower priority,lower priority,False,False
+Punjab,S4,2023,benchmark_median,median,on,5,115.38745511626732,0.1874,lower priority,lower priority,False,False
+Rajasthan,S4,2023,benchmark_median,median,on,5,110.35511149468864,0.2743,uncertain,act now,True,False
+Sikkim,S4,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S4,2023,benchmark_median,median,on,5,235.57837665140698,0.9788,act now,act now,False,False
+Telangana,S4,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Tripura,S4,2023,benchmark_median,median,on,5,5.619634407179214,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S4,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Uttarakhand,S4,2023,benchmark_median,median,on,5,9.70035496781669,0.0,lower priority,lower priority,False,False
+West Bengal,S4,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Andaman and Nicobar Islands,S4,2023,benchmark_p90,p90,on,5,10.705269985852146,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S4,2023,benchmark_p90,p90,on,5,0.0,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S4,2023,benchmark_p90,p90,on,5,184.19764355167086,0.0,lower priority,lower priority,False,False
+Assam,S4,2023,benchmark_p90,p90,on,5,255.9145678135517,0.0,lower priority,lower priority,False,False
+Bihar,S4,2023,benchmark_p90,p90,on,5,5919.981913938774,1.0,act now,act now,False,False
+Chandigarh,S4,2023,benchmark_p90,p90,on,5,77.14441166283189,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S4,2023,benchmark_p90,p90,on,5,369.81311437087436,0.0,lower priority,lower priority,False,False
+Delhi,S4,2023,benchmark_p90,p90,on,5,3219.675848503471,1.0,act now,act now,False,False
+Goa,S4,2023,benchmark_p90,p90,on,5,67.36865795828844,0.0,lower priority,lower priority,False,False
+Gujarat,S4,2023,benchmark_p90,p90,on,5,637.6335517128786,0.0,lower priority,lower priority,False,False
+Haryana,S4,2023,benchmark_p90,p90,on,5,488.95645872467236,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S4,2023,benchmark_p90,p90,on,5,97.05155988392373,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S4,2023,benchmark_p90,p90,on,5,36.52096760718341,0.0,lower priority,lower priority,False,False
+Jharkhand,S4,2023,benchmark_p90,p90,on,5,751.4823402445434,0.0,lower priority,lower priority,False,False
+Karnataka,S4,2023,benchmark_p90,p90,on,5,915.005569107024,0.0,lower priority,lower priority,False,False
+Kerala,S4,2023,benchmark_p90,p90,on,5,397.5460682125077,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S4,2023,benchmark_p90,p90,on,5,4720.271499840389,1.0,act now,act now,False,False
+Maharashtra,S4,2023,benchmark_p90,p90,on,5,1026.7459487284023,0.0,lower priority,lower priority,False,False
+Manipur,S4,2023,benchmark_p90,p90,on,5,83.02715260401926,0.0,lower priority,lower priority,False,False
+Meghalaya,S4,2023,benchmark_p90,p90,on,5,96.69321079987992,0.0,lower priority,lower priority,False,False
+Mizoram,S4,2023,benchmark_p90,p90,on,5,20.284439960249728,0.0,lower priority,lower priority,False,False
+Nagaland,S4,2023,benchmark_p90,p90,on,5,156.845625266741,0.0,lower priority,lower priority,False,False
+Odisha,S4,2023,benchmark_p90,p90,on,5,0.21516500518710924,0.0,lower priority,lower priority,False,False
+Puducherry,S4,2023,benchmark_p90,p90,on,5,26.056499674315294,0.0,lower priority,lower priority,False,False
+Punjab,S4,2023,benchmark_p90,p90,on,5,916.7116603359215,0.0,lower priority,lower priority,False,False
+Rajasthan,S4,2023,benchmark_p90,p90,on,5,2435.775854740773,1.0,act now,act now,False,False
+Sikkim,S4,2023,benchmark_p90,p90,on,5,0.12708529245445016,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S4,2023,benchmark_p90,p90,on,5,1543.6883943260495,0.0,lower priority,act now,True,False
+Telangana,S4,2023,benchmark_p90,p90,on,5,0.0,0.0,lower priority,lower priority,False,False
+Tripura,S4,2023,benchmark_p90,p90,on,5,49.35188615728165,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S4,2023,benchmark_p90,p90,on,5,2549.017701487752,1.0,act now,lower priority,True,False
+Uttarakhand,S4,2023,benchmark_p90,p90,on,5,375.15896181550096,0.0,lower priority,lower priority,False,False
+West Bengal,S4,2023,benchmark_p90,p90,on,5,1060.4697464627507,0.0,lower priority,lower priority,False,False
+Andaman and Nicobar Islands,S5,2023,k3,p75,on,3,0.4221839954560328,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S5,2023,k3,p75,on,3,0.07095032924652483,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S5,2023,k3,p75,on,3,3.2221762383990025,0.0,lower priority,lower priority,False,False
+Assam,S5,2023,k3,p75,on,3,15.602120795340381,0.0,lower priority,lower priority,False,False
+Bihar,S5,2023,k3,p75,on,3,137.20005948512133,0.9919,act now,act now,False,False
+Chandigarh,S5,2023,k3,p75,on,3,1.2747526914410803,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S5,2023,k3,p75,on,3,9.37147783767364,0.0,lower priority,lower priority,False,False
+Delhi,S5,2023,k3,p75,on,3,95.54719311833175,0.7237,probable priority,act now,True,False
+Goa,S5,2023,k3,p75,on,3,1.061798844842109,0.0,lower priority,lower priority,False,False
+Gujarat,S5,2023,k3,p75,on,3,18.517538320566167,0.0,lower priority,lower priority,False,False
+Haryana,S5,2023,k3,p75,on,3,0.26532458398923053,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S5,2023,k3,p75,on,3,0.3009900298549872,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S5,2023,k3,p75,on,3,0.09166505978063547,0.0,lower priority,lower priority,False,False
+Jharkhand,S5,2023,k3,p75,on,3,53.14002282064416,0.0061,lower priority,uncertain,True,False
+Karnataka,S5,2023,k3,p75,on,3,49.65314747939211,0.0025,lower priority,lower priority,False,False
+Kerala,S5,2023,k3,p75,on,3,1.45367152737322,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S5,2023,k3,p75,on,3,79.18887750954111,0.2368,uncertain,act now,True,False
+Maharashtra,S5,2023,k3,p75,on,3,13.880196569466468,0.0044,lower priority,lower priority,False,False
+Manipur,S5,2023,k3,p75,on,3,1.497213723756229,0.0,lower priority,lower priority,False,False
+Meghalaya,S5,2023,k3,p75,on,3,1.9378677163753901,0.0,lower priority,lower priority,False,False
+Mizoram,S5,2023,k3,p75,on,3,0.4929264716739377,0.0,lower priority,lower priority,False,False
+Nagaland,S5,2023,k3,p75,on,3,4.402695007115364,0.0,lower priority,lower priority,False,False
+Odisha,S5,2023,k3,p75,on,3,0.008233104372099363,0.0,lower priority,lower priority,False,False
+Puducherry,S5,2023,k3,p75,on,3,0.3938309054816684,0.0,lower priority,lower priority,False,False
+Punjab,S5,2023,k3,p75,on,3,21.823569309029878,0.0,lower priority,lower priority,False,False
+Rajasthan,S5,2023,k3,p75,on,3,39.91867831458156,0.0034,lower priority,lower priority,False,False
+Sikkim,S5,2023,k3,p75,on,3,2.3938510747448367,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S5,2023,k3,p75,on,3,62.352934939825104,0.0296,lower priority,probable priority,True,False
+Telangana,S5,2023,k3,p75,on,3,0.9008279053392263,0.0,lower priority,lower priority,False,False
+Tripura,S5,2023,k3,p75,on,3,0.7966298399130973,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S5,2023,k3,p75,on,3,355.51548644250676,1.0,act now,act now,False,False
+Uttarakhand,S5,2023,k3,p75,on,3,5.062747542321257,0.0,lower priority,lower priority,False,False
+West Bengal,S5,2023,k3,p75,on,3,39.29812039615532,0.0016,lower priority,lower priority,False,False
+Andaman and Nicobar Islands,S5,2023,k8,p75,on,8,0.4221839954560328,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S5,2023,k8,p75,on,8,0.07095032924652483,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S5,2023,k8,p75,on,8,3.2221762383990025,0.0,lower priority,lower priority,False,False
+Assam,S5,2023,k8,p75,on,8,15.602120795340381,0.0071,lower priority,lower priority,False,False
+Bihar,S5,2023,k8,p75,on,8,137.20005948512133,1.0,act now,act now,False,False
+Chandigarh,S5,2023,k8,p75,on,8,1.2747526914410803,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S5,2023,k8,p75,on,8,9.37147783767364,0.0018,lower priority,lower priority,False,False
+Delhi,S5,2023,k8,p75,on,8,95.54719311833175,0.9996,act now,act now,False,False
+Goa,S5,2023,k8,p75,on,8,1.061798844842109,0.0,lower priority,lower priority,False,False
+Gujarat,S5,2023,k8,p75,on,8,18.517538320566167,0.0843,lower priority,lower priority,False,False
+Haryana,S5,2023,k8,p75,on,8,0.26532458398923053,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S5,2023,k8,p75,on,8,0.3009900298549872,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S5,2023,k8,p75,on,8,0.09166505978063547,0.0,lower priority,lower priority,False,False
+Jharkhand,S5,2023,k8,p75,on,8,53.14002282064416,0.8865,act now,uncertain,True,False
+Karnataka,S5,2023,k8,p75,on,8,49.65314747939211,0.8247,act now,lower priority,True,False
+Kerala,S5,2023,k8,p75,on,8,1.45367152737322,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S5,2023,k8,p75,on,8,79.18887750954111,0.9913,act now,act now,False,False
+Maharashtra,S5,2023,k8,p75,on,8,13.880196569466468,0.1236,lower priority,lower priority,False,False
+Manipur,S5,2023,k8,p75,on,8,1.497213723756229,0.0,lower priority,lower priority,False,False
+Meghalaya,S5,2023,k8,p75,on,8,1.9378677163753901,0.0,lower priority,lower priority,False,False
+Mizoram,S5,2023,k8,p75,on,8,0.4929264716739377,0.0,lower priority,lower priority,False,False
+Nagaland,S5,2023,k8,p75,on,8,4.402695007115364,0.0,lower priority,lower priority,False,False
+Odisha,S5,2023,k8,p75,on,8,0.008233104372099363,0.0,lower priority,lower priority,False,False
+Puducherry,S5,2023,k8,p75,on,8,0.3938309054816684,0.0,lower priority,lower priority,False,False
+Punjab,S5,2023,k8,p75,on,8,21.823569309029878,0.0556,lower priority,lower priority,False,False
+Rajasthan,S5,2023,k8,p75,on,8,39.91867831458156,0.5429,probable priority,lower priority,True,False
+Sikkim,S5,2023,k8,p75,on,8,2.3938510747448367,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S5,2023,k8,p75,on,8,62.352934939825104,0.9642,act now,probable priority,True,False
+Telangana,S5,2023,k8,p75,on,8,0.9008279053392263,0.0,lower priority,lower priority,False,False
+Tripura,S5,2023,k8,p75,on,8,0.7966298399130973,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S5,2023,k8,p75,on,8,355.51548644250676,1.0,act now,act now,False,False
+Uttarakhand,S5,2023,k8,p75,on,8,5.062747542321257,0.0004,lower priority,lower priority,False,False
+West Bengal,S5,2023,k8,p75,on,8,39.29812039615532,0.518,probable priority,lower priority,True,False
+Andaman and Nicobar Islands,S5,2023,benchmark_median,median,on,5,0.18000907540711086,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S5,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S5,2023,benchmark_median,median,on,5,1.5960379869022259,0.0,lower priority,lower priority,False,False
+Assam,S5,2023,benchmark_median,median,on,5,8.128117569090241,0.0007,lower priority,lower priority,False,False
+Bihar,S5,2023,benchmark_median,median,on,5,90.84795625520495,0.9941,act now,act now,False,False
+Chandigarh,S5,2023,benchmark_median,median,on,5,0.6078801517410316,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S5,2023,benchmark_median,median,on,5,3.1290934420288874,0.0,lower priority,lower priority,False,False
+Delhi,S5,2023,benchmark_median,median,on,5,66.4608872089797,0.9612,act now,act now,False,False
+Goa,S5,2023,benchmark_median,median,on,5,0.599779252621419,0.0,lower priority,lower priority,False,False
+Gujarat,S5,2023,benchmark_median,median,on,5,1.694992648853892,0.0006,lower priority,lower priority,False,False
+Haryana,S5,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S5,2023,benchmark_median,median,on,5,0.042712568751937866,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S5,2023,benchmark_median,median,on,5,0.010961865619007216,0.0,lower priority,lower priority,False,False
+Jharkhand,S5,2023,benchmark_median,median,on,5,35.48671814639291,0.392,uncertain,uncertain,False,False
+Karnataka,S5,2023,benchmark_median,median,on,5,32.109540437428365,0.2835,uncertain,lower priority,True,False
+Kerala,S5,2023,benchmark_median,median,on,5,0.30098279715519427,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S5,2023,benchmark_median,median,on,5,46.72137051168956,0.6975,probable priority,act now,True,False
+Maharashtra,S5,2023,benchmark_median,median,on,5,0.0004930848705508768,0.0,lower priority,lower priority,False,False
+Manipur,S5,2023,benchmark_median,median,on,5,0.8014509914830845,0.0,lower priority,lower priority,False,False
+Meghalaya,S5,2023,benchmark_median,median,on,5,0.6934787646910009,0.0,lower priority,lower priority,False,False
+Mizoram,S5,2023,benchmark_median,median,on,5,0.1341020222327305,0.0,lower priority,lower priority,False,False
+Nagaland,S5,2023,benchmark_median,median,on,5,2.7880785455062105,0.0,lower priority,lower priority,False,False
+Odisha,S5,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Puducherry,S5,2023,benchmark_median,median,on,5,0.20438378594277193,0.0,lower priority,lower priority,False,False
+Punjab,S5,2023,benchmark_median,median,on,5,10.468844061489053,0.0041,lower priority,lower priority,False,False
+Rajasthan,S5,2023,benchmark_median,median,on,5,8.297918595881148,0.0191,lower priority,lower priority,False,False
+Sikkim,S5,2023,benchmark_median,median,on,5,0.8162826457620639,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S5,2023,benchmark_median,median,on,5,42.00650377453386,0.6098,probable priority,probable priority,False,False
+Telangana,S5,2023,benchmark_median,median,on,5,0.016618751336860645,0.0,lower priority,lower priority,False,False
+Tripura,S5,2023,benchmark_median,median,on,5,0.4706419523997973,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S5,2023,benchmark_median,median,on,5,204.99018828050504,1.0,act now,act now,False,False
+Uttarakhand,S5,2023,benchmark_median,median,on,5,0.9425052008972431,0.0,lower priority,lower priority,False,False
+West Bengal,S5,2023,benchmark_median,median,on,5,13.561187031684828,0.0374,lower priority,lower priority,False,False
+Andaman and Nicobar Islands,S5,2023,benchmark_p90,p90,on,5,0.9038955300389935,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S5,2023,benchmark_p90,p90,on,5,4.101340560749231,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S5,2023,benchmark_p90,p90,on,5,5.6481774345488,0.0,lower priority,lower priority,False,False
+Assam,S5,2023,benchmark_p90,p90,on,5,24.926226812348993,0.0,lower priority,lower priority,False,False
+Bihar,S5,2023,benchmark_p90,p90,on,5,191.11943248968234,1.0,act now,act now,False,False
+Chandigarh,S5,2023,benchmark_p90,p90,on,5,2.3746516239862885,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S5,2023,benchmark_p90,p90,on,5,19.294475613471786,0.0,lower priority,lower priority,False,False
+Delhi,S5,2023,benchmark_p90,p90,on,5,129.38226193093033,0.9614,act now,act now,False,False
+Goa,S5,2023,benchmark_p90,p90,on,5,1.7306109330480846,0.0,lower priority,lower priority,False,False
+Gujarat,S5,2023,benchmark_p90,p90,on,5,53.449459969006156,0.0016,lower priority,lower priority,False,False
+Haryana,S5,2023,benchmark_p90,p90,on,5,11.180420008372437,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S5,2023,benchmark_p90,p90,on,5,1.5219601443809478,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S5,2023,benchmark_p90,p90,on,5,0.609895772855419,0.0,lower priority,lower priority,False,False
+Jharkhand,S5,2023,benchmark_p90,p90,on,5,73.68188310331078,0.0112,lower priority,uncertain,True,False
+Karnataka,S5,2023,benchmark_p90,p90,on,5,70.07446123147612,0.0062,lower priority,lower priority,False,False
+Kerala,S5,2023,benchmark_p90,p90,on,5,4.898170213762095,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S5,2023,benchmark_p90,p90,on,5,116.9733778419021,0.8551,act now,act now,False,False
+Maharashtra,S5,2023,benchmark_p90,p90,on,5,158.798342229089,0.9624,act now,lower priority,True,False
+Manipur,S5,2023,benchmark_p90,p90,on,5,2.5255780750738936,0.0,lower priority,lower priority,False,False
+Meghalaya,S5,2023,benchmark_p90,p90,on,5,4.3970492453859435,0.0,lower priority,lower priority,False,False
+Mizoram,S5,2023,benchmark_p90,p90,on,5,1.5397042620815882,0.0,lower priority,lower priority,False,False
+Nagaland,S5,2023,benchmark_p90,p90,on,5,6.431675428237259,0.0,lower priority,lower priority,False,False
+Odisha,S5,2023,benchmark_p90,p90,on,5,0.29979061921915356,0.0,lower priority,lower priority,False,False
+Puducherry,S5,2023,benchmark_p90,p90,on,5,0.7005405725480633,0.0,lower priority,lower priority,False,False
+Punjab,S5,2023,benchmark_p90,p90,on,5,35.879753614167875,0.0,lower priority,lower priority,False,False
+Rajasthan,S5,2023,benchmark_p90,p90,on,5,83.80318942313116,0.1031,lower priority,lower priority,False,False
+Sikkim,S5,2023,benchmark_p90,p90,on,5,5.522235036175934,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S5,2023,benchmark_p90,p90,on,5,86.02544215888875,0.0824,lower priority,probable priority,True,False
+Telangana,S5,2023,benchmark_p90,p90,on,5,11.485339911610817,0.0,lower priority,lower priority,False,False
+Tripura,S5,2023,benchmark_p90,p90,on,5,1.2557482096997121,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S5,2023,benchmark_p90,p90,on,5,530.6149777851433,1.0,act now,act now,False,False
+Uttarakhand,S5,2023,benchmark_p90,p90,on,5,14.844507426755584,0.0,lower priority,lower priority,False,False
+West Bengal,S5,2023,benchmark_p90,p90,on,5,71.407613427892,0.0166,lower priority,lower priority,False,False
+Andaman and Nicobar Islands,S6,2023,k3,p75,on,3,25.969575006349807,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S6,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S6,2023,k3,p75,on,3,251.12293603489502,0.0,lower priority,lower priority,False,False
+Assam,S6,2023,k3,p75,on,3,1986.6103332986445,0.0,lower priority,lower priority,False,False
+Bihar,S6,2023,k3,p75,on,3,19636.81131337264,1.0,act now,act now,False,False
+Chandigarh,S6,2023,k3,p75,on,3,372.9014680433463,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S6,2023,k3,p75,on,3,685.894245297868,0.0,lower priority,lower priority,False,False
+Delhi,S6,2023,k3,p75,on,3,12511.933314746308,1.0,act now,act now,False,False
+Goa,S6,2023,k3,p75,on,3,244.12565387557527,0.0,lower priority,lower priority,False,False
+Gujarat,S6,2023,k3,p75,on,3,43.252919152570385,0.0,lower priority,lower priority,False,False
+Haryana,S6,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S6,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S6,2023,k3,p75,on,3,172.67438118676534,0.0,lower priority,lower priority,False,False
+Jharkhand,S6,2023,k3,p75,on,3,1775.0017022909287,0.0,lower priority,lower priority,False,False
+Karnataka,S6,2023,k3,p75,on,3,898.6399407427887,0.0,lower priority,lower priority,False,False
+Kerala,S6,2023,k3,p75,on,3,140.76890186705756,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S6,2023,k3,p75,on,3,6007.240689773673,0.0,lower priority,act now,True,False
+Maharashtra,S6,2023,k3,p75,on,3,2465.5766907335737,0.0,lower priority,lower priority,False,False
+Manipur,S6,2023,k3,p75,on,3,298.3723033321364,0.0,lower priority,lower priority,False,False
+Meghalaya,S6,2023,k3,p75,on,3,524.8137305636238,0.0,lower priority,lower priority,False,False
+Mizoram,S6,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Nagaland,S6,2023,k3,p75,on,3,96.85217683074492,0.0,lower priority,lower priority,False,False
+Odisha,S6,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Puducherry,S6,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Punjab,S6,2023,k3,p75,on,3,2356.0059552351104,0.0,lower priority,lower priority,False,False
+Rajasthan,S6,2023,k3,p75,on,3,6115.103305866219,0.0,lower priority,act now,True,False
+Sikkim,S6,2023,k3,p75,on,3,16.408930841204874,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S6,2023,k3,p75,on,3,1735.7947739973824,0.0,lower priority,lower priority,False,False
+Telangana,S6,2023,k3,p75,on,3,18072.02213822211,1.0,act now,act now,False,False
+Tripura,S6,2023,k3,p75,on,3,0.022920692560220245,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S6,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Uttarakhand,S6,2023,k3,p75,on,3,10.193467979239145,0.0,lower priority,lower priority,False,False
+West Bengal,S6,2023,k3,p75,on,3,1826.7418469706397,0.0,lower priority,lower priority,False,False
+Andaman and Nicobar Islands,S6,2023,k8,p75,on,8,25.969575006349807,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S6,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S6,2023,k8,p75,on,8,251.12293603489502,0.0,lower priority,lower priority,False,False
+Assam,S6,2023,k8,p75,on,8,1986.6103332986445,0.965,act now,lower priority,True,False
+Bihar,S6,2023,k8,p75,on,8,19636.81131337264,1.0,act now,act now,False,False
+Chandigarh,S6,2023,k8,p75,on,8,372.9014680433463,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S6,2023,k8,p75,on,8,685.894245297868,0.0,lower priority,lower priority,False,False
+Delhi,S6,2023,k8,p75,on,8,12511.933314746308,1.0,act now,act now,False,False
+Goa,S6,2023,k8,p75,on,8,244.12565387557527,0.0,lower priority,lower priority,False,False
+Gujarat,S6,2023,k8,p75,on,8,43.252919152570385,0.0,lower priority,lower priority,False,False
+Haryana,S6,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S6,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S6,2023,k8,p75,on,8,172.67438118676534,0.0,lower priority,lower priority,False,False
+Jharkhand,S6,2023,k8,p75,on,8,1775.0017022909287,0.0032,lower priority,lower priority,False,False
+Karnataka,S6,2023,k8,p75,on,8,898.6399407427887,0.0,lower priority,lower priority,False,False
+Kerala,S6,2023,k8,p75,on,8,140.76890186705756,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S6,2023,k8,p75,on,8,6007.240689773673,1.0,act now,act now,False,False
+Maharashtra,S6,2023,k8,p75,on,8,2465.5766907335737,1.0,act now,lower priority,True,False
+Manipur,S6,2023,k8,p75,on,8,298.3723033321364,0.0,lower priority,lower priority,False,False
+Meghalaya,S6,2023,k8,p75,on,8,524.8137305636238,0.0,lower priority,lower priority,False,False
+Mizoram,S6,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Nagaland,S6,2023,k8,p75,on,8,96.85217683074492,0.0,lower priority,lower priority,False,False
+Odisha,S6,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Puducherry,S6,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Punjab,S6,2023,k8,p75,on,8,2356.0059552351104,1.0,act now,lower priority,True,False
+Rajasthan,S6,2023,k8,p75,on,8,6115.103305866219,1.0,act now,act now,False,False
+Sikkim,S6,2023,k8,p75,on,8,16.408930841204874,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S6,2023,k8,p75,on,8,1735.7947739973824,0.001,lower priority,lower priority,False,False
+Telangana,S6,2023,k8,p75,on,8,18072.02213822211,1.0,act now,act now,False,False
+Tripura,S6,2023,k8,p75,on,8,0.022920692560220245,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S6,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Uttarakhand,S6,2023,k8,p75,on,8,10.193467979239145,0.0,lower priority,lower priority,False,False
+West Bengal,S6,2023,k8,p75,on,8,1826.7418469706397,0.0308,lower priority,lower priority,False,False
+Andaman and Nicobar Islands,S6,2023,benchmark_median,median,on,5,15.727072801638808,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S6,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S6,2023,benchmark_median,median,on,5,201.48670785073628,0.0,lower priority,lower priority,False,False
+Assam,S6,2023,benchmark_median,median,on,5,1072.8989002249339,0.0,lower priority,lower priority,False,False
+Bihar,S6,2023,benchmark_median,median,on,5,16272.777553439033,1.0,act now,act now,False,False
+Chandigarh,S6,2023,benchmark_median,median,on,5,298.21830627547916,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S6,2023,benchmark_median,median,on,5,15.995826456343067,0.0,lower priority,lower priority,False,False
+Delhi,S6,2023,benchmark_median,median,on,5,10945.734300542541,1.0,act now,act now,False,False
+Goa,S6,2023,benchmark_median,median,on,5,208.32420418529907,0.0,lower priority,lower priority,False,False
+Gujarat,S6,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Haryana,S6,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S6,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S6,2023,benchmark_median,median,on,5,0.31773981873682855,0.0,lower priority,lower priority,False,False
+Jharkhand,S6,2023,benchmark_median,median,on,5,663.6958374458118,0.0,lower priority,lower priority,False,False
+Karnataka,S6,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Kerala,S6,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S6,2023,benchmark_median,median,on,5,2717.8196856105037,1.0,act now,act now,False,False
+Maharashtra,S6,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Manipur,S6,2023,benchmark_median,median,on,5,253.18925448506712,0.0,lower priority,lower priority,False,False
+Meghalaya,S6,2023,benchmark_median,median,on,5,438.35516572653603,0.0,lower priority,lower priority,False,False
+Mizoram,S6,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Nagaland,S6,2023,benchmark_median,median,on,5,20.40602346270884,0.0,lower priority,lower priority,False,False
+Odisha,S6,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Puducherry,S6,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Punjab,S6,2023,benchmark_median,median,on,5,1340.698667878079,0.0,lower priority,lower priority,False,False
+Rajasthan,S6,2023,benchmark_median,median,on,5,3191.5294658192697,1.0,act now,act now,False,False
+Sikkim,S6,2023,benchmark_median,median,on,5,0.46478859257360455,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S6,2023,benchmark_median,median,on,5,12.745984634189474,0.0,lower priority,lower priority,False,False
+Telangana,S6,2023,benchmark_median,median,on,5,16750.765589057617,1.0,act now,act now,False,False
+Tripura,S6,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S6,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Uttarakhand,S6,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+West Bengal,S6,2023,benchmark_median,median,on,5,27.770769575243538,0.0,lower priority,lower priority,False,False
+Andaman and Nicobar Islands,S6,2023,benchmark_p90,p90,on,5,34.380335213390495,0.0,lower priority,lower priority,False,False
+Andhra Pradesh,S6,2023,benchmark_p90,p90,on,5,0.0,0.0,lower priority,lower priority,False,False
+Arunachal Pradesh,S6,2023,benchmark_p90,p90,on,5,291.8761040483911,0.0,lower priority,lower priority,False,False
+Assam,S6,2023,benchmark_p90,p90,on,5,2736.801008741409,0.0,lower priority,lower priority,False,False
+Bihar,S6,2023,benchmark_p90,p90,on,5,22398.806695314277,1.0,act now,act now,False,False
+Chandigarh,S6,2023,benchmark_p90,p90,on,5,434.21908927783704,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S6,2023,benchmark_p90,p90,on,5,1249.2273099553474,0.0,lower priority,lower priority,False,False
+Delhi,S6,2023,benchmark_p90,p90,on,5,13797.8402803523,1.0,act now,act now,False,False
+Goa,S6,2023,benchmark_p90,p90,on,5,273.5199601661608,0.0,lower priority,lower priority,False,False
+Gujarat,S6,2023,benchmark_p90,p90,on,5,2077.179093527934,0.0,lower priority,lower priority,False,False
+Haryana,S6,2023,benchmark_p90,p90,on,5,509.74300868308654,0.0,lower priority,lower priority,False,False
+Himachal Pradesh,S6,2023,benchmark_p90,p90,on,5,4.362582813176496,0.0,lower priority,lower priority,False,False
+Jammu and Kashmir,S6,2023,benchmark_p90,p90,on,5,347.43610487017247,0.0,lower priority,lower priority,False,False
+Jharkhand,S6,2023,benchmark_p90,p90,on,5,2687.424669974653,0.0,lower priority,lower priority,False,False
+Karnataka,S6,2023,benchmark_p90,p90,on,5,2059.8451025230856,0.0,lower priority,lower priority,False,False
+Kerala,S6,2023,benchmark_p90,p90,on,5,456.18686110910215,0.0,lower priority,lower priority,False,False
+Madhya Pradesh,S6,2023,benchmark_p90,p90,on,5,8707.976256392889,1.0,act now,act now,False,False
+Maharashtra,S6,2023,benchmark_p90,p90,on,5,5706.537408657936,0.0,lower priority,lower priority,False,False
+Manipur,S6,2023,benchmark_p90,p90,on,5,335.46924740683306,0.0,lower priority,lower priority,False,False
+Meghalaya,S6,2023,benchmark_p90,p90,on,5,595.7993905928057,0.0,lower priority,lower priority,False,False
+Mizoram,S6,2023,benchmark_p90,p90,on,5,2.5626316369455484,0.0,lower priority,lower priority,False,False
+Nagaland,S6,2023,benchmark_p90,p90,on,5,159.99068429562593,0.0,lower priority,lower priority,False,False
+Odisha,S6,2023,benchmark_p90,p90,on,5,1.2351712295645012,0.0,lower priority,lower priority,False,False
+Puducherry,S6,2023,benchmark_p90,p90,on,5,0.47161040982007874,0.0,lower priority,lower priority,False,False
+Punjab,S6,2023,benchmark_p90,p90,on,5,3189.6105618033707,0.0,lower priority,lower priority,False,False
+Rajasthan,S6,2023,benchmark_p90,p90,on,5,8515.464901861138,1.0,act now,act now,False,False
+Sikkim,S6,2023,benchmark_p90,p90,on,5,36.70428631458275,0.0,lower priority,lower priority,False,False
+Tamil Nadu,S6,2023,benchmark_p90,p90,on,5,3187.517998393039,0.0,lower priority,lower priority,False,False
+Telangana,S6,2023,benchmark_p90,p90,on,5,19156.82233571611,1.0,act now,act now,False,False
+Tripura,S6,2023,benchmark_p90,p90,on,5,29.814863546022867,0.0,lower priority,lower priority,False,False
+Uttar Pradesh,S6,2023,benchmark_p90,p90,on,5,1609.3296011460059,0.0,lower priority,lower priority,False,False
+Uttarakhand,S6,2023,benchmark_p90,p90,on,5,385.92065637353386,0.0,lower priority,lower priority,False,False
+West Bengal,S6,2023,benchmark_p90,p90,on,5,3323.336910615198,0.0,lower priority,lower priority,False,False
