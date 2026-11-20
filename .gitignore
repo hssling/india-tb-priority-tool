@@ -1,0 +1,16 @@
+# Source documents: not redistributed (digests in data/source_manifest.csv)
+data_raw/
+
+# Manuscript: kept private until an editorial decision
+manuscript/
+
+# Local agent workspace
+.superpowers/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Office lock files
+**/~$*
