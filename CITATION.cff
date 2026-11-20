@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this tool, its data or its analysis plan, please cite it as below."
+title: "Where to invest against TB in India: a State and district priority tool"
+abstract: >-
+  Code, extracted data, outputs and a pre-registered analysis plan for a tool
+  that shows where closing a gap in India's TB care pathway would avert the most
+  harm, counted as patients lost at each step (shortfall against target, not
+  tested for rifampicin resistance, died, lost to follow-up, DR-TB treatment not
+  successful, HIV status not known), with uncertainty, tiers rather than ranks,
+  and a rising-risk flag from each gap's trend. It uses published, aggregate
+  India TB Report tables for States and UTs (data years 2018-2023), tests the
+  stability of the priorities over time and their association with the ICMR
+  National TB Prevalence Survey, and demonstrates the same functions on district
+  tables. Observational; no causal estimates.
+type: software
+version: "1.0.0"
+# PLACEHOLDER: the release date is set at release.
+date-released: "YYYY-MM-DD"
+authors:
+  - family-names: "Siddalingaiah"
+    given-names: "H S"
+    orcid: "https://orcid.org/0000-0002-4771-8285"
+    affiliation: >-
+      Shridevi Institute of Medical Sciences and Research Hospital, Tumkur,
+      Karnataka, India
+license: MIT
+repository-code: "https://github.com/hssling/india-tb-priority-tool"
+keywords:
+  - tuberculosis
+  - India
+  - National TB Elimination Programme
+  - prioritisation
+  - care cascade
+  - empirical Bayes
+  - pre-registration

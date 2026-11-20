@@ -214,6 +214,19 @@ def test_reverted_edit_above_section12_is_still_flagged(repo):
     assert len(bad) == 1 and "above section 12" in bad[0]
 
 
+def test_uncommitted_edit_above_section12_is_flagged(repo):
+    reg = commit(repo, {"docs/analysis_plan.md": PLAN}, "plan")
+    commit(repo, {"docs/registration_event.json": event(reg)}, "registration event")
+    assert check_plan_order.problems(repo, reg) == []
+    (repo / "docs" / "analysis_plan.md").write_bytes(
+        PLAN.replace("Before.", "Changed.").encode("utf-8"))
+    bad = check_plan_order.problems(repo, reg)
+    assert len(bad) == 1 and "uncommitted edit" in bad[0]
+    # An uncommitted edit below the heading (a new §12 entry being drafted) is allowed.
+    (repo / "docs" / "analysis_plan.md").write_bytes((PLAN + "\nnew entry\n").encode("utf-8"))
+    assert check_plan_order.problems(repo, reg) == []
+
+
 def test_line_ending_change_above_section12_is_flagged(repo):
     """Byte identity, not line identity: a CRLF conversion of the frozen text fails."""
     reg = commit(repo, {"docs/analysis_plan.md": PLAN}, "plan")

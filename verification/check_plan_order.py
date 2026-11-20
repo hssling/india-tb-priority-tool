@@ -3,7 +3,8 @@
 # "## 12. Deviations (dated)"; a missing docs/registration_event.json is a FAIL ("NOT
 # REGISTERED YET"); every committed version of that file must name the same commit; all of
 # src/tbprio/ and outputs/ are guarded except an explicit allow-list; later commits are
-# listed with --ancestry-path; the LGD and extension checks of that repository are dropped.
+# listed with --ancestry-path; the working-tree plan is compared too; the LGD and extension
+# checks of that repository are dropped.
 """Check that the analysis plan was registered before any estimate or output.
 
 Run as: python -I verification/check_plan_order.py
@@ -25,6 +26,8 @@ Assertions:
    byte-identical at the registration commit and at every commit in
    `git rev-list --ancestry-path <registration>..HEAD`, so an edit that was later reverted
    is also caught.
+6. The same text of the working-tree docs/analysis_plan.md is byte-identical to it too, so
+   an uncommitted edit is caught before it is committed.
 
 In a copy without .git (a release archive) the history cannot be checked: this prints
 "SKIPPED: not a git checkout ..." and exits 0.
@@ -65,15 +68,20 @@ def is_ancestor(repo: Path, a: str, b: str) -> bool:
 
 
 def plan_above_section12(repo: Path, rev: str) -> bytes:
-    """The bytes of the plan above its deviations heading (exactly one such line)."""
-    data = git(repo, "show", f"{rev}:{PLAN}", text=False).stdout
+    """The bytes of the plan at commit ``rev`` above its deviations heading."""
+    return above_heading(git(repo, "show", f"{rev}:{PLAN}", text=False).stdout,
+                         f"at {rev[:7]}")
+
+
+def above_heading(data: bytes, where: str) -> bytes:
+    """The bytes of a plan above its deviations heading (exactly one such line)."""
     pos, found = 0, []
     for line in data.split(b"\n"):
         if line.rstrip(b"\r") == HEADING:
             found.append(pos)
         pos += len(line) + 1
     if len(found) != 1:
-        raise RuntimeError(f"{PLAN} at {rev[:7]}: expected one {HEADING.decode()!r} heading, "
+        raise RuntimeError(f"{PLAN} {where}: expected one {HEADING.decode()!r} heading, "
                            f"found {len(found)}")
     return data[:found[0]]
 
@@ -149,7 +157,7 @@ def later_commits(repo: Path, reg: str) -> list[str]:
 def problems(repo: Path = ROOT, registration: str | None = None,
              guarded: tuple[str, ...] = GUARDED,
              allowed: tuple[str, ...] = ALLOWED) -> list[str]:
-    """Every violation of assertions 2-5, given the registration commit (read from
+    """Every violation of assertions 2-6, given the registration commit (read from
     docs/registration_event.json when not given)."""
     out: list[str] = []
     registration = registration or registered_commit(repo)
@@ -183,6 +191,18 @@ def problems(repo: Path = ROOT, registration: str | None = None,
         if not same:
             out.append(f"commit {c[:7]}: {PLAN} above section 12 differs from its content at "
                        f"the registration commit {registration[:7]}")
+    work = repo / PLAN
+    head = git(repo, "show", f"HEAD:{PLAN}", ok=(0, 128), text=False)
+    if work.exists() and head.returncode == 0 and work.read_bytes() == head.stdout:
+        return out  # the working tree is HEAD's plan, checked above
+    try:
+        same = (work.exists()
+                and above_heading(work.read_bytes(), "in the working tree") == frozen)
+    except RuntimeError as e:
+        return out + [str(e)]
+    if not same:
+        out.append(f"the working-tree {PLAN} above section 12 differs from its content at "
+                   f"the registration commit {registration[:7]} (an uncommitted edit)")
     return out
 
 
