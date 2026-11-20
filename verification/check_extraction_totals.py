@@ -20,6 +20,16 @@ Run as: python -I verification/check_extraction_totals.py
    is repeated on the fresh extraction, and the four CSVs rebuilt from it are
    byte-identical to the committed files. If any PDF is absent this step is
    reported as SKIPPED (run tools/fetch_sources.py) and does not fail.
+4. ITR 2019 Annexure 1.13 (district_2018.csv, committed; plan §9.1): 761 district
+   rows, as many as the explicit district crosswalk lists, and for every
+   column the sum of the district rows equals the printed India row, except
+   the differences recorded with their size in
+   itr2019_districts.RECORDED_GAPS. If ITR 2019 is in data_raw/, the table is
+   extracted again: the India row read from the PDF must equal the printed row
+   recorded in the inventory, and the CSV must be reproduced byte for byte.
+5. Lok Sabha Q802 (district_notifications.csv; plan §9.2): if the Word file is
+   in data_raw/, it is extracted again and the CSV reproduced byte for byte
+   (it has no printed total row). Otherwise SKIPPED.
 
 Exit 1 on any failed check.
 """
@@ -32,7 +42,8 @@ ROOT = Path(__file__).resolve().parents[1]
 if __package__ in (None, ""):
     sys.path.insert(0, str(ROOT))
 
-from src.extract import annex, crosswalk, itr_state  # noqa: E402
+from src.extract import annex, au802, crosswalk, district_names  # noqa: E402
+from src.extract import itr2019_districts, itr_state  # noqa: E402
 
 SKIP = "SKIPPED: source PDFs not present (run python -I tools/fetch_sources.py)"
 
@@ -102,6 +113,38 @@ def pdf_problems() -> list[str]:
     return out
 
 
+def district_total_problems() -> list[str]:
+    """Check 4 on the committed district_2018.csv (no PDF needed)."""
+    recs = itr2019_districts.read_csv()
+    out = []
+    if len(recs) != district_names.itr2019_count():
+        out.append(f"district_2018.csv has {len(recs)} rows; the crosswalk lists "
+                   f"{district_names.itr2019_count()}")
+    return out + itr2019_districts.unrecorded_gaps(itr2019_districts.total_checks(recs))
+
+
+def district_pdf_problems() -> list[str]:
+    """Check 4 from the PDF: the India row as recorded, and the CSV byte for byte."""
+    rows, national = itr2019_districts.read_pdf()
+    recs = itr2019_districts.records(rows)
+    out = []
+    if itr2019_districts.national_values(national) != itr2019_districts.PRINTED_INDIA:
+        out.append("A1.13: the India row read from the PDF differs from the printed row "
+                   "recorded in the inventory")
+    out += itr2019_districts.unrecorded_gaps(itr2019_districts.total_checks(recs))
+    if _written(recs, itr2019_districts.OUT_COLS) != itr2019_districts.OUT_CSV.read_bytes():
+        out.append("district_2018.csv differs from a fresh extraction from the PDF")
+    return out
+
+
+def au802_problems() -> list[str]:
+    """Check 5: district_notifications.csv byte for byte from the Word file."""
+    recs = au802.records(au802.read_docx())
+    if _written(recs, au802.OUT_COLS) != au802.OUT_CSV.read_bytes():
+        return ["district_notifications.csv differs from a fresh extraction from AU802"]
+    return []
+
+
 def main() -> int:
     failed = 0
     for label, fn in (("printed totals (state_cells.csv)",
@@ -134,6 +177,28 @@ def main() -> int:
         if not bad:
             print(f"OK: {len(itr_state.SPECS)} tables re-extracted from the PDFs; printed "
                   f"totals as recorded; the committed CSVs are reproduced byte for byte")
+    for label, fn, src in (
+            ("ITR 2019 A1.13 district rows and printed India row (district_2018.csv)",
+             district_total_problems, None),
+            ("ITR 2019 A1.13 re-extracted from the PDF; district_2018.csv reproduced byte "
+             "for byte", district_pdf_problems, itr2019_districts.SOURCE_FILE),
+            ("Lok Sabha Q802 re-extracted; district_notifications.csv reproduced byte for "
+             "byte", au802_problems, au802.SOURCE_FILE)):
+        if src is not None and not (ROOT / src).exists():
+            print(f"SKIPPED: {src} not present; not re-extracted")
+            continue
+        try:
+            bad = fn()
+        except Exception as e:  # noqa: BLE001
+            bad = [f"{type(e).__name__}: {e}"]
+        for b in bad:
+            print(f"FAIL: {b}")
+        failed += bool(bad)
+        if not bad:
+            print(f"OK: {label}")
+    for k, (s, n) in itr2019_districts.RECORDED_GAPS.items():
+        print(f"RECORDED GAP: ITR2019_A1.13 {k}: district sum {s}, printed India {n}, "
+              f"difference {s - n}")
     return 1 if failed else 0
 
 
