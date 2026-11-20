@@ -18,7 +18,7 @@ endings (`.gitattributes`). The outputs in `outputs/` were produced, and
   notifications); needed only to re-extract it
 - setuptools 80.9.0 and pip 25.2: the editable install of the tool
   (`python -I -m pip install -e .`, which makes `python -I -m tbprio` work)
-- matplotlib 3.10.7: the manuscript figures (from Task 8); not used by the tool or
+- matplotlib 3.10.7: optional, for the manuscript figures; not used by the tool or
   the outputs
 
 The independent recompute `verification/check_outputs.py`, the deviations check and
