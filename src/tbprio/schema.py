@@ -6,8 +6,9 @@ Required columns: ``district, year, notified``. Optional: ``state``, ``target``,
 and ignoring case. Any other column is dropped with a warning.
 
 - A row whose district is "Total" (or "Grand Total", "State Total", "All", "All
-  districts"; any case) is dropped with a warning: it is a total, not a district. A
-  district named like its State (Chandigarh) is kept.
+  districts"; any case), or whose state is one of these and whose district is blank, is
+  dropped with a warning: it is a total, not a district. A district named like its State
+  (Chandigarh) is kept.
 - A missing required column is an error that names it.
 - ``year`` must be a whole number; ``notified`` and the optional count columns must be
   whole numbers >= 0 (blank is allowed for the optional columns only).
@@ -92,12 +93,12 @@ def validate_district(rows: list[dict]) -> list[dict]:
         get = {k: (r[by_key[k]] or "") for k in by_key}
         district = re.sub(r"\s+", " ", get["district"]).strip()
         state = re.sub(r"\s+", " ", get.get("state", "")).strip()
-        where = f"row {i} ({district or 'no district'})"
-        if not district:
-            raise SchemaError(f"{where}: district is blank")
-        if _key(district) in TOTAL_NAMES:
+        where = f"row {i} ({district or state or 'no district'})"
+        if _key(district) in TOTAL_NAMES or (_key(state) in TOTAL_NAMES and not district):
             warnings.warn(f"{where}: a total row, dropped", SchemaWarning, stacklevel=2)
             continue
+        if not district:
+            raise SchemaError(f"{where}: district is blank")
         year_s = get["year"].strip()
         if not re.fullmatch(r"\d{4}", year_s):
             raise SchemaError(f"{where}: year = {get['year']!r} is not a four-digit year")

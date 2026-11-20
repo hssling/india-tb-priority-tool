@@ -60,6 +60,18 @@ def test_district_schema_variants():
     with pytest.raises(schema.SchemaError, match="appears twice"):
         schema.validate_district([{"district": "A", "year": "2022", "notified": "3"},
                                   {"district": "A", "year": "2022", "notified": "4"}])
+    # a State-level total row with a blank district is dropped, not an error
+    with warnings.catch_warnings(record=True) as caught:
+        warnings.simplefilter("always")
+        out = schema.validate_district([
+            {"state": "S", "district": "A", "year": "2022", "notified": "3"},
+            {"state": "Total", "district": "", "year": "2022", "notified": "3"},
+            {"state": "TOTAL ", "district": "Total", "year": "2022", "notified": "3"}])
+    assert [r["district"] for r in out] == ["A"]
+    assert sum("total row" in str(w.message) for w in caught) == 2
+    with pytest.raises(schema.SchemaError, match="district is blank"):
+        schema.validate_district([{"state": "S", "district": "", "year": "2022",
+                                   "notified": "3"}])
     # a district named like its State is not a total row
     out = schema.validate_district([{"state": "Chandigarh", "district": "Chandigarh",
                                      "year": "2022", "notified": "9"}])

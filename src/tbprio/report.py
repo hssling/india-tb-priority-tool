@@ -274,88 +274,17 @@ def _labels(cands: list[tuple[float, float, str]], left: float, right: float) ->
     return out
 
 
-def change_funnel_svg(fid: str, title: str, points: list[dict], R: float, phi: float,
-                      base_year: int, final_year: int) -> str:
-    """Funnel of the relative change y_d = d / n_base against n_base (log scale), around the
-    State's pooled change R - 1, with the multiplicatively adjusted 95% and 99.8% limits.
-
-    The limits are drawn for the expected final count n_base x R: (R - 1) +/- z sqrt(phi)
-    sqrt((1 + R) / n). Flags use each district's own SE."""
-    W, H = 720, 380
-    ml, mr, mt, mb = 62, 16, 16, 52
-    pts = [p for p in points if p.get("rel_change") is not None]
-    ns = [p["n_base"] for p in pts]
-    xlo = 10 ** math.floor(math.log10(min(ns)) - 0.05)
-    xhi = 10 ** math.ceil(math.log10(max(ns)) + 0.05)
-    xlo = min(xlo, min(ns) / 1.3)
-    c = R - 1
-    f = math.sqrt(phi) if phi == phi and phi > 1 else 1.0
-    ys = [p["rel_change"] for p in pts] + [c]
-    span = max(ys) - min(ys)
-    ylo, yhi = min(ys) - 0.12 * span - 0.02, max(ys) + 0.12 * span + 0.02
-
-    def X(n):
-        return ml + (math.log10(n) - math.log10(xlo)) / (math.log10(xhi) - math.log10(xlo)) \
-            * (W - ml - mr)
-
-    def Y(v):
-        return mt + (yhi - v) / (yhi - ylo) * (H - mt - mb)
-
-    out = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-labelledby="{fid}-t {fid}-d" '
-           f'xmlns="http://www.w3.org/2000/svg">',
-           f'<title id="{fid}-t">{esc(title)}</title>',
-           f'<desc id="{fid}-d">Each point is a district: its notifications in {base_year} '
-           f'(horizontal, log scale) and its change to {final_year} (vertical). The solid line '
-           f'is the State pooled change; the curves are the 95% (dashed) and 99.8% (solid) '
-           f'limits after the overdispersion adjustment. Triangles are districts beyond the '
-           f'99.8% limits (pointing up: rose; down: fell), named.</desc>',
-           f'<clipPath id="{fid}-c"><rect x="{ml}" y="{mt}" width="{W - ml - mr}" '
-           f'height="{H - mt - mb}"/></clipPath>',
-           f'<rect x="{ml}" y="{mt}" width="{W - ml - mr}" height="{H - mt - mb}" '
-           f'fill="#ffffff" stroke="#c9d1dc"/>']
-    for t in _nice_ticks(ylo, yhi):
-        y = Y(t)
-        out.append(f'<line x1="{ml}" y1="{y:.1f}" x2="{W - mr}" y2="{y:.1f}" stroke="#eef1f5"/>'
-                   f'<text x="{ml - 6}" y="{y + 3.5:.1f}" font-size="10" '
-                   f'text-anchor="end">{signed(100 * t, 0)}%</text>')
-    for t in _nice_log_ticks(xlo, xhi):
-        x = X(t)
-        out.append(f'<line x1="{x:.1f}" y1="{H - mb}" x2="{x:.1f}" y2="{H - mb + 4}" '
-                   f'stroke="#1a1f29"/><text x="{x:.1f}" y="{H - mb + 16}" font-size="10" '
-                   f'text-anchor="middle">{_fmt_tick(t)}</text>')
-    out.append(f'<text x="{(ml + W - mr) / 2:.1f}" y="{H - 12}" font-size="11.5" '
-               f'text-anchor="middle">Notified in {base_year} (log scale)</text>')
-    out.append(f'<text transform="translate(14,{(mt + H - mb) / 2:.1f}) rotate(-90)" '
-               f'font-size="11.5" text-anchor="middle">Change {base_year} to {final_year}'
-               f'</text>')
-    curves = []
-    for z, dash in ((1.96, ' stroke-dasharray="5 4"'), (3.09, "")):
-        for sgn in (1, -1):
-            pts_ = []
-            for i in range(121):
-                n = 10 ** (math.log10(xlo) + i / 120 * (math.log10(xhi) - math.log10(xlo)))
-                v = c + sgn * z * f * math.sqrt((1 + R) / n)
-                pts_.append(f"{X(n):.1f},{Y(v):.1f}")
-            curves.append(f'<polyline points="{" ".join(pts_)}" fill="none" '
-                          f'stroke="#4f5866" stroke-width="1"{dash}/>')
-    out.append(f'<g clip-path="url(#{fid}-c)">' + "".join(curves) +
-               f'<line x1="{ml}" y1="{Y(c):.1f}" x2="{W - mr}" y2="{Y(c):.1f}" '
-               f'stroke="#0b3d7a" stroke-width="1.4"/></g>')
-    flagged = []
-    for p in sorted(pts, key=lambda p: (p["kind"] != "none", p["name"])):
-        x, y = X(p["n_base"]), Y(p["rel_change"])
-        out.append(_marker(p["kind"], x, y))
-        if p["kind"] != "none":
-            flagged.append((x, y, p["name"]))
-    out += _labels(flagged, ml, W - mr)
-    out.append(f'<text x="{W - mr - 4}" y="{Y(c) - 5:.1f}" font-size="10" text-anchor="end" '
-               f'fill="#0b3d7a">State {100 * c:+.1f}%</text>')
-    out.append("</svg>")
-    return "\n".join(out)
+NATIONAL_Z_DESC = ("Each point is a district: its denominator (horizontal, log scale) and "
+                   "its z-score against its own State (vertical). Horizontal lines: the 95% "
+                   "(dashed) and 99.8% (solid) limits after the overdispersion adjustment. "
+                   "Triangles are districts beyond the 99.8% limits (up: above, down: below "
+                   "the State).")
 
 
 def z_funnel_svg(fid: str, title: str, points: list[dict], limit95: float,
-                 limit998: float, xlabel: str) -> str:
+                 limit998: float, xlabel: str, desc: str = NATIONAL_Z_DESC,
+                 ylabel: str = "z against the State proportion",
+                 label_flagged: bool = False) -> str:
     """Standardised funnel for State-relative comparisons with different State centres:
     the z-score of each district (horizontal lines at the adjusted 95% and 99.8% limits)
     against its denominator (log scale)."""
@@ -378,11 +307,7 @@ def z_funnel_svg(fid: str, title: str, points: list[dict], limit95: float,
     out = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-labelledby="{fid}-t {fid}-d" '
            f'xmlns="http://www.w3.org/2000/svg">',
            f'<title id="{fid}-t">{esc(title)}</title>',
-           f'<desc id="{fid}-d">Each point is a district: its denominator (horizontal, log '
-           f'scale) and its z-score against its own State (vertical). Horizontal lines: the '
-           f'95% (dashed) and 99.8% (solid) limits after the overdispersion adjustment. '
-           f'Triangles are districts beyond the 99.8% limits (up: above, down: below the '
-           f'State).</desc>',
+           f'<desc id="{fid}-d">{esc(desc)}</desc>',
            f'<rect x="{ml}" y="{mt}" width="{W - ml - mr}" height="{H - mt - mb}" '
            f'fill="#ffffff" stroke="#c9d1dc"/>']
     for t in _nice_ticks(ylo, yhi, 8):
@@ -404,9 +329,14 @@ def z_funnel_svg(fid: str, title: str, points: list[dict], limit95: float,
     out.append(f'<text x="{(ml + W - mr) / 2:.1f}" y="{H - 12}" font-size="11.5" '
                f'text-anchor="middle">{esc(xlabel)} (log scale)</text>')
     out.append(f'<text transform="translate(14,{(mt + H - mb) / 2:.1f}) rotate(-90)" '
-               f'font-size="11.5" text-anchor="middle">z against the State proportion</text>')
+               f'font-size="11.5" text-anchor="middle">{esc(ylabel)}</text>')
+    flagged = []
     for p in sorted(points, key=lambda p: (p["kind"] != "none", p["name"])):
         out.append(_marker(p["kind"], X(p["n"]), Y(p["z"])))
+        if p["kind"] != "none":
+            flagged.append((X(p["n"]), Y(p["z"]), p["name"]))
+    if label_flagged:
+        out += _labels(flagged, ml, W - mr)
     out.append("</svg>")
     return "\n".join(out)
 
@@ -657,18 +587,30 @@ def district_report(change_rows: list[dict], change_info: dict, years: list[int]
             f"adjusted limits</dd></dl>")
         if info["na"]:
             body.append(f"<p>Not tested ({b} count 0): {esc(', '.join(info['na']))}.</p>")
-        pts = [{"name": r["district"], "n_base": r[f"n_{b}"], "rel_change": r["rel_change"],
-                "kind": _change_kind(r["flag"])} for r in rs if r["rel_change"] is not None]
-        if len(pts) >= 2 and info["phi"] == info["phi"]:
+        if info["phi"] == info["phi"]:
+            fz = math.sqrt(max(1.0, info["phi"]))
+            pts = [{"name": r["district"], "n": r[f"n_{b}"], "z": r["z"] / fz,
+                    "kind": _change_kind(r["flag"])} for r in rs if r["z"] is not None]
+        else:
+            pts = []
+        if len(pts) >= 2:
             body.append("<figure>")
-            body.append(change_funnel_svg(f"fc{i}", f"{s}: change in TB notifications by "
-                                          f"district, {b} to {f}", pts, info["R"],
-                                          info["phi"], b, f))
-            body.append(f"<figcaption>Funnel around the State's pooled change "
-                        f"({pct(info['change'])}). Curves: 95% (dashed) and 99.8% (solid) "
-                        f"limits widened by √phi, drawn for the expected {f} count; the "
-                        f"flags use each district's own standard error.</figcaption>"
-                        f"</figure>")
+            body.append(z_funnel_svg(
+                f"fc{i}", f"{s}: change in TB notifications by district, {b} to {f}", pts,
+                1.96, 3.09, f"Notified in {b}",
+                desc=(f"Each point is a district: its notifications in {b} (horizontal, log "
+                      f"scale) and the z-score of its change to {f} against the State's "
+                      f"pooled change, divided by the square root of phi (vertical). "
+                      f"Horizontal lines: the adjusted 95% (dashed) and 99.8% (solid) limits. "
+                      f"Triangles are districts beyond the 99.8% limits (pointing up: rose; "
+                      f"down: fell), named."),
+                ylabel=f"z of the change ÷ √phi", label_flagged=True))
+            body.append(f"<figcaption>Standardised funnel around the State's pooled change "
+                        f"({pct(info['change'])}): each district's z, computed with its own "
+                        f"standard error √(n{b} + n{f}), divided by √phi (phi = "
+                        f"{fnum(info['phi'], 2)}), so the adjusted limits are at ±1.96 "
+                        f"(dashed) and ±3.09 (solid). A point lies beyond the solid lines "
+                        f"exactly when the district is flagged.</figcaption></figure>")
         body.append('<div class="tablewrap"><table><thead><tr><th>District</th>' +
                     "".join(f'<th class="n">{y}</th>' for y in years) +
                     '<th class="n">Change</th><th class="n">Change %</th><th class="n">z</th>'

@@ -56,7 +56,9 @@ def test_cli_district_demonstration_states(tmp_path):
     html = (tmp_path / "report_district.html").read_text(encoding="utf-8")
     _self_contained(html)
     for text in ("2018 data (historical)", "Priority matrix", "Vidisha (printed twice)",
-                 "less TB or less case-finding", "rounded_from_percent", "P(top-20)"):
+                 "less TB or less case-finding", "rounded_from_percent", "P(top-20)",
+                 "referral centres", "count as not initiated",
+                 "A point lies beyond the solid lines exactly when the district is flagged"):
         assert text in html
 
 
@@ -68,7 +70,9 @@ def test_cli_state_writes_report(tmp_path):
     assert html == (OUTPUTS / "report_state.html").read_bytes()
     text = html.decode("utf-8")
     _self_contained(text)
-    for t in ("Priority matrix", "programme goal, not an estimate of disease",
+    for t in ("Priority matrix",
+              "A CTD notification target is a programme goal, not an estimate of disease",
+              "shortfall against target: it does not count people with TB who were not found",
               "shortfall against target", "Summary for each State/UT", "watch: rising"):
         assert t in text
     assert "missed cases" not in text  # plan §1.3 wording
