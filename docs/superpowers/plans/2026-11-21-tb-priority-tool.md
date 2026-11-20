@@ -89,6 +89,25 @@ Also reported for H1: top-5 overlap.
 - Flags: "fell beyond adjusted limits" and "rose beyond adjusted limits".
 - No tiers at district level. The paper states that a notification fall can mean less TB or less case-finding.
 
+**Controller rulings after Task 1 (21 Nov 2026; fixed before registration; Task 2 copies them into the analysis plan)**
+- **Data year 2020 is dropped entirely.** ITR 2021 has no text layer. Main-analysis data years: 2018, 2019, 2021, 2022 and 2023. The "including 2020" sensitivity is replaced, for H1, by the year-window axis {pre-period 2018, 2019, 2021} vs {2019, 2021}.
+- **Unit coarsening.** Units are coarsened to the 2018 structure in every year: DNH&DD merged into Gujarat, Lakshadweep into Kerala, Ladakh into J&K. Small UTs are not separately prioritised; this is a stated limitation.
+- **S1** uses 2021–2023 only, the years with printed targets. Its trend uses those 3 years.
+- **S2** changes definition in 2022 (bacteriologically confirmed patients only). S2 is used for the 2023 priorities only; trend "not estimable (definition change)"; excluded from H1.
+- **S3** for 2018 = public + private deaths.
+- **S4** for 2018 is public only and is excluded. The S4 pre-period is 2019 and 2021.
+- **S5** DR-TB cohorts are not comparable across editions. S5 is used for the 2023 priorities only; no trend; excluded from H1.
+- **S6** has all years.
+- **H1** pools S3, S4 and S6 only.
+- **National district module, data year 2018 (ITR 2019 Annexure 1.13, about 760 districts).**
+  - Steps:
+    - D1 "not initiated on treatment" = total notified − total initiated;
+    - D2 "public-sector treatment not successful" = the 2017 public cohort (success N ÷ success %) − success N. Rounding from % is flagged.
+  - The same within-step harm, shrinkage, P(top-k) and tiers as the States, with k = 20.
+  - A State-relative funnel per district.
+  - Labelled as 2018 data (historical).
+- **MP/MH district trend (AU802, 2022–2024).** Kept as in the plan. There is no 2018→2022 linkage, because districts were renamed or split. The Vidisha duplicate is kept once and flagged.
+
 ## Review Focus
 1. **Missing step data.** A unit has NA for a step in 2023 (e.g. no DR-TB cohort for a small UT). Expected: the unit is excluded from that step only, listed in `na_cells.csv`, and P(top-k) is computed over the remaining units. Pinned in Task 4: `test_missing_step_excludes_unit_only_from_that_step`.
 2. **Above-target or zero-loss units.** notified > target, or x = 0 deaths. Expected: harm averted is 0 (never negative), and shrinkage still gives a finite posterior. Pinned in Task 4: `test_harm_averted_floor_zero_and_zero_counts`.
