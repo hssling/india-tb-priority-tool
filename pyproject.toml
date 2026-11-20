@@ -1,0 +1,18 @@
+# Makes the analysis package importable as ``tbprio`` for the tool's command line
+# (python -I -m tbprio ...). Install once from the repository root:
+#     python -I -m pip install --no-deps --no-build-isolation -e .
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tbprio"
+version = "0.1.0"
+description = "TB priority tool: State priorities and district funnels (registered analysis plan)"
+requires-python = ">=3.14"
+license = "MIT"
+dependencies = ["numpy==2.3.5"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["tbprio"]

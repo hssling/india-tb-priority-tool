@@ -1,0 +1,80 @@
+# SYNTHETIC EXAMPLE - NOT REAL DATA. Made-up districts and counts, generated with
+# numpy default_rng(20261121), to show the district input schema of the TB priority
+# tool (docs/analysis_plan.md §9.3): required columns district, year, notified;
+# optional target, population, cascade_*. The last row is a total and is dropped.
+state,district,year,notified,target,population,cascade_initiated
+Synthetic State,Synthetic District A,2022,3556,4230,1158756,3466
+Synthetic State,Synthetic District A,2023,3662,4230,1158756,3619
+Synthetic State,Synthetic District A,2024,3619,4230,1158756,3546
+Synthetic State,Synthetic District B,2022,2510,2980,625108,2430
+Synthetic State,Synthetic District B,2023,2645,2980,625108,2645
+Synthetic State,Synthetic District B,2024,2530,2980,625108,2463
+Synthetic State,Synthetic District C,2022,2491,2800,511161,2426
+Synthetic State,Synthetic District C,2023,2549,2800,511161,2515
+Synthetic State,Synthetic District C,2024,2477,2800,511161,2403
+Synthetic State,Synthetic District D,2022,2562,2980,481763,2490
+Synthetic State,Synthetic District D,2023,1953,2980,481763,1942
+Synthetic State,Synthetic District D,2024,1353,2980,481763,1316
+Synthetic State,Synthetic District E,2022,5773,6570,1240023,5737
+Synthetic State,Synthetic District E,2023,5508,6570,1240023,5364
+Synthetic State,Synthetic District E,2024,5537,6570,1240023,5466
+Synthetic State,Synthetic District F,2022,6203,7250,1278877,6039
+Synthetic State,Synthetic District F,2023,6249,7250,1278877,6208
+Synthetic State,Synthetic District F,2024,6110,7250,1278877,6051
+Synthetic State,Synthetic District G,2022,4870,5540,934620,4780
+Synthetic State,Synthetic District G,2023,4446,5540,934620,4375
+Synthetic State,Synthetic District G,2024,4153,5540,934620,4098
+Synthetic State,Synthetic District H,2022,7739,8990,2285054,7578
+Synthetic State,Synthetic District H,2023,7835,8990,2285054,7605
+Synthetic State,Synthetic District H,2024,7797,8990,2285054,7622
+Synthetic State,Synthetic District I,2022,7942,9160,1940691,7730
+Synthetic State,Synthetic District I,2023,8109,9160,1940691,7887
+Synthetic State,Synthetic District I,2024,8278,9160,1940691,8069
+Synthetic State,Synthetic District J,2022,1345,1540,363644,1293
+Synthetic State,Synthetic District J,2023,1279,1540,363644,1260
+Synthetic State,Synthetic District J,2024,1289,1540,363644,1275
+Synthetic State,Synthetic District K,2022,4285,4990,1334478,4143
+Synthetic State,Synthetic District K,2023,4289,4990,1334478,4279
+Synthetic State,Synthetic District K,2024,4203,4990,1334478,4077
+Synthetic State,Synthetic District L,2022,8778,10060,2179582,8615
+Synthetic State,Synthetic District L,2023,8594,10060,2179582,8340
+Synthetic State,Synthetic District L,2024,8707,10060,2179582,8470
+Synthetic State,Synthetic District M,2022,6864,7800,1282273,6655
+Synthetic State,Synthetic District M,2023,6605,7800,1282273,6421
+Synthetic State,Synthetic District M,2024,6536,7800,1282273,6285
+Synthetic State,Synthetic District N,2022,5534,6470,1021982,5347
+Synthetic State,Synthetic District N,2023,5465,6470,1021982,5403
+Synthetic State,Synthetic District N,2024,5059,6470,1021982,5033
+Synthetic State,Synthetic District O,2022,5568,6440,1561343,5479
+Synthetic State,Synthetic District O,2023,5442,6440,1561343,5257
+Synthetic State,Synthetic District O,2024,5152,6440,1561343,5004
+Synthetic State,Synthetic District P,2022,7929,9080,2156196,7715
+Synthetic State,Synthetic District P,2023,7921,9080,2156196,7786
+Synthetic State,Synthetic District P,2024,7772,9080,2156196,7502
+Synthetic State,Synthetic District Q,2022,3181,3750,698311,3173
+Synthetic State,Synthetic District Q,2023,3199,3750,698311,3078
+Synthetic State,Synthetic District Q,2024,3060,3750,698311,3040
+Synthetic State,Synthetic District R,2022,4847,5630,1566574,4833
+Synthetic State,Synthetic District R,2023,5859,5630,1566574,5855
+Synthetic State,Synthetic District R,2024,6598,5630,1566574,6404
+Synthetic State,Synthetic District S,2022,7541,8750,2430097,7268
+Synthetic State,Synthetic District S,2023,6817,8750,2430097,6741
+Synthetic State,Synthetic District S,2024,6194,8750,2430097,6009
+Synthetic State,Synthetic District T,2022,4833,5590,899706,4812
+Synthetic State,Synthetic District T,2023,4513,5590,899706,4382
+Synthetic State,Synthetic District T,2024,4191,5590,899706,4047
+Synthetic State,Synthetic District U,2022,8807,10350,2770163,8738
+Synthetic State,Synthetic District U,2023,9041,10350,2770163,8963
+Synthetic State,Synthetic District U,2024,9036,10350,2770163,8742
+Synthetic State,Synthetic District V,2022,7338,8530,2250036,7145
+Synthetic State,Synthetic District V,2023,7168,8530,2250036,7101
+Synthetic State,Synthetic District V,2024,6967,8530,2250036,6864
+Synthetic State,Synthetic District W,2022,4469,5250,1360950,4441
+Synthetic State,Synthetic District W,2023,4372,5250,1360950,4325
+Synthetic State,Synthetic District W,2024,4153,5250,1360950,4101
+Synthetic State,Synthetic District X,2022,8559,9880,2203342,8549
+Synthetic State,Synthetic District X,2023,8560,9880,2203342,8404
+Synthetic State,Synthetic District X,2024,8459,9880,2203342,8166
+Synthetic State,Total,2022,133524,,,
+Synthetic State,Total,2023,132080,,,
+Synthetic State,Total,2024,129230,,,

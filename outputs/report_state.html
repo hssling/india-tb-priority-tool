@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>State TB priorities 2023</title>
+<style>
+:root { --ink: #1a1f29; --muted: #4f5866; --rule: #c9d1dc; --paper: #ffffff;
+  --band: #f3f6fa; --accent: #0b3d7a; --warn: #7a2e0b; color-scheme: light; }
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body { margin: 0; background: var(--paper); color: var(--ink);
+  font: 14px/1.5 "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+main { max-width: 190mm; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { font-size: 22px; line-height: 1.25; margin: 0 0 4px; }
+h2 { font-size: 17px; margin: 32px 0 8px; padding-top: 8px; border-top: 2px solid var(--accent); }
+h3 { font-size: 15px; margin: 20px 0 6px; }
+p, li { max-width: 72ch; }
+.sub { color: var(--muted); margin: 0 0 12px; }
+.banner { background: var(--band); border-left: 4px solid var(--warn); padding: 8px 12px;
+  margin: 12px 0; }
+.note { color: var(--muted); font-size: 12.5px; }
+nav ol { margin: 4px 0 0; padding-left: 20px; }
+dl.legend { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; margin: 8px 0; }
+dl.legend dt { font-weight: 600; }
+dl.legend dd { margin: 0; }
+figure { margin: 12px 0 20px; }
+figcaption { font-size: 12.5px; color: var(--muted); margin-top: 4px; max-width: 72ch; }
+svg { display: block; width: 100%; height: auto; }
+svg text { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: var(--ink); }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 12.5px; margin: 6px 0 16px; }
+th, td { text-align: left; padding: 3px 6px; border-bottom: 1px solid var(--rule);
+  vertical-align: top; }
+th { background: var(--band); font-weight: 600; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tbody tr.first td { border-top: 1px solid var(--muted); }
+.kv { display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; font-size: 13px; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; font-variant-numeric: tabular-nums; }
+@media print {
+  @page { size: A4; margin: 12mm; }
+  main { max-width: none; padding: 0; }
+  h2 { break-after: avoid; }
+  figure, tr { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<main>
+<header><h1>Where closing a gap in TB care would avert the most harm: States and UTs, data year 2023</h1>
+<p class="sub">TB priority tool, State report. Input: state_panel.csv. Method: the registered analysis plan (docs/analysis_plan.md, §6). Tiers, not ranks.</p></header>
+<nav><strong>Contents</strong><ol><li><a href="#legend">How to read this report</a></li><li><a href="#matrix">Priority matrix</a></li><li><a href="#steps">Largest harm averted at each step</a></li><li><a href="#units">Summary for each State/UT</a></li><li><a href="#caveats">Caveats</a></li></ol></nav>
+<section id="legend"><h2>How to read this report</h2>
+<p>For each step of the TB care pathway, the tool asks how many patients would not have been lost if a State's loss rate were as good as the benchmark: the rate of the better quarter of States. This number is the <strong>harm averted</strong>. It is counted in patients and is shown with a 95% interval. For S1 it is the shortfall of notifications against the benchmark share of the target.</p>
+<p>The tool then simulates 10,000 plausible versions of the data. <strong>P(top-5)</strong> is the share of these in which the State is among the 5 with the largest harm averted at that step. The <strong>tier</strong> is set from P(top-5):</p>
+<dl class="legend"><dt>A = act now</dt><dd>P(top-5) ≥ 0.80</dd><dt>P = probable priority</dt><dd>0.50 ≤ P &lt; 0.80</dd><dt>U = uncertain</dt><dd>0.20 ≤ P &lt; 0.50</dd><dt>W = watch: rising</dt><dd>uncertain or lower priority, and the loss rate is rising (the 95% interval of its trend lies wholly on the worsening side)</dd><dt>L = lower priority</dt><dd>P &lt; 0.20</dd></dl>
+<dl class="legend"><dt>↑</dt><dd>the loss rate is rising (shown when it does not already set the tier to W)</dd><dt>•</dt><dd>small but far behind: the State's rate gap is among the worst quarter, but its harm averted is below the median. This never changes the tier.</dd><dt>per 100,000</dt><dd>harm averted per 100,000 population (ITR 2024 population), shown alongside and never used for tiers.</dd></dl>
+<p>Steps:</p><ul><li><strong>S1</strong>: shortfall against target</li><li><strong>S2</strong>: not tested for rifampicin resistance</li><li><strong>S3</strong>: died (DS-TB cohort)</li><li><strong>S4</strong>: lost to follow-up (DS-TB cohort)</li><li><strong>S5</strong>: DR-TB treatment not successful</li><li><strong>S6</strong>: HIV status not known</li></ul></section>
+<section id="matrix"><h2>Priority matrix</h2><figure>
+<svg viewBox="0 0 760 780" style="max-width:760px" role="img" aria-labelledby="hm33x6-t hm33x6-d" xmlns="http://www.w3.org/2000/svg">
+<title id="hm33x6-t">Priority matrix, data year 2023: tier and P(top-5) of each State/UT at each step</title>
+<desc id="hm33x6-d">Each cell shows the tier code and P(top-5) of one unit at one step; darker blue means a higher P(top-5).</desc>
+<text x="246.0" y="18" font-size="12" font-weight="600" text-anchor="middle">S1</text>
+<text x="246.0" y="31" font-size="9.5" text-anchor="middle">shortfall</text>
+<text x="246.0" y="42" font-size="9.5" text-anchor="middle">against target</text>
+<text x="338.0" y="18" font-size="12" font-weight="600" text-anchor="middle">S2</text>
+<text x="338.0" y="31" font-size="9.5" text-anchor="middle">not tested for</text>
+<text x="338.0" y="42" font-size="9.5" text-anchor="middle">rifampicin</text>
+<text x="338.0" y="53" font-size="9.5" text-anchor="middle">resistance</text>
+<text x="430.0" y="18" font-size="12" font-weight="600" text-anchor="middle">S3</text>
+<text x="430.0" y="31" font-size="9.5" text-anchor="middle">died (DS-TB</text>
+<text x="430.0" y="42" font-size="9.5" text-anchor="middle">cohort)</text>
+<text x="522.0" y="18" font-size="12" font-weight="600" text-anchor="middle">S4</text>
+<text x="522.0" y="31" font-size="9.5" text-anchor="middle">lost to</text>
+<text x="522.0" y="42" font-size="9.5" text-anchor="middle">follow-up (DS-TB</text>
+<text x="522.0" y="53" font-size="9.5" text-anchor="middle">cohort)</text>
+<text x="614.0" y="18" font-size="12" font-weight="600" text-anchor="middle">S5</text>
+<text x="614.0" y="31" font-size="9.5" text-anchor="middle">DR-TB treatment</text>
+<text x="614.0" y="42" font-size="9.5" text-anchor="middle">not successful</text>
+<text x="706.0" y="18" font-size="12" font-weight="600" text-anchor="middle">S6</text>
+<text x="706.0" y="31" font-size="9.5" text-anchor="middle">HIV status not</text>
+<text x="706.0" y="42" font-size="9.5" text-anchor="middle">known</text>
+<rect x="0" y="64" width="196" height="20" fill="#f3f6fa"/>
+<text x="4" y="78" font-size="11">Andaman and Nicobar Islands</text>
+<rect x="201" y="65" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="78" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="65" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="78" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00•</text>
+<rect x="385" y="65" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="78" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="65" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="78" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00•</text>
+<rect x="569" y="65" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="78" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="65" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="78" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00•</text>
+<text x="4" y="98" font-size="11">Andhra Pradesh</text>
+<rect x="201" y="85" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="98" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="85" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="98" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="85" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="98" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="85" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="98" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="85" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="98" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="85" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="98" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="0" y="104" width="196" height="20" fill="#f3f6fa"/>
+<text x="4" y="118" font-size="11">Arunachal Pradesh</text>
+<rect x="201" y="105" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="118" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="105" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="118" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00•</text>
+<rect x="385" y="105" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="118" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="105" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="118" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="105" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="118" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="105" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="118" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<text x="4" y="138" font-size="11">Assam</text>
+<rect x="201" y="125" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="138" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="125" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="138" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="125" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="138" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="125" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="138" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="125" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="138" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="125" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="138" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="0" y="144" width="196" height="20" fill="#f3f6fa"/>
+<text x="4" y="158" font-size="11">Bihar</text>
+<rect x="201" y="145" width="90" height="18" fill="#0b3d7a"/><text x="246.0" y="158" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="293" y="145" width="90" height="18" fill="#0b3d7a"/><text x="338.0" y="158" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="385" y="145" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="158" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">W 0.00</text>
+<rect x="477" y="145" width="90" height="18" fill="#0b3d7a"/><text x="522.0" y="158" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="569" y="145" width="90" height="18" fill="#0b3d7a"/><text x="614.0" y="158" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="661" y="145" width="90" height="18" fill="#0b3d7a"/><text x="706.0" y="158" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<text x="4" y="178" font-size="11">Chandigarh</text>
+<rect x="201" y="165" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="178" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="165" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="178" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="165" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="178" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="165" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="178" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00•</text>
+<rect x="569" y="165" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="178" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="165" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="178" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="0" y="184" width="196" height="20" fill="#f3f6fa"/>
+<text x="4" y="198" font-size="11">Chhattisgarh</text>
+<rect x="201" y="185" width="90" height="18" fill="#bac9dd"/><text x="246.0" y="198" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">U 0.23</text>
+<rect x="293" y="185" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="198" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="185" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="198" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">W 0.00</text>
+<rect x="477" y="185" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="198" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="185" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="198" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="185" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="198" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<text x="4" y="218" font-size="11">Delhi</text>
+<rect x="201" y="205" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="218" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="205" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="218" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="205" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="218" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">W 0.00</text>
+<rect x="477" y="205" width="90" height="18" fill="#0b3d7a"/><text x="522.0" y="218" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="569" y="205" width="90" height="18" fill="#0e407c"/><text x="614.0" y="218" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 0.99</text>
+<rect x="661" y="205" width="90" height="18" fill="#0b3d7a"/><text x="706.0" y="218" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="0" y="224" width="196" height="20" fill="#f3f6fa"/>
+<text x="4" y="238" font-size="11">Goa</text>
+<rect x="201" y="225" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="238" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="225" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="238" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="225" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="238" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="225" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="238" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00•</text>
+<rect x="569" y="225" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="238" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="225" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="238" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00•</text>
+<text x="4" y="258" font-size="11">Gujarat</text>
+<rect x="201" y="245" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="258" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="245" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="258" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="245" width="90" height="18" fill="#0b3d7a"/><text x="430.0" y="258" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="477" y="245" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="258" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="245" width="90" height="18" fill="#edf2fa"/><text x="614.0" y="258" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="245" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="258" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="0" y="264" width="196" height="20" fill="#f3f6fa"/>
+<text x="4" y="278" font-size="11">Haryana</text>
+<rect x="201" y="265" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="278" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="265" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="278" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="265" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="278" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="265" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="278" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="265" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="278" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="265" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="278" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<text x="4" y="298" font-size="11">Himachal Pradesh</text>
+<rect x="201" y="285" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="298" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="285" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="298" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="285" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="298" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="285" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="298" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="285" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="298" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="285" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="298" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="0" y="304" width="196" height="20" fill="#f3f6fa"/>
+<text x="4" y="318" font-size="11">Jammu and Kashmir</text>
+<rect x="201" y="305" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="318" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="305" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="318" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="305" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="318" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="305" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="318" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="305" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="318" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="305" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="318" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<text x="4" y="338" font-size="11">Jharkhand</text>
+<rect x="201" y="325" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="338" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="325" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="338" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="325" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="338" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="325" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="338" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="325" width="90" height="18" fill="#b8c8dc"/><text x="614.0" y="338" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">U 0.24</text>
+<rect x="661" y="325" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="338" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="0" y="344" width="196" height="20" fill="#f3f6fa"/>
+<text x="4" y="358" font-size="11">Karnataka</text>
+<rect x="201" y="345" width="90" height="18" fill="#3f6797"/><text x="246.0" y="358" font-size="10.5" text-anchor="middle" style="fill:#ffffff">P 0.77</text>
+<rect x="293" y="345" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="358" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="345" width="90" height="18" fill="#0b3d7a"/><text x="430.0" y="358" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00↑</text>
+<rect x="477" y="345" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="358" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="345" width="90" height="18" fill="#cad6e6"/><text x="614.0" y="358" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.16</text>
+<rect x="661" y="345" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="358" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<text x="4" y="378" font-size="11">Kerala</text>
+<rect x="201" y="365" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="378" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="365" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="378" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="365" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="378" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">W 0.00</text>
+<rect x="477" y="365" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="378" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="365" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="378" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="365" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="378" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="0" y="384" width="196" height="20" fill="#f3f6fa"/>
+<text x="4" y="398" font-size="11">Madhya Pradesh</text>
+<rect x="201" y="385" width="90" height="18" fill="#0b3d7a"/><text x="246.0" y="398" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="293" y="385" width="90" height="18" fill="#0b3d7a"/><text x="338.0" y="398" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="385" y="385" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="398" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">W 0.00</text>
+<rect x="477" y="385" width="90" height="18" fill="#0b3d7a"/><text x="522.0" y="398" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="569" y="385" width="90" height="18" fill="#2a558b"/><text x="614.0" y="398" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 0.87</text>
+<rect x="661" y="385" width="90" height="18" fill="#0b3d7a"/><text x="706.0" y="398" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<text x="4" y="418" font-size="11">Maharashtra</text>
+<rect x="201" y="405" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="418" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="405" width="90" height="18" fill="#0b3d7a"/><text x="338.0" y="418" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="385" y="405" width="90" height="18" fill="#0b3d7a"/><text x="430.0" y="418" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00↑</text>
+<rect x="477" y="405" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="418" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="405" width="90" height="18" fill="#e6edf6"/><text x="614.0" y="418" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.03</text>
+<rect x="661" y="405" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="418" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="0" y="424" width="196" height="20" fill="#f3f6fa"/>
+<text x="4" y="438" font-size="11">Manipur</text>
+<rect x="201" y="425" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="438" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="425" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="438" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00•</text>
+<rect x="385" y="425" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="438" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="425" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="438" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="425" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="438" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="425" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="438" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<text x="4" y="458" font-size="11">Meghalaya</text>
+<rect x="201" y="445" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="458" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="445" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="458" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="445" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="458" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="445" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="458" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="445" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="458" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="445" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="458" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="0" y="464" width="196" height="20" fill="#f3f6fa"/>
+<text x="4" y="478" font-size="11">Mizoram</text>
+<rect x="201" y="465" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="478" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00•</text>
+<rect x="293" y="465" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="478" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="465" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="478" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="465" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="478" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="465" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="478" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="465" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="478" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<text x="4" y="498" font-size="11">Nagaland</text>
+<rect x="201" y="485" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="498" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="485" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="498" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="485" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="498" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="485" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="498" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="485" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="498" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="485" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="498" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="0" y="504" width="196" height="20" fill="#f3f6fa"/>
+<text x="4" y="518" font-size="11">Odisha</text>
+<rect x="201" y="505" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="518" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="505" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="518" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="505" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="518" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="505" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="518" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="505" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="518" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="505" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="518" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<text x="4" y="538" font-size="11">Puducherry</text>
+<rect x="201" y="525" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="538" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="525" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="538" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="525" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="538" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00•</text>
+<rect x="477" y="525" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="538" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="525" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="538" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="525" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="538" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="0" y="544" width="196" height="20" fill="#f3f6fa"/>
+<text x="4" y="558" font-size="11">Punjab</text>
+<rect x="201" y="545" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="558" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="545" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="558" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="545" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="558" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="545" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="558" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="545" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="558" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="545" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="558" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<text x="4" y="578" font-size="11">Rajasthan</text>
+<rect x="201" y="565" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="578" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="565" width="90" height="18" fill="#0b3d7a"/><text x="338.0" y="578" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="385" y="565" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="578" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="565" width="90" height="18" fill="#0b3d7a"/><text x="522.0" y="578" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="569" y="565" width="90" height="18" fill="#d6e0ed"/><text x="614.0" y="578" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.10</text>
+<rect x="661" y="565" width="90" height="18" fill="#0b3d7a"/><text x="706.0" y="578" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="0" y="584" width="196" height="20" fill="#f3f6fa"/>
+<text x="4" y="598" font-size="11">Sikkim</text>
+<rect x="201" y="585" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="598" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="585" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="598" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="585" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="598" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="585" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="598" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="585" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="598" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="585" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="598" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<text x="4" y="618" font-size="11">Tamil Nadu</text>
+<rect x="201" y="605" width="90" height="18" fill="#0b3d7a"/><text x="246.0" y="618" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="293" y="605" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="618" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="605" width="90" height="18" fill="#0b3d7a"/><text x="430.0" y="618" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00↑</text>
+<rect x="477" y="605" width="90" height="18" fill="#0b3d7a"/><text x="522.0" y="618" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="569" y="605" width="90" height="18" fill="#7390b5"/><text x="614.0" y="618" font-size="10.5" text-anchor="middle" style="fill:#ffffff">P 0.54</text>
+<rect x="661" y="605" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="618" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="0" y="624" width="196" height="20" fill="#f3f6fa"/>
+<text x="4" y="638" font-size="11">Telangana</text>
+<rect x="201" y="625" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="638" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="625" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="638" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="625" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="638" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="625" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="638" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="625" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="638" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="625" width="90" height="18" fill="#0b3d7a"/><text x="706.0" y="638" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<text x="4" y="658" font-size="11">Tripura</text>
+<rect x="201" y="645" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="658" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="645" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="658" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="645" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="658" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00•</text>
+<rect x="477" y="645" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="658" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="645" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="658" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="645" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="658" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="0" y="664" width="196" height="20" fill="#f3f6fa"/>
+<text x="4" y="678" font-size="11">Uttar Pradesh</text>
+<rect x="201" y="665" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="678" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="665" width="90" height="18" fill="#0b3d7a"/><text x="338.0" y="678" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="385" y="665" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="678" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="665" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="678" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="665" width="90" height="18" fill="#0b3d7a"/><text x="614.0" y="678" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="661" y="665" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="678" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<text x="4" y="698" font-size="11">Uttarakhand</text>
+<rect x="201" y="685" width="90" height="18" fill="#eef3fa"/><text x="246.0" y="698" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="293" y="685" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="698" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="685" width="90" height="18" fill="#eef3fa"/><text x="430.0" y="698" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="477" y="685" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="698" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="685" width="90" height="18" fill="#eef3fa"/><text x="614.0" y="698" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="661" y="685" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="698" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="0" y="704" width="196" height="20" fill="#f3f6fa"/>
+<text x="4" y="718" font-size="11">West Bengal</text>
+<rect x="201" y="705" width="90" height="18" fill="#0b3d7a"/><text x="246.0" y="718" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00</text>
+<rect x="293" y="705" width="90" height="18" fill="#eef3fa"/><text x="338.0" y="718" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="385" y="705" width="90" height="18" fill="#0b3d7a"/><text x="430.0" y="718" font-size="10.5" text-anchor="middle" style="fill:#ffffff">A 1.00↑</text>
+<rect x="477" y="705" width="90" height="18" fill="#eef3fa"/><text x="522.0" y="718" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="569" y="705" width="90" height="18" fill="#dfe7f1"/><text x="614.0" y="718" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.07</text>
+<rect x="661" y="705" width="90" height="18" fill="#eef3fa"/><text x="706.0" y="718" font-size="10.5" text-anchor="middle" style="fill:#1a1f29">L 0.00</text>
+<rect x="200.00" y="746.0" width="6.30" height="10" fill="#ecf1f9"/><rect x="206.00" y="746.0" width="6.30" height="10" fill="#e7eef6"/><rect x="212.00" y="746.0" width="6.30" height="10" fill="#e3eaf4"/><rect x="218.00" y="746.0" width="6.30" height="10" fill="#dee6f1"/><rect x="224.00" y="746.0" width="6.30" height="10" fill="#dae3ee"/><rect x="230.00" y="746.0" width="6.30" height="10" fill="#d5dfec"/><rect x="236.00" y="746.0" width="6.30" height="10" fill="#d0dbe9"/><rect x="242.00" y="746.0" width="6.30" height="10" fill="#ccd8e7"/><rect x="248.00" y="746.0" width="6.30" height="10" fill="#c7d4e4"/><rect x="254.00" y="746.0" width="6.30" height="10" fill="#c3d0e2"/><rect x="260.00" y="746.0" width="6.30" height="10" fill="#becddf"/><rect x="266.00" y="746.0" width="6.30" height="10" fill="#bac9dd"/><rect x="272.00" y="746.0" width="6.30" height="10" fill="#b5c6da"/><rect x="278.00" y="746.0" width="6.30" height="10" fill="#b1c2d7"/><rect x="284.00" y="746.0" width="6.30" height="10" fill="#acbed5"/><rect x="290.00" y="746.0" width="6.30" height="10" fill="#a8bbd2"/><rect x="296.00" y="746.0" width="6.30" height="10" fill="#a3b7d0"/><rect x="302.00" y="746.0" width="6.30" height="10" fill="#9fb3cd"/><rect x="308.00" y="746.0" width="6.30" height="10" fill="#9ab0cb"/><rect x="314.00" y="746.0" width="6.30" height="10" fill="#95acc8"/><rect x="320.00" y="746.0" width="6.30" height="10" fill="#91a8c6"/><rect x="326.00" y="746.0" width="6.30" height="10" fill="#8ca5c3"/><rect x="332.00" y="746.0" width="6.30" height="10" fill="#88a1c0"/><rect x="338.00" y="746.0" width="6.30" height="10" fill="#839dbe"/><rect x="344.00" y="746.0" width="6.30" height="10" fill="#7f9abb"/><rect x="350.00" y="746.0" width="6.30" height="10" fill="#7a96b9"/><rect x="356.00" y="746.0" width="6.30" height="10" fill="#7693b6"/><rect x="362.00" y="746.0" width="6.30" height="10" fill="#718fb4"/><rect x="368.00" y="746.0" width="6.30" height="10" fill="#6d8bb1"/><rect x="374.00" y="746.0" width="6.30" height="10" fill="#6888ae"/><rect x="380.00" y="746.0" width="6.30" height="10" fill="#6484ac"/><rect x="386.00" y="746.0" width="6.30" height="10" fill="#5f80a9"/><rect x="392.00" y="746.0" width="6.30" height="10" fill="#5a7da7"/><rect x="398.00" y="746.0" width="6.30" height="10" fill="#5679a4"/><rect x="404.00" y="746.0" width="6.30" height="10" fill="#5175a2"/><rect x="410.00" y="746.0" width="6.30" height="10" fill="#4d729f"/><rect x="416.00" y="746.0" width="6.30" height="10" fill="#486e9d"/><rect x="422.00" y="746.0" width="6.30" height="10" fill="#446a9a"/><rect x="428.00" y="746.0" width="6.30" height="10" fill="#3f6797"/><rect x="434.00" y="746.0" width="6.30" height="10" fill="#3b6395"/><rect x="440.00" y="746.0" width="6.30" height="10" fill="#366092"/><rect x="446.00" y="746.0" width="6.30" height="10" fill="#325c90"/><rect x="452.00" y="746.0" width="6.30" height="10" fill="#2d588d"/><rect x="458.00" y="746.0" width="6.30" height="10" fill="#29558b"/><rect x="464.00" y="746.0" width="6.30" height="10" fill="#245188"/><rect x="470.00" y="746.0" width="6.30" height="10" fill="#1f4d86"/><rect x="476.00" y="746.0" width="6.30" height="10" fill="#1b4a83"/><rect x="482.00" y="746.0" width="6.30" height="10" fill="#164680"/><rect x="488.00" y="746.0" width="6.30" height="10" fill="#12427e"/><rect x="494.00" y="746.0" width="6.30" height="10" fill="#0d3f7b"/><line x1="200.0" y1="756.0" x2="200.0" y2="760.0" stroke="#1a1f29"/><text x="200.0" y="771.0" font-size="10" text-anchor="middle">0</text><line x1="260.0" y1="756.0" x2="260.0" y2="760.0" stroke="#1a1f29"/><text x="260.0" y="771.0" font-size="10" text-anchor="middle">0.2</text><line x1="350.0" y1="756.0" x2="350.0" y2="760.0" stroke="#1a1f29"/><text x="350.0" y="771.0" font-size="10" text-anchor="middle">0.5</text><line x1="440.0" y1="756.0" x2="440.0" y2="760.0" stroke="#1a1f29"/><text x="440.0" y="771.0" font-size="10" text-anchor="middle">0.8</text><line x1="500.0" y1="756.0" x2="500.0" y2="760.0" stroke="#1a1f29"/><text x="500.0" y="771.0" font-size="10" text-anchor="middle">1</text><text x="200.0" y="742.0" font-size="11">P(top-5)</text>
+</svg>
+<figcaption>Each cell: tier code and P(top-5); the colour shows P(top-5) on a single-hue scale (darker = higher). The tier and the number carry the same information as the colour.</figcaption></figure></section>
+<section id="steps"><h2>Largest harm averted at each step</h2>
+<h3>S1: shortfall against target</h3>
+<div class="tablewrap"><table><thead><tr><th>State/UT</th><th>Tier</th><th class="n">Harm averted (95% interval)</th><th class="n">per 100,000</th><th class="n">P(top-5)</th></tr></thead><tbody>
+<tr><td>Bihar</td><td>act now</td><td class="n">52,952 (52,109 to 53,797)</td><td class="n">40.1</td><td class="n">1.00</td></tr>
+<tr><td>West Bengal</td><td>act now</td><td class="n">22,034 (21,407 to 22,669)</td><td class="n">21.5</td><td class="n">1.00</td></tr>
+<tr><td>Tamil Nadu</td><td>act now</td><td class="n">16,913 (16,300 to 17,523)</td><td class="n">21.6</td><td class="n">1.00</td></tr>
+<tr><td>Madhya Pradesh</td><td>act now</td><td class="n">16,856 (15,996 to 17,688)</td><td class="n">19.1</td><td class="n">1.00</td></tr>
+<tr><td>Karnataka</td><td>probable priority</td><td class="n">14,103 (13,545 to 14,666)</td><td class="n">19.1</td><td class="n">0.77</td></tr>
+<tr><td>Chhattisgarh</td><td>uncertain</td><td class="n">13,848 (13,467 to 14,239)</td><td class="n">45.9</td><td class="n">0.23</td></tr>
+</tbody></table></div>
+<h3>S2: not tested for rifampicin resistance</h3>
+<div class="tablewrap"><table><thead><tr><th>State/UT</th><th>Tier</th><th class="n">Harm averted (95% interval)</th><th class="n">per 100,000</th><th class="n">P(top-5)</th></tr></thead><tbody>
+<tr><td>Bihar</td><td>act now</td><td class="n">15,244 (15,007 to 15,482)</td><td class="n">11.6</td><td class="n">1.00</td></tr>
+<tr><td>Rajasthan</td><td>act now</td><td class="n">12,496 (12,246 to 12,747)</td><td class="n">15.4</td><td class="n">1.00</td></tr>
+<tr><td>Maharashtra</td><td>act now</td><td class="n">9,514 (9,267 to 9,770)</td><td class="n">7.4</td><td class="n">1.00</td></tr>
+<tr><td>Uttar Pradesh</td><td>act now</td><td class="n">8,822 (8,479 to 9,160)</td><td class="n">3.6</td><td class="n">1.00</td></tr>
+<tr><td>Madhya Pradesh</td><td>act now</td><td class="n">8,358 (8,131 to 8,589)</td><td class="n">9.5</td><td class="n">1.00</td></tr>
+</tbody></table></div>
+<h3>S3: died (DS-TB cohort)</h3>
+<div class="tablewrap"><table><thead><tr><th>State/UT</th><th>Tier</th><th class="n">Harm averted (95% interval)</th><th class="n">per 100,000</th><th class="n">P(top-5)</th></tr></thead><tbody>
+<tr><td>Karnataka</td><td>act now</td><td class="n">2,889 (2,752 to 3,024)</td><td class="n">3.9</td><td class="n">1.00</td></tr>
+<tr><td>Tamil Nadu</td><td>act now</td><td class="n">2,513 (2,376 to 2,652)</td><td class="n">3.2</td><td class="n">1.00</td></tr>
+<tr><td>Maharashtra</td><td>act now</td><td class="n">2,199 (2,018 to 2,381)</td><td class="n">1.7</td><td class="n">1.00</td></tr>
+<tr><td>West Bengal</td><td>act now</td><td class="n">1,945 (1,818 to 2,073)</td><td class="n">1.9</td><td class="n">1.00</td></tr>
+<tr><td>Gujarat</td><td>act now</td><td class="n">1,774 (1,628 to 1,923)</td><td class="n">2.4</td><td class="n">1.00</td></tr>
+<tr><td>Kerala</td><td>watch: rising</td><td class="n">1,273 (1,192 to 1,356)</td><td class="n">3.6</td><td class="n">0.00</td></tr>
+<tr><td>Madhya Pradesh</td><td>watch: rising</td><td class="n">1,139 (983 to 1,295)</td><td class="n">1.3</td><td class="n">0.00</td></tr>
+<tr><td>Chhattisgarh</td><td>watch: rising</td><td class="n">969 (884 to 1,056)</td><td class="n">3.2</td><td class="n">0.00</td></tr>
+<tr><td>Bihar</td><td>watch: rising</td><td class="n">422 (285 to 562)</td><td class="n">0.3</td><td class="n">0.00</td></tr>
+<tr><td>Delhi</td><td>watch: rising</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td></tr>
+</tbody></table></div>
+<h3>S4: lost to follow-up (DS-TB cohort)</h3>
+<div class="tablewrap"><table><thead><tr><th>State/UT</th><th>Tier</th><th class="n">Harm averted (95% interval)</th><th class="n">per 100,000</th><th class="n">P(top-5)</th></tr></thead><tbody>
+<tr><td>Bihar</td><td>act now</td><td class="n">5,040 (4,877 to 5,203)</td><td class="n">3.8</td><td class="n">1.00</td></tr>
+<tr><td>Madhya Pradesh</td><td>act now</td><td class="n">3,713 (3,559 to 3,868)</td><td class="n">4.2</td><td class="n">1.00</td></tr>
+<tr><td>Delhi</td><td>act now</td><td class="n">2,761 (2,641 to 2,884)</td><td class="n">13.9</td><td class="n">1.00</td></tr>
+<tr><td>Rajasthan</td><td>act now</td><td class="n">1,538 (1,418 to 1,659)</td><td class="n">1.9</td><td class="n">1.00</td></tr>
+<tr><td>Tamil Nadu</td><td>act now</td><td class="n">1,039 (945 to 1,134)</td><td class="n">1.3</td><td class="n">1.00</td></tr>
+</tbody></table></div>
+<h3>S5: DR-TB treatment not successful</h3>
+<div class="tablewrap"><table><thead><tr><th>State/UT</th><th>Tier</th><th class="n">Harm averted (95% interval)</th><th class="n">per 100,000</th><th class="n">P(top-5)</th></tr></thead><tbody>
+<tr><td>Uttar Pradesh</td><td>act now</td><td class="n">356 (281 to 430)</td><td class="n">0.1</td><td class="n">1.00</td></tr>
+<tr><td>Bihar</td><td>act now</td><td class="n">137 (97 to 178)</td><td class="n">0.1</td><td class="n">1.00</td></tr>
+<tr><td>Delhi</td><td>act now</td><td class="n">96 (63 to 129)</td><td class="n">0.5</td><td class="n">0.99</td></tr>
+<tr><td>Madhya Pradesh</td><td>act now</td><td class="n">79 (46 to 113)</td><td class="n">0.1</td><td class="n">0.87</td></tr>
+<tr><td>Tamil Nadu</td><td>probable priority</td><td class="n">62 (36 to 89)</td><td class="n">0.1</td><td class="n">0.54</td></tr>
+<tr><td>Jharkhand</td><td>uncertain</td><td class="n">53 (30 to 77)</td><td class="n">0.1</td><td class="n">0.24</td></tr>
+</tbody></table></div>
+<h3>S6: HIV status not known</h3>
+<div class="tablewrap"><table><thead><tr><th>State/UT</th><th>Tier</th><th class="n">Harm averted (95% interval)</th><th class="n">per 100,000</th><th class="n">P(top-5)</th></tr></thead><tbody>
+<tr><td>Bihar</td><td>act now</td><td class="n">19,637 (19,351 to 19,926)</td><td class="n">14.9</td><td class="n">1.00</td></tr>
+<tr><td>Telangana</td><td>act now</td><td class="n">18,072 (17,836 to 18,309)</td><td class="n">44.5</td><td class="n">1.00</td></tr>
+<tr><td>Delhi</td><td>act now</td><td class="n">12,512 (12,292 to 12,736)</td><td class="n">63.1</td><td class="n">1.00</td></tr>
+<tr><td>Rajasthan</td><td>act now</td><td class="n">6,115 (5,924 to 6,307)</td><td class="n">7.5</td><td class="n">1.00</td></tr>
+<tr><td>Madhya Pradesh</td><td>act now</td><td class="n">6,007 (5,810 to 6,205)</td><td class="n">6.8</td><td class="n">1.00</td></tr>
+</tbody></table></div>
+</section>
+<section id="units"><h2>Summary for each State/UT</h2><div class="tablewrap"><table><thead><tr><th>State/UT</th><th>Step</th><th class="n">Harm averted (95% interval)</th><th class="n">per 100,000</th><th class="n">P(top-5)</th><th>Tier</th><th>Flags</th></tr></thead><tbody>
+<tr class="first"><td>Andaman and Nicobar Islands</td><td>S1</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">99 (80 to 119)</td><td class="n">25.3</td><td class="n">0.00</td><td>lower priority</td><td>small but far behind</td></tr>
+<tr><td></td><td>S3</td><td class="n">1 (0 to 7)</td><td class="n">0.3</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">8 (2 to 16)</td><td class="n">2.0</td><td class="n">0.00</td><td>lower priority</td><td>small but far behind</td></tr>
+<tr><td></td><td>S5</td><td class="n">0 (0 to 2)</td><td class="n">0.1</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">26 (15 to 39)</td><td class="n">6.6</td><td class="n">0.00</td><td>lower priority</td><td>small but far behind</td></tr>
+<tr class="first"><td>Andhra Pradesh</td><td>S1</td><td class="n">11,698 (11,110 to 12,269)</td><td class="n">22.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">2,814 (2,655 to 2,972)</td><td class="n">5.3</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Arunachal Pradesh</td><td>S1</td><td class="n">743 (642 to 843)</td><td class="n">28.8</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">201 (170 to 233)</td><td class="n">7.8</td><td class="n">0.00</td><td>lower priority</td><td>small but far behind</td></tr>
+<tr><td></td><td>S3</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">169 (143 to 197)</td><td class="n">6.5</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">3 (0 to 9)</td><td class="n">0.1</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">251 (218 to 285)</td><td class="n">9.7</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Assam</td><td>S1</td><td class="n">8,594 (8,150 to 9,039)</td><td class="n">23.6</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">6,084 (5,934 to 6,234)</td><td class="n">16.7</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">375 (293 to 456)</td><td class="n">1.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">11 (0 to 52)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">16 (1 to 31)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">1,987 (1,875 to 2,096)</td><td class="n">5.5</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Bihar</td><td>S1</td><td class="n">52,952 (52,109 to 53,797)</td><td class="n">40.1</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">15,244 (15,007 to 15,482)</td><td class="n">11.6</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">422 (285 to 562)</td><td class="n">0.3</td><td class="n">0.00</td><td>watch: rising</td><td>rising</td></tr>
+<tr><td></td><td>S4</td><td class="n">5,040 (4,877 to 5,203)</td><td class="n">3.8</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">137 (97 to 178)</td><td class="n">0.1</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">19,637 (19,351 to 19,926)</td><td class="n">14.9</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr class="first"><td>Chandigarh</td><td>S1</td><td class="n">190 (30 to 348)</td><td class="n">15.7</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">0 (0 to 6)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">42 (19 to 66)</td><td class="n">3.4</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">57 (38 to 78)</td><td class="n">4.7</td><td class="n">0.00</td><td>lower priority</td><td>small but far behind</td></tr>
+<tr><td></td><td>S5</td><td class="n">1 (0 to 5)</td><td class="n">0.1</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">373 (333 to 415)</td><td class="n">30.9</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Chhattisgarh</td><td>S1</td><td class="n">13,848 (13,467 to 14,239)</td><td class="n">45.9</td><td class="n">0.23</td><td>uncertain</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">1,436 (1,339 to 1,534)</td><td class="n">4.8</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">969 (884 to 1,056)</td><td class="n">3.2</td><td class="n">0.00</td><td>watch: rising</td><td>rising</td></tr>
+<tr><td></td><td>S4</td><td class="n">161 (110 to 213)</td><td class="n">0.5</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">9 (0 to 25)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">686 (607 to 765)</td><td class="n">2.3</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Delhi</td><td>S1</td><td class="n">5,046 (4,426 to 5,677)</td><td class="n">25.5</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">3,597 (3,438 to 3,761)</td><td class="n">18.1</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>watch: rising</td><td>rising</td></tr>
+<tr><td></td><td>S4</td><td class="n">2,761 (2,641 to 2,884)</td><td class="n">13.9</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">96 (63 to 129)</td><td class="n">0.5</td><td class="n">0.99</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">12,512 (12,292 to 12,736)</td><td class="n">63.1</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr class="first"><td>Goa</td><td>S1</td><td class="n">37 (0 to 118)</td><td class="n">2.4</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">108 (85 to 133)</td><td class="n">6.9</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">57 (40 to 75)</td><td class="n">3.6</td><td class="n">0.00</td><td>lower priority</td><td>small but far behind</td></tr>
+<tr><td></td><td>S5</td><td class="n">1 (0 to 3)</td><td class="n">0.1</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">244 (214 to 277)</td><td class="n">15.6</td><td class="n">0.00</td><td>lower priority</td><td>small but far behind</td></tr>
+<tr class="first"><td>Gujarat</td><td>S1</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">1,939 (1,769 to 2,107)</td><td class="n">2.6</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">1,774 (1,628 to 1,923)</td><td class="n">2.4</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">19 (0 to 48)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">43 (0 to 150)</td><td class="n">0.1</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Haryana</td><td>S1</td><td class="n">11,641 (11,085 to 12,185)</td><td class="n">37.7</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">2,740 (2,587 to 2,898)</td><td class="n">8.9</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">773 (670 to 880)</td><td class="n">2.5</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">79 (14 to 148)</td><td class="n">0.3</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">0 (0 to 4)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Himachal Pradesh</td><td>S1</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">451 (394 to 510)</td><td class="n">5.9</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">12 (0 to 41)</td><td class="n">0.2</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">0 (0 to 4)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Jammu and Kashmir</td><td>S1</td><td class="n">167 (0 to 378)</td><td class="n">1.1</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">433 (374 to 494)</td><td class="n">2.8</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">98 (58 to 140)</td><td class="n">0.6</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">0 (0 to 1)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">173 (131 to 216)</td><td class="n">1.1</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Jharkhand</td><td>S1</td><td class="n">5,465 (4,986 to 5,946)</td><td class="n">13.1</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">7,939 (7,772 to 8,106)</td><td class="n">19.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">433 (365 to 503)</td><td class="n">1.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">53 (30 to 77)</td><td class="n">0.1</td><td class="n">0.24</td><td>uncertain</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">1,775 (1,666 to 1,886)</td><td class="n">4.3</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Karnataka</td><td>S1</td><td class="n">14,103 (13,545 to 14,666)</td><td class="n">19.1</td><td class="n">0.77</td><td>probable priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">28 (0 to 130)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">2,889 (2,752 to 3,024)</td><td class="n">3.9</td><td class="n">1.00</td><td>act now</td><td>rising</td></tr>
+<tr><td></td><td>S4</td><td class="n">501 (425 to 580)</td><td class="n">0.7</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">50 (25 to 74)</td><td class="n">0.1</td><td class="n">0.16</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">899 (794 to 1,004)</td><td class="n">1.2</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Kerala</td><td>S1</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">481 (401 to 562)</td><td class="n">1.4</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">1,273 (1,192 to 1,356)</td><td class="n">3.6</td><td class="n">0.00</td><td>watch: rising</td><td>rising</td></tr>
+<tr><td></td><td>S4</td><td class="n">273 (227 to 321)</td><td class="n">0.8</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">1 (0 to 9)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">141 (91 to 193)</td><td class="n">0.4</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Madhya Pradesh</td><td>S1</td><td class="n">16,856 (15,996 to 17,688)</td><td class="n">19.1</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">8,358 (8,131 to 8,589)</td><td class="n">9.5</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">1,139 (983 to 1,295)</td><td class="n">1.3</td><td class="n">0.00</td><td>watch: rising</td><td>rising</td></tr>
+<tr><td></td><td>S4</td><td class="n">3,713 (3,559 to 3,868)</td><td class="n">4.2</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">79 (46 to 113)</td><td class="n">0.1</td><td class="n">0.87</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">6,007 (5,810 to 6,205)</td><td class="n">6.8</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr class="first"><td>Maharashtra</td><td>S1</td><td class="n">12,277 (11,310 to 13,220)</td><td class="n">9.5</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">9,514 (9,267 to 9,770)</td><td class="n">7.4</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">2,199 (2,018 to 2,381)</td><td class="n">1.7</td><td class="n">1.00</td><td>act now</td><td>rising</td></tr>
+<tr><td></td><td>S4</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">14 (0 to 69)</td><td class="n">0.0</td><td class="n">0.03</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">2,466 (2,288 to 2,644)</td><td class="n">1.9</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Manipur</td><td>S1</td><td class="n">849 (752 to 944)</td><td class="n">23.6</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">203 (172 to 235)</td><td class="n">5.7</td><td class="n">0.00</td><td>lower priority</td><td>small but far behind</td></tr>
+<tr><td></td><td>S3</td><td class="n">11 (0 to 28)</td><td class="n">0.3</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">69 (51 to 89)</td><td class="n">1.9</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">1 (0 to 4)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">298 (265 to 333)</td><td class="n">8.3</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Meghalaya</td><td>S1</td><td class="n">558 (421 to 693)</td><td class="n">14.3</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">286 (243 to 329)</td><td class="n">7.3</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">62 (36 to 89)</td><td class="n">1.6</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">72 (50 to 95)</td><td class="n">1.8</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">2 (0 to 8)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">525 (479 to 572)</td><td class="n">13.5</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Mizoram</td><td>S1</td><td class="n">594 (502 to 685)</td><td class="n">45.0</td><td class="n">0.00</td><td>lower priority</td><td>small but far behind</td></tr>
+<tr><td></td><td>S2</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">27 (11 to 45)</td><td class="n">2.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">10 (0 to 22)</td><td class="n">0.7</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">0 (0 to 4)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Nagaland</td><td>S1</td><td class="n">507 (376 to 632)</td><td class="n">24.2</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">199 (162 to 235)</td><td class="n">9.5</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">135 (108 to 162)</td><td class="n">6.4</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">4 (0 to 10)</td><td class="n">0.2</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">97 (70 to 125)</td><td class="n">4.6</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Odisha</td><td>S1</td><td class="n">101 (0 to 493)</td><td class="n">0.2</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">915 (817 to 1,015)</td><td class="n">1.9</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Puducherry</td><td>S1</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">0 (0 to 4)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">68 (49 to 88)</td><td class="n">4.3</td><td class="n">0.00</td><td>lower priority</td><td>small but far behind</td></tr>
+<tr><td></td><td>S4</td><td class="n">18 (7 to 31)</td><td class="n">1.1</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">0 (0 to 1)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Punjab</td><td>S1</td><td class="n">11,952 (11,495 to 12,404)</td><td class="n">39.1</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">4,363 (4,217 to 4,516)</td><td class="n">14.3</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">981 (884 to 1,078)</td><td class="n">3.2</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">607 (534 to 679)</td><td class="n">2.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">22 (3 to 41)</td><td class="n">0.1</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">2,356 (2,240 to 2,471)</td><td class="n">7.7</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Rajasthan</td><td>S1</td><td class="n">7,634 (6,826 to 8,431)</td><td class="n">9.4</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">12,496 (12,246 to 12,747)</td><td class="n">15.4</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">1,538 (1,418 to 1,659)</td><td class="n">1.9</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">40 (5 to 75)</td><td class="n">0.0</td><td class="n">0.10</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">6,115 (5,924 to 6,307)</td><td class="n">7.5</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr class="first"><td>Sikkim</td><td>S1</td><td class="n">2 (0 to 28)</td><td class="n">0.3</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">8 (0 to 20)</td><td class="n">1.1</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">2 (0 to 10)</td><td class="n">0.4</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">16 (4 to 31)</td><td class="n">2.4</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Tamil Nadu</td><td>S1</td><td class="n">16,913 (16,300 to 17,523)</td><td class="n">21.6</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">2,513 (2,376 to 2,652)</td><td class="n">3.2</td><td class="n">1.00</td><td>act now</td><td>rising</td></tr>
+<tr><td></td><td>S4</td><td class="n">1,039 (945 to 1,134)</td><td class="n">1.3</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">62 (36 to 89)</td><td class="n">0.1</td><td class="n">0.54</td><td>probable priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">1,736 (1,611 to 1,862)</td><td class="n">2.2</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Telangana</td><td>S1</td><td class="n">1,787 (1,247 to 2,315)</td><td class="n">4.4</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">2,536 (2,393 to 2,681)</td><td class="n">6.2</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">1 (0 to 11)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">18,072 (17,836 to 18,309)</td><td class="n">44.5</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr class="first"><td>Tripura</td><td>S1</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">21 (0 to 49)</td><td class="n">0.5</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">85 (61 to 112)</td><td class="n">2.1</td><td class="n">0.00</td><td>lower priority</td><td>small but far behind</td></tr>
+<tr><td></td><td>S4</td><td class="n">32 (16 to 50)</td><td class="n">0.8</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">1 (0 to 2)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Uttar Pradesh</td><td>S1</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">8,822 (8,479 to 9,160)</td><td class="n">3.6</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">49 (0 to 238)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">356 (281 to 430)</td><td class="n">0.1</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">0 (0 to 0)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>Uttarakhand</td><td>S1</td><td class="n">91 (0 to 366)</td><td class="n">0.7</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">2,773 (2,673 to 2,873)</td><td class="n">22.8</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">146 (88 to 206)</td><td class="n">1.2</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S4</td><td class="n">230 (183 to 280)</td><td class="n">1.9</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">5 (0 to 20)</td><td class="n">0.0</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">10 (0 to 52)</td><td class="n">0.1</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr class="first"><td>West Bengal</td><td>S1</td><td class="n">22,034 (21,407 to 22,669)</td><td class="n">21.5</td><td class="n">1.00</td><td>act now</td><td></td></tr>
+<tr><td></td><td>S2</td><td class="n">6,618 (6,419 to 6,823)</td><td class="n">6.5</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S3</td><td class="n">1,945 (1,818 to 2,073)</td><td class="n">1.9</td><td class="n">1.00</td><td>act now</td><td>rising</td></tr>
+<tr><td></td><td>S4</td><td class="n">559 (478 to 644)</td><td class="n">0.5</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S5</td><td class="n">39 (10 to 70)</td><td class="n">0.0</td><td class="n">0.07</td><td>lower priority</td><td></td></tr>
+<tr><td></td><td>S6</td><td class="n">1,827 (1,702 to 1,954)</td><td class="n">1.8</td><td class="n">0.00</td><td>lower priority</td><td></td></tr>
+</tbody></table></div></section>
+<section id="caveats"><h2>Caveats</h2><ul><li>A CTD notification target is a programme goal, not an estimate of disease. S1 is a shortfall against target: it does not count people with TB who were not found.</li><li>Harm averted counts patients lost at one step of the care pathway. Steps count different kinds of loss and are never added together; no combined score is formed.</li><li>With denominators of about 100,000 patients, P(top-5) mostly reflects binomial noise, so it is close to 0 or 1. The tiers therefore express little uncertainty beyond sampling (plan §10.4).</li><li>Harm averted is an absolute count, so large States have large values at every step. The temporal-stability estimate (H1, outputs/headline.csv) is largely driven by unit size for the same reason (plan §10.4).</li><li>The association of the S1 shortfall with the National TB Prevalence Survey (H2) may be circular if CTD targets were set from burden estimates that include the survey (plan §10.4).</li><li>Small UTs are merged into the unit they adjoin (Dadra and Nagar Haveli and Daman and Diu into Gujarat, Lakshadweep into Kerala, Ladakh into Jammu and Kashmir) and are not prioritised separately.</li><li>The results describe programme data, not the performance or effort of any State&#x27;s staff. They are associations in published data: no causal effect of any intervention and no cost are estimated.</li><li>S3 and S4 describe the 2022 treatment cohort and S5 the 2021 MDR/RR-TB cohort (ITR 2024); S2 counts bacteriologically confirmed patients without a valid rapid rifampicin result.</li></ul></section>
+</main>
+</body>
+</html>
