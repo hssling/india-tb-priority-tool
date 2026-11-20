@@ -230,9 +230,35 @@ runs in the pytest step of check_all:
 
 ## Not exercised
 
-- `check_manuscript_numbers` and `check_docx_tie` do not exist yet; check_all reports them
-  as SKIP while `manuscript/manuscript.md` is absent, and FAIL if the manuscript exists but
-  a check script does not.
+- (Superseded, 21 November 2026: the manuscript checks now exist; see the next section.)
 - check_outputs does not re-derive the H1 bootstrap interval, the sensitivity trend
   models, the leave-one-out tiers or the district modules; an edit there alone is caught
   by check_rerun (and the byte-identity tests), as mutation 10 shows for a report.
+
+## Manuscript checks (Task 8, 21 November 2026)
+
+`check_manuscript_numbers` and `check_docx_tie` run on the private, git-ignored manuscript
+folder (`manuscript/`); check_all runs both and reports SKIP only where
+`manuscript/manuscript_src.md` is absent (a fresh clone). Their mutation harness is
+`verification/mutate_manuscript.py`: each named mutation is applied to a copy of the folder
+inside the folder's own `_mutations/` work area (removed afterwards), and both checks run
+on the copy. The anchors the mutations edit quote the manuscript, so they are kept with it
+(in its `section_phrases.json`), not here.
+
+- 44 named mutations, all caught: numbers changed in the .docx only (01, 02, 08) and in
+  the Markdown only (text, highlights, the registration time); the author's name, e-mail,
+  institution or the repository URL put into an anonymised file (text and document
+  properties of 02, 03 and 08); citation and reference-list numbers changed or reordered; table
+  cells edited in the .docx and in `tables.md`; a figure-data cell edited; the H1/H2 labels
+  changed or overstated; signs flipped; internal identifiers, "missed cases", causal and
+  ranking language and an American spelling inserted; a highlight made longer than 85
+  characters; the abstract pushed over 250 words; the AI declaration changed on the title
+  page; a caveat removed; a figure PDF swapped, a TIFF at 300 dpi, a report edited; an
+  extra and a missing file in `submission/`.
+- `--sweep`: every number token of `manuscript_src.md` outside the References (506 tokens,
+  last digit bumped) is caught by check_manuscript_numbers, and every number token in the
+  text of `02_manuscript_anonymised.docx`, tables and references included (951 tokens), by
+  check_docx_tie.
+- Unit tests: `tests/test_manuscript_tools.py` (the build refuses a folder holding a
+  `SUBMITTED_*` file and rejects unknown options; the checks skip without the folder and fail
+  without their phrases; reference order, highlight and abstract limits, wording rules).

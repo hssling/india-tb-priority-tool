@@ -1,7 +1,8 @@
 # Adapted from hssling/india-tb-acf-campaign (MIT), verification/check_all.py (itself copied
 # from hssling/india-state-tb-score). Changes: the steps of this repository (analysis plan
-# §10.3), including the byte-for-byte rerun of outputs/; the manuscript steps are SKIP while
-# manuscript/manuscript.md does not exist.
+# §10.3), including the byte-for-byte rerun of outputs/; the manuscript steps run on the private
+# manuscript folder (manuscript/) and are SKIP only where manuscript/manuscript_src.md does not
+# exist (a fresh clone).
 """Run the whole verification (analysis plan §10.3).
 
 Run as: python -I verification/check_all.py   (steps run from the repository root)
@@ -13,8 +14,9 @@ Steps, each a `python -I ...` subprocess:
 4. check_extraction_totals  extracted tables against their printed totals
 5. check_outputs            independent standard-library recompute
 6. check_rerun              byte-for-byte rerun of outputs/
-7. check_manuscript_numbers }  SKIP while manuscript/manuscript.md does not exist (the
-8. check_docx_tie           }  manuscript is private and arrives later)
+7. check_manuscript_numbers }  every number of the manuscript traced to outputs/; the docx tie,
+8. check_docx_tie           }  anonymisation and limits. SKIP where manuscript/manuscript_src.md
+                               does not exist (the manuscript is private, git-ignored)
 
 Each step prints PASS, FAIL or SKIP. A step that exits 0 and prints only lines beginning
 "SKIPPED" (check_plan_order without .git) counts as skipped; one that also prints other
@@ -27,7 +29,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PY = [sys.executable, "-I"]
-MANUSCRIPT = Path("manuscript") / "manuscript.md"
+MANUSCRIPT_DIR = "manuscript"
+MANUSCRIPT = Path(MANUSCRIPT_DIR) / "manuscript_src.md"
 
 STEPS = [
     ("pytest -q", PY + ["-m", "pytest", "-q", "-p", "no:cacheprovider"]),
@@ -36,8 +39,8 @@ STEPS = [
     ("check_extraction_totals", PY + ["verification/check_extraction_totals.py"]),
     ("check_outputs", PY + ["verification/check_outputs.py"]),
     ("check_rerun (byte-for-byte rerun of outputs/)", PY + ["verification/check_rerun.py"]),
-    ("check_manuscript_numbers", PY + ["verification/check_manuscript_numbers.py"]),
-    ("check_docx_tie", PY + ["verification/check_docx_tie.py"]),
+    ("check_manuscript_numbers", PY + ["verification/check_manuscript_numbers.py", "--manuscript-dir", MANUSCRIPT_DIR]),
+    ("check_docx_tie", PY + ["verification/check_docx_tie.py", "--manuscript-dir", MANUSCRIPT_DIR]),
 ]
 MANUSCRIPT_STEPS = ("check_manuscript_numbers", "check_docx_tie")
 

@@ -294,7 +294,7 @@ def test_check_all_skips_the_manuscript_steps_without_a_manuscript(tmp_path, mon
         assert check_all.skip_reason(name, []).startswith("SKIPPED")
     assert check_all.skip_reason("check_outputs", []) is None
     (tmp_path / "manuscript").mkdir()
-    (tmp_path / "manuscript" / "manuscript.md").write_text("x", encoding="utf-8")
+    (tmp_path / "manuscript" / "manuscript_src.md").write_text("x", encoding="utf-8")
     assert check_all.skip_reason("check_docx_tie", []) is None
     names = [n for n, _ in check_all.STEPS]
     assert names[0] == "pytest -q" and names[-2:] == list(check_all.MANUSCRIPT_STEPS)
