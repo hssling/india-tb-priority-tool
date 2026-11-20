@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/hssling/india-tb-priority-tool",
+  "registered_document": "docs/analysis_plan.md",
+  "registered_commit": "bd3572e02b78154ffe12c0e65247e98b95d8f2e8",
+  "pushed_at": "2026-11-20T20:38:56Z",
+  "source_of_timestamp": "GitHub REST API, GET /repos/hssling/india-tb-priority-tool (pushed_at), first push of the repository",
+  "estimates_computed_before": false,
+  "note": "No src/tbprio/ module and no outputs/ file existed at the registration commit. The pushed head (3c17777) adds only the plan-order check after the plan commit."
+}
