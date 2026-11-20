@@ -195,7 +195,7 @@ Also reported for H1: top-5 overlap.
   - `test_harm_averted_floor_zero_and_zero_counts`;
   - `test_missing_step_excludes_unit_only_from_that_step`;
   - `test_small_unit_cannot_dominate_tiers`;
-  - `test_p_topk_sums_to_k_over_units` (the sum of P(top-k) over units equals k, within 1e-9, when all units have draws);
+  - `test_p_topk_zero_harm_scores_zero` (a unit whose harm is 0 in a draw gets no share of the top-k places in that draw; when every draw has ≥k units with harm > 0, P(top-k) sums to k within 1e-9; analysis plan §6.4);
   - `test_tier_thresholds` (0.80 gives "act now"; 0.7999 gives "probable priority"; 0.19 with rising=True gives "watch: rising").
 - [ ] Step 2: Implement, with no hard-coded unit names.
 - [ ] Step 3: Implement `src/run_state.py`. It writes the outputs deterministically: same seed, byte-identical reruns.
@@ -225,7 +225,7 @@ Also reported for H1: top-5 overlap.
 ### Task 6: District module and CLI tool with HTML report
 
 **Files:**
-- Create: `src/extract/au802.py`, `data/extracted/district_notifications.csv`, `src/tbprio/district.py`, `src/tbprio/schema.py`, `src/tbprio/report.py`, `src/tbprio/__main__.py`, `examples/district_example.csv` (synthetic, clearly labelled), `outputs/district_mp_mh.csv`, `outputs/report_state.html`, `outputs/report_district.html`, `tests/test_district.py`, `tests/test_cli.py`.
+- Create: `src/extract/au802.py`, `src/extract/itr2019_districts.py` (ITR 2019 Annexure 1.13, data year 2018, national; analysis plan §9.1), `data/extracted/district_2018.csv`, `data/extracted/district_notifications.csv`, `src/tbprio/district.py`, `src/tbprio/schema.py`, `src/tbprio/report.py`, `src/tbprio/__main__.py`, `examples/district_example.csv` (synthetic, clearly labelled), `outputs/district_mp_mh.csv`, `outputs/report_state.html`, `outputs/report_district.html`, `tests/test_district.py`, `tests/test_cli.py`.
 
 **Interfaces:**
 - CLI: `python -I -m tbprio state --panel data/extracted/state_panel.csv --out outputs/`
