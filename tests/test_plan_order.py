@@ -86,7 +86,7 @@ def test_estimation_module_before_registration_is_flagged(repo, module):
     commit(repo, {f"src/tbprio/{module}.py": "x = 1\n"}, "module first")
     reg = commit(repo, {"docs/analysis_plan.md": PLAN}, "plan")
     bad = check_plan_order.problems(repo, reg)
-    assert len(bad) == 1 and "estimation module" in bad[0]
+    assert len(bad) == 1 and "src/tbprio/" in bad[0]
 
 
 def test_estimation_module_in_registration_commit_is_flagged(repo):
@@ -95,10 +95,69 @@ def test_estimation_module_in_registration_commit_is_flagged(repo):
     assert len(check_plan_order.problems(repo, reg)) == 1
 
 
-def test_unguarded_module_before_registration_is_allowed(repo):
+def test_any_tbprio_module_before_registration_is_flagged(repo):
+    """All of src/tbprio/ is guarded; the allow-list is empty."""
+    assert check_plan_order.ALLOWED == ()
+    commit(repo, {"src/tbprio/panel.py": "x = 1\n"}, "loader first")
+    reg = commit(repo, {"docs/analysis_plan.md": PLAN}, "plan")
+    bad = check_plan_order.problems(repo, reg)
+    assert len(bad) == 1 and "src/tbprio/" in bad[0]
+
+
+def test_allow_listed_loader_and_extraction_code_before_registration_pass(repo):
     commit(repo, {"src/tbprio/panel.py": "x = 1\n", "src/extract/itr_state.py": "y = 1\n"},
            "loader first")
     reg = commit(repo, {"docs/analysis_plan.md": PLAN}, "plan")
+    assert check_plan_order.problems(repo, reg, allowed=("src/tbprio/panel.py",)) == []
+
+
+def test_allow_list_does_not_cover_a_second_module_in_the_same_commit(repo):
+    commit(repo, {"src/tbprio/panel.py": "x\n", "src/tbprio/validate.py": "y\n"}, "two")
+    reg = commit(repo, {"docs/analysis_plan.md": PLAN}, "plan")
+    assert len(check_plan_order.problems(repo, reg, allowed=("src/tbprio/panel.py",))) == 1
+
+
+def test_renamed_tbprio_module_before_registration_is_flagged(repo):
+    commit(repo, {"src/scratch.py": "x = 1\n"}, "scratch")
+    git(repo, "mv", "src/scratch.py", "src/tbprio_tmp.py")
+    git(repo, "commit", "-q", "-m", "rename outside")
+    (repo / "src" / "tbprio").mkdir()
+    git(repo, "mv", "src/tbprio_tmp.py", "src/tbprio/harm.py")
+    git(repo, "commit", "-q", "-m", "rename into tbprio")
+    reg = commit(repo, {"docs/analysis_plan.md": PLAN}, "plan")
+    assert len(check_plan_order.problems(repo, reg)) == 1
+
+
+def test_moved_registration_anchor_is_flagged(repo, capsys):
+    """A later commit may not re-point the registration record at another commit."""
+    reg = commit(repo, {"docs/analysis_plan.md": PLAN}, "plan")
+    commit(repo, {"docs/registration_event.json": event(reg)}, "registration event")
+    commit(repo, {"docs/analysis_plan.md": PLAN.replace("Before.", "Changed.")}, "edit")
+    later = commit(repo, {"outputs/x.csv": "a\n"}, "output")
+    commit(repo, {"docs/registration_event.json": event(later)}, "move the anchor")
+    assert check_plan_order.main(repo) == 1
+    assert "the anchor must never move" in capsys.readouterr().out
+
+
+def test_deleted_then_restored_registration_event_is_flagged(repo):
+    reg = commit(repo, {"docs/analysis_plan.md": PLAN}, "plan")
+    commit(repo, {"docs/registration_event.json": event(reg)}, "registration event")
+    git(repo, "rm", "-q", "docs/registration_event.json")
+    git(repo, "commit", "-q", "-m", "delete event")
+    commit(repo, {"docs/registration_event.json": event(reg)}, "restore event")
+    bad = check_plan_order.problems(repo, reg)
+    assert len(bad) == 1 and "names no commit" in bad[0]
+
+
+def test_old_plan_on_a_branch_merged_after_registration_is_not_a_later_commit(repo):
+    """--ancestry-path: a side commit made before registration, merged after it, is not
+    one of the commits whose plan text must equal the registered text."""
+    commit(repo, {"README.md": "r\n"}, "root")
+    git(repo, "checkout", "-q", "-b", "side")
+    commit(repo, {"docs/analysis_plan.md": PLAN.replace("Before.", "Draft.")}, "draft plan")
+    git(repo, "checkout", "-q", "-")
+    reg = commit(repo, {"docs/analysis_plan.md": PLAN}, "plan")
+    git(repo, "merge", "-q", "-s", "ours", "side", "-m", "merge, keeping our tree")
     assert check_plan_order.problems(repo, reg) == []
 
 

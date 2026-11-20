@@ -1,26 +1,30 @@
 # Adapted from hssling/india-tb-acf-campaign (MIT), verification/check_plan_order.py, which was
 # itself copied from hssling/india-state-tb-score. Changes: the frozen text ends at
-# "## 12. Deviations (dated)"; the guarded paths are outputs/ and the four estimation modules
-# src/tbprio/{harm,shrink,priority,trend}.py; a missing docs/registration_event.json is a FAIL
-# ("NOT REGISTERED YET"); the LGD and extension checks of that repository are dropped.
+# "## 12. Deviations (dated)"; a missing docs/registration_event.json is a FAIL ("NOT
+# REGISTERED YET"); every committed version of that file must name the same commit; all of
+# src/tbprio/ and outputs/ are guarded except an explicit allow-list; later commits are
+# listed with --ancestry-path; the LGD and extension checks of that repository are dropped.
 """Check that the analysis plan was registered before any estimate or output.
 
 Run as: python -I verification/check_plan_order.py
 
-Four assertions:
+Assertions:
 
 1. docs/registration_event.json exists. Before the controller records the public push it
    does not, and the check FAILS with "NOT REGISTERED YET": a missing registration record
    never switches the other checks off.
-2. The registration commit named in that file is an ancestor of HEAD.
-3. No commit that is not a strict descendant of the registration commit touches outputs/
-   or src/tbprio/harm.py, shrink.py, priority.py or trend.py (full history, so a commit on a
-   merged side branch is found even when the merge dropped its change; the registration
-   commit itself may not touch them either).
-4. The text of docs/analysis_plan.md above the "## 12. Deviations (dated)" heading is
-   byte-identical at the registration commit and at every commit in registration..HEAD
-   (git rev-list, merged side branches included), so an edit that was later reverted is
-   also caught.
+2. Every committed version of docs/registration_event.json (full history, deletions
+   included) names the same commit as the working-tree file, so the anchor cannot be moved.
+3. The registration commit named in that file is an ancestor of HEAD.
+4. No commit that is not a strict descendant of the registration commit touches outputs/
+   (any file) or src/tbprio/ (any file except the explicit allow-list ALLOWED, empty for
+   now). Full history, deletions and renames included (--no-renames lists a rename as a
+   deletion and an addition), so a commit on a merged side branch is found even when the
+   merge dropped its change; the registration commit itself may not touch them either.
+5. The text of docs/analysis_plan.md above the "## 12. Deviations (dated)" heading is
+   byte-identical at the registration commit and at every commit in
+   `git rev-list --ancestry-path <registration>..HEAD`, so an edit that was later reverted
+   is also caught.
 
 In a copy without .git (a release archive) the history cannot be checked: this prints
 "SKIPPED: not a git checkout ..." and exits 0.
@@ -31,8 +35,10 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-GUARDED = ("outputs", "src/tbprio/harm.py", "src/tbprio/shrink.py",
-           "src/tbprio/priority.py", "src/tbprio/trend.py")
+GUARDED = ("outputs", "src/tbprio")
+# Loader modules that may be committed before registration (repository paths, e.g.
+# "src/tbprio/panel.py"). Empty: none is allowed.
+ALLOWED: tuple[str, ...] = ()
 PLAN = "docs/analysis_plan.md"
 HEADING = b"## 12. Deviations (dated)"
 EVENT = Path("docs") / "registration_event.json"
@@ -72,6 +78,20 @@ def plan_above_section12(repo: Path, rev: str) -> bytes:
     return data[:found[0]]
 
 
+def commit_named(text: str) -> str | None:
+    """The registration commit named in the text of a registration_event.json, or None."""
+    try:
+        event = json.loads(text)
+    except json.JSONDecodeError:
+        return None
+    if not isinstance(event, dict):
+        return None
+    for key in COMMIT_KEYS:
+        if isinstance(event.get(key), str) and event[key].strip():
+            return event[key].strip()
+    return None
+
+
 def registered_commit(repo: Path) -> str:
     """The registration commit recorded in docs/registration_event.json.
 
@@ -79,39 +99,80 @@ def registered_commit(repo: Path) -> str:
     f = repo / EVENT
     if not f.exists():
         raise FileNotFoundError(NOT_REGISTERED)
+    text = f.read_text(encoding="utf-8")
     try:
-        event = json.loads(f.read_text(encoding="utf-8"))
+        json.loads(text)
     except json.JSONDecodeError as e:
         raise ValueError(f"{EVENT.as_posix()} is not valid JSON ({e})") from e
-    for key in COMMIT_KEYS:
-        if isinstance(event, dict) and isinstance(event.get(key), str) and event[key].strip():
-            return event[key].strip()
-    raise ValueError(f"{EVENT.as_posix()} names no registration commit (expected the key "
-                     f"{COMMIT_KEYS[0]!r})")
+    named = commit_named(text)
+    if named is None:
+        raise ValueError(f"{EVENT.as_posix()} names no registration commit (expected the key "
+                         f"{COMMIT_KEYS[0]!r})")
+    return named
+
+
+def event_versions(repo: Path) -> list[tuple[str, str | None]]:
+    """(commit, named registration commit) for every commit that touched
+    docs/registration_event.json; None where that commit deleted it or it names none."""
+    out = []
+    for c in git(repo, "log", "--full-history", "--format=%H", "--",
+                 EVENT.as_posix()).stdout.split():
+        r = git(repo, "show", f"{c}:{EVENT.as_posix()}", ok=(0, 128))
+        out.append((c, commit_named(r.stdout) if r.returncode == 0 else None))
+    return out
+
+
+def same_commit(a: str, b: str) -> bool:
+    return a.startswith(b) or b.startswith(a)
+
+
+def guarded_commits(repo: Path, guarded: tuple[str, ...] = GUARDED,
+                    allowed: tuple[str, ...] = ALLOWED) -> list[str]:
+    """Commits (full history, no simplification, no rename detection) that touch a guarded
+    path other than an allowed one."""
+    log = git(repo, "log", "--full-history", "--no-renames", "--name-only", "--format=%x00%H",
+              "--", *guarded).stdout
+    hits = []
+    for block in log.split("\x00")[1:]:
+        sha, *names = block.split("\n")
+        if any(n.strip() and n.strip() not in allowed for n in names):
+            hits.append(sha.strip())
+    return hits
+
+
+def later_commits(repo: Path, reg: str) -> list[str]:
+    return git(repo, "rev-list", "--ancestry-path", f"{reg}..HEAD").stdout.split()
 
 
 def problems(repo: Path = ROOT, registration: str | None = None,
-             guarded: tuple[str, ...] = GUARDED) -> list[str]:
-    """Every violation of assertions 2-4, given the registration commit (read from
+             guarded: tuple[str, ...] = GUARDED,
+             allowed: tuple[str, ...] = ALLOWED) -> list[str]:
+    """Every violation of assertions 2-5, given the registration commit (read from
     docs/registration_event.json when not given)."""
     out: list[str] = []
     registration = registration or registered_commit(repo)
+    for c, named in event_versions(repo):
+        if named is None or not same_commit(named, registration):
+            out.append(f"commit {c[:7]}: the committed {EVENT.as_posix()} names "
+                       f"{named[:7] if named else 'no commit'}, not the registration commit "
+                       f"{registration[:7]} (the anchor must never move)")
     try:
         reg = git(repo, "rev-parse", "--verify", f"{registration}^{{commit}}").stdout.strip()
     except RuntimeError:
-        return [f"registration commit {registration[:7]} does not exist in this repository"]
+        return out + [f"registration commit {registration[:7]} does not exist in this "
+                      f"repository"]
     if not is_ancestor(repo, reg, "HEAD"):
-        return [f"registration commit {registration[:7]} is not an ancestor of HEAD"]
-    for c in git(repo, "log", "--full-history", "--format=%H", "--", *guarded).stdout.split():
+        return out + [f"registration commit {registration[:7]} is not an ancestor of HEAD"]
+    for c in guarded_commits(repo, guarded, allowed):
         if c == reg or not is_ancestor(repo, reg, c):
-            out.append(f"commit {c[:7]} touches outputs/ or an estimation module "
-                       f"(src/tbprio/harm.py, shrink.py, priority.py, trend.py) but is not a "
-                       f"descendant of the registration commit {registration[:7]}")
+            out.append(f"commit {c[:7]} touches outputs/ or src/tbprio/ (outside the "
+                       f"allow-list) but is not a descendant of the registration commit "
+                       f"{registration[:7]}")
     try:
         frozen = plan_above_section12(repo, reg)
     except RuntimeError as e:
         return out + [f"the registration commit's plan cannot be read ({e})"]
-    for c in git(repo, "rev-list", f"{reg}..HEAD").stdout.split():
+    for c in later_commits(repo, reg):
         try:
             same = plan_above_section12(repo, c) == frozen
         except RuntimeError as e:
@@ -137,10 +198,10 @@ def main(root: Path = ROOT) -> int:
         for b in bad:
             print(f"FAIL: {b}")
         return 1
-    n = len(git(root, "rev-list", f"{reg}..HEAD").stdout.split())
-    print(f"OK: registration commit {reg[:7]} is an ancestor of HEAD; no commit touching "
-          f"outputs/ or an estimation module precedes it; the plan text above section 12 is "
-          f"byte-identical across {n} later commits; {EVENT.as_posix()} exists")
+    n = len(later_commits(root, reg))
+    print(f"OK: registration commit {reg[:7]} is an ancestor of HEAD; every committed "
+          f"{EVENT.as_posix()} names it; no commit touching outputs/ or src/tbprio/ precedes "
+          f"it; the plan text above section 12 is byte-identical across {n} later commits")
     return 0
 
 
