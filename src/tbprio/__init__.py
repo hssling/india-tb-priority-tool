@@ -2,5 +2,6 @@
 
 Modules: panel (reading the long-format panel), shrink (empirical-Bayes priors, §6.1),
 harm (benchmark and harm-averted draws, §6.2-§6.3), priority (P(top-k), tiers and the
-small-but-far-behind flag, §6.4-§6.6).
+small-but-far-behind flag, §6.4-§6.6), trend (the trend and the rising flag, §6.5, §7),
+validate (H1-H3, labels and leave-one-out, §8).
 """

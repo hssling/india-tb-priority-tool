@@ -1,0 +1,25 @@
+estimate,benchmark,shrinkage,year_window,denominator,value,n,main,agrees
+H1,p75,on,2018;2019;2021,,0.5629141158270872,99,True,True
+H1,p75,on,2019;2021,,0.5950991113585304,99,False,True
+H1,p75,off,2018;2019;2021,,0.5667569928857455,99,False,True
+H1,p75,off,2019;2021,,0.6034120346553803,99,False,True
+H1,median,on,2018;2019;2021,,0.4843195183782058,99,False,True
+H1,median,on,2019;2021,,0.5445161053491389,99,False,True
+H1,median,off,2018;2019;2021,,0.4865029495916799,99,False,True
+H1,median,off,2019;2021,,0.5438586155387111,99,False,True
+H1,p90,on,2018;2019;2021,,0.8373116455911969,99,False,True
+H1,p90,on,2019;2021,,0.8603737852542104,99,False,True
+H1,p90,off,2018;2019;2021,,0.8408768072782328,99,False,True
+H1,p90,off,2019;2021,,0.8630476565194873,99,False,True
+H2,p75,on,,per population,0.32994371345642615,20,True,True
+H2,p75,on,,per target,0.09491531482993082,20,False,True
+H2,p75,off,,per population,0.32994371345642615,20,False,True
+H2,p75,off,,per target,0.09491531482993082,20,False,True
+H2,median,on,,per population,0.13796889950111277,20,False,True
+H2,median,on,,per target,0.07241461576025256,20,False,True
+H2,median,off,,per population,0.13796889950111277,20,False,True
+H2,median,off,,per target,0.07241461576025256,20,False,True
+H2,p90,on,,per population,0.41143289859574983,20,False,True
+H2,p90,on,,per target,0.057164351541639825,20,False,True
+H2,p90,off,,per population,0.41143289859574983,20,False,True
+H2,p90,off,,per target,0.057164351541639825,20,False,True

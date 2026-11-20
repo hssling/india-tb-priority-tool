@@ -1,0 +1,14 @@
+estimate,value,lo,hi,null,n,n_grid,n_agree,label,note
+H1,0.5629141158270872,0.3230797665104732,0.7429892845902605,0.0,99,12,12,supported,"Pearson of within-step normalised ranks, unit x step pairs of S3, S4, S6 (33 units); pre-period 2018, 2019, 2021 (S4: 2019, 2021) vs 2023; bootstrap over units, 10000 draws, 0 discarded; excluded unit-steps: none"
+H2,0.32994371345642615,-0.14561559756087536,0.6816492596075885,0.0,20,12,12,not established,"Spearman rho, 2023 S1 harm averted per 100,000 (sum over members) vs NTPS prevalence, over NTPS reporting units; Fisher-z interval with Fieller's variance 1.06/(n-3); excluded (not covered): Andaman and Nicobar Islands; Ladakh (member of Jammu and Kashmir) not covered by the survey; Lakshadweep (member of Kerala) not covered by the survey"
+H3,0.5874992003619658,,,,4,,,,"share of harm averted (2023, S2-S5 summed, main specification) in each step's top-5 units; n = steps; descriptive, no label"
+H1 top-5 overlap S3,4,,,,5,,,,descriptive; ties at the fifth place broken alphabetically
+H1 top-5 overlap S4,4,,,,5,,,,descriptive; ties at the fifth place broken alphabetically
+H1 top-5 overlap S6,3,,,,5,,,,descriptive; ties at the fifth place broken alphabetically
+H1 top-5 overlap,11,,,,15,,,,"descriptive; summed over S3, S4, S6"
+H1 rate-gap rho (descriptive),0.5497994652406417,,,,99,,,,"rate gap r_u - r_bench on posterior means (§10.4), same within-step rank construction as H1; no interval, no label"
+"H2 signed shortfall per 100,000 (descriptive)",0.36329449729752683,-0.10832040766934924,0.7014245853460707,,20,,,,"(target - notified) summed over members per 100,000 vs NTPS prevalence; Fieller interval; descriptive, no label"
+H3 share S2,0.5485979009154831,,,,33,,,,"top 5: Bihar, Rajasthan, Maharashtra, Uttar Pradesh, Madhya Pradesh"
+H3 share S3,0.5857922732563196,,,,33,,,,"top 5: Karnataka, Tamil Nadu, Maharashtra, West Bengal, Gujarat"
+H3 share S4,0.8013823888997831,,,,33,,,,"top 5: Bihar, Madhya Pradesh, Delhi, Rajasthan, Tamil Nadu"
+H3 share S5,0.7175630973206583,,,,33,,,,"top 5: Uttar Pradesh, Bihar, Delhi, Madhya Pradesh, Tamil Nadu"

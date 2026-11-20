@@ -1,0 +1,21 @@
+rule,role,unit,unit_score,dropped,prevalence
+R2,primary,Andhra Pradesh,83.01529516884571,0,265.0
+R2,primary,Bihar,68.29286361008053,0,327.0
+R2,primary,Chhattisgarh,77.18998013355574,0,454.0
+R2,primary,Delhi,77.11332213534976,0,534.0
+R2,primary,Gujarat,88.18015914836695,0,141.0
+R2,primary,"Himachal Pradesh, Uttarakhand, Jammu & Kashmir",87.34057486796088,0,344.0
+R2,primary,Haryana,86.10772718197117,0,465.0
+R2,primary,Jharkhand,79.8577412110806,0,352.0
+R2,primary,Karnataka,,1,276.0
+R2,primary,Kerala,86.59246849510393,0,115.0
+R2,primary,Maharashtra,82.10779156431964,0,161.0
+R2,primary,Madhya Pradesh,81.58440289586878,0,386.0
+R2,primary,North Eastern States,79.33356099800734,0,276.0
+R2,primary,Odisha,89.31987841816778,0,243.0
+R2,primary,Punjab,70.89111473957578,0,283.0
+R2,primary,Rajasthan,82.53790528860573,0,484.0
+R2,primary,Tamil Nadu,84.59535373111058,0,301.0
+R2,primary,Telangana,78.99349532379551,0,287.0
+R2,primary,Uttar Pradesh,88.41474569212708,0,481.0
+R2,primary,West Bengal,81.76947865915369,0,167.0

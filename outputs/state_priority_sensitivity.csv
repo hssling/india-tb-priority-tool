@@ -267,20 +267,20 @@ Andaman and Nicobar Islands,S3,2023,k3,p75,on,3,1.3713595271524914,0.0,lower pri
 Andhra Pradesh,S3,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
 Arunachal Pradesh,S3,2023,k3,p75,on,3,0.06579673760755218,0.0,lower priority,lower priority,False,False
 Assam,S3,2023,k3,p75,on,3,374.7457813875364,0.0,lower priority,lower priority,False,False
-Bihar,S3,2023,k3,p75,on,3,422.3003457448332,0.0,lower priority,lower priority,False,False
+Bihar,S3,2023,k3,p75,on,3,422.3003457448332,0.0,watch: rising,watch: rising,False,True
 Chandigarh,S3,2023,k3,p75,on,3,41.62618806041475,0.0,lower priority,lower priority,False,False
-Chhattisgarh,S3,2023,k3,p75,on,3,968.8545692623856,0.0,lower priority,lower priority,False,False
-Delhi,S3,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S3,2023,k3,p75,on,3,968.8545692623856,0.0,watch: rising,watch: rising,False,True
+Delhi,S3,2023,k3,p75,on,3,0.0,0.0,watch: rising,watch: rising,False,True
 Goa,S3,2023,k3,p75,on,3,108.35772824505591,0.0,lower priority,lower priority,False,False
 Gujarat,S3,2023,k3,p75,on,3,1774.126668628566,0.0001,lower priority,act now,True,False
 Haryana,S3,2023,k3,p75,on,3,772.5266609737126,0.0,lower priority,lower priority,False,False
 Himachal Pradesh,S3,2023,k3,p75,on,3,451.4375893355528,0.0,lower priority,lower priority,False,False
 Jammu and Kashmir,S3,2023,k3,p75,on,3,98.37039879556771,0.0,lower priority,lower priority,False,False
 Jharkhand,S3,2023,k3,p75,on,3,0.0003004708324678941,0.0,lower priority,lower priority,False,False
-Karnataka,S3,2023,k3,p75,on,3,2888.5260283323782,1.0,act now,act now,False,False
-Kerala,S3,2023,k3,p75,on,3,1273.12295460852,0.0,lower priority,lower priority,False,False
-Madhya Pradesh,S3,2023,k3,p75,on,3,1139.1693131272455,0.0,lower priority,lower priority,False,False
-Maharashtra,S3,2023,k3,p75,on,3,2198.723165460822,0.987,act now,act now,False,False
+Karnataka,S3,2023,k3,p75,on,3,2888.5260283323782,1.0,act now,act now,False,True
+Kerala,S3,2023,k3,p75,on,3,1273.12295460852,0.0,watch: rising,watch: rising,False,True
+Madhya Pradesh,S3,2023,k3,p75,on,3,1139.1693131272455,0.0,watch: rising,watch: rising,False,True
+Maharashtra,S3,2023,k3,p75,on,3,2198.723165460822,0.987,act now,act now,False,True
 Manipur,S3,2023,k3,p75,on,3,10.745976612787551,0.0,lower priority,lower priority,False,False
 Meghalaya,S3,2023,k3,p75,on,3,61.82317356199912,0.0,lower priority,lower priority,False,False
 Mizoram,S3,2023,k3,p75,on,3,26.604902933718495,0.0,lower priority,lower priority,False,False
@@ -290,30 +290,30 @@ Puducherry,S3,2023,k3,p75,on,3,67.8421020777615,0.0,lower priority,lower priorit
 Punjab,S3,2023,k3,p75,on,3,981.4732631794056,0.0,lower priority,lower priority,False,False
 Rajasthan,S3,2023,k3,p75,on,3,0.001452806178648829,0.0,lower priority,lower priority,False,False
 Sikkim,S3,2023,k3,p75,on,3,7.681760574512354,0.0,lower priority,lower priority,False,False
-Tamil Nadu,S3,2023,k3,p75,on,3,2513.4165241501987,1.0,act now,act now,False,False
+Tamil Nadu,S3,2023,k3,p75,on,3,2513.4165241501987,1.0,act now,act now,False,True
 Telangana,S3,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
 Tripura,S3,2023,k3,p75,on,3,85.23384532289523,0.0,lower priority,lower priority,False,False
 Uttar Pradesh,S3,2023,k3,p75,on,3,49.40772337217832,0.0,lower priority,lower priority,False,False
 Uttarakhand,S3,2023,k3,p75,on,3,146.05249533311644,0.0,lower priority,lower priority,False,False
-West Bengal,S3,2023,k3,p75,on,3,1944.6874183477375,0.0129,lower priority,act now,True,False
+West Bengal,S3,2023,k3,p75,on,3,1944.6874183477375,0.0129,watch: rising,act now,True,True
 Andaman and Nicobar Islands,S3,2023,k8,p75,on,8,1.3713595271524914,0.0,lower priority,lower priority,False,False
 Andhra Pradesh,S3,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
 Arunachal Pradesh,S3,2023,k8,p75,on,8,0.06579673760755218,0.0,lower priority,lower priority,False,False
 Assam,S3,2023,k8,p75,on,8,374.7457813875364,0.0,lower priority,lower priority,False,False
-Bihar,S3,2023,k8,p75,on,8,422.3003457448332,0.0,lower priority,lower priority,False,False
+Bihar,S3,2023,k8,p75,on,8,422.3003457448332,0.0,watch: rising,watch: rising,False,True
 Chandigarh,S3,2023,k8,p75,on,8,41.62618806041475,0.0,lower priority,lower priority,False,False
-Chhattisgarh,S3,2023,k8,p75,on,8,968.8545692623856,0.3867,uncertain,lower priority,True,False
-Delhi,S3,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S3,2023,k8,p75,on,8,968.8545692623856,0.3867,watch: rising,watch: rising,False,True
+Delhi,S3,2023,k8,p75,on,8,0.0,0.0,watch: rising,watch: rising,False,True
 Goa,S3,2023,k8,p75,on,8,108.35772824505591,0.0,lower priority,lower priority,False,False
 Gujarat,S3,2023,k8,p75,on,8,1774.126668628566,1.0,act now,act now,False,False
 Haryana,S3,2023,k8,p75,on,8,772.5266609737126,0.0002,lower priority,lower priority,False,False
 Himachal Pradesh,S3,2023,k8,p75,on,8,451.4375893355528,0.0,lower priority,lower priority,False,False
 Jammu and Kashmir,S3,2023,k8,p75,on,8,98.37039879556771,0.0,lower priority,lower priority,False,False
 Jharkhand,S3,2023,k8,p75,on,8,0.0003004708324678941,0.0,lower priority,lower priority,False,False
-Karnataka,S3,2023,k8,p75,on,8,2888.5260283323782,1.0,act now,act now,False,False
-Kerala,S3,2023,k8,p75,on,8,1273.12295460852,1.0,act now,lower priority,True,False
-Madhya Pradesh,S3,2023,k8,p75,on,8,1139.1693131272455,0.9838,act now,lower priority,True,False
-Maharashtra,S3,2023,k8,p75,on,8,2198.723165460822,1.0,act now,act now,False,False
+Karnataka,S3,2023,k8,p75,on,8,2888.5260283323782,1.0,act now,act now,False,True
+Kerala,S3,2023,k8,p75,on,8,1273.12295460852,1.0,act now,watch: rising,True,True
+Madhya Pradesh,S3,2023,k8,p75,on,8,1139.1693131272455,0.9838,act now,watch: rising,True,True
+Maharashtra,S3,2023,k8,p75,on,8,2198.723165460822,1.0,act now,act now,False,True
 Manipur,S3,2023,k8,p75,on,8,10.745976612787551,0.0,lower priority,lower priority,False,False
 Meghalaya,S3,2023,k8,p75,on,8,61.82317356199912,0.0,lower priority,lower priority,False,False
 Mizoram,S3,2023,k8,p75,on,8,26.604902933718495,0.0,lower priority,lower priority,False,False
@@ -323,30 +323,30 @@ Puducherry,S3,2023,k8,p75,on,8,67.8421020777615,0.0,lower priority,lower priorit
 Punjab,S3,2023,k8,p75,on,8,981.4732631794056,0.5394,probable priority,lower priority,True,False
 Rajasthan,S3,2023,k8,p75,on,8,0.001452806178648829,0.0,lower priority,lower priority,False,False
 Sikkim,S3,2023,k8,p75,on,8,7.681760574512354,0.0,lower priority,lower priority,False,False
-Tamil Nadu,S3,2023,k8,p75,on,8,2513.4165241501987,1.0,act now,act now,False,False
+Tamil Nadu,S3,2023,k8,p75,on,8,2513.4165241501987,1.0,act now,act now,False,True
 Telangana,S3,2023,k8,p75,on,8,0.0,0.0,lower priority,lower priority,False,False
 Tripura,S3,2023,k8,p75,on,8,85.23384532289523,0.0,lower priority,lower priority,False,False
 Uttar Pradesh,S3,2023,k8,p75,on,8,49.40772337217832,0.0,lower priority,lower priority,False,False
 Uttarakhand,S3,2023,k8,p75,on,8,146.05249533311644,0.0,lower priority,lower priority,False,False
-West Bengal,S3,2023,k8,p75,on,8,1944.6874183477375,1.0,act now,act now,False,False
+West Bengal,S3,2023,k8,p75,on,8,1944.6874183477375,1.0,act now,act now,False,True
 Andaman and Nicobar Islands,S3,2023,benchmark_median,median,on,5,0.1560634430332918,0.0,lower priority,lower priority,False,False
 Andhra Pradesh,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
 Arunachal Pradesh,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
 Assam,S3,2023,benchmark_median,median,on,5,0.09987475994285187,0.0,lower priority,lower priority,False,False
-Bihar,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Bihar,S3,2023,benchmark_median,median,on,5,0.0,0.0,watch: rising,watch: rising,False,True
 Chandigarh,S3,2023,benchmark_median,median,on,5,7.366211878286581,0.0,lower priority,lower priority,False,False
-Chhattisgarh,S3,2023,benchmark_median,median,on,5,579.9868585751701,0.9932,act now,lower priority,True,False
-Delhi,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S3,2023,benchmark_median,median,on,5,579.9868585751701,0.9932,act now,watch: rising,True,True
+Delhi,S3,2023,benchmark_median,median,on,5,0.0,0.0,watch: rising,watch: rising,False,True
 Goa,S3,2023,benchmark_median,median,on,5,88.34690142924478,0.0,lower priority,lower priority,False,False
 Gujarat,S3,2023,benchmark_median,median,on,5,314.61957050943596,0.0012,lower priority,act now,True,False
 Haryana,S3,2023,benchmark_median,median,on,5,26.70084034922971,0.0,lower priority,lower priority,False,False
 Himachal Pradesh,S3,2023,benchmark_median,median,on,5,289.345881941748,0.0,lower priority,lower priority,False,False
 Jammu and Kashmir,S3,2023,benchmark_median,median,on,5,1.4390313444110368,0.0,lower priority,lower priority,False,False
 Jharkhand,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
-Karnataka,S3,2023,benchmark_median,median,on,5,2119.7032447531656,1.0,act now,act now,False,False
-Kerala,S3,2023,benchmark_median,median,on,5,1040.9733024307034,1.0,act now,lower priority,True,False
-Madhya Pradesh,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
-Maharashtra,S3,2023,benchmark_median,median,on,5,37.03025312784735,0.0,lower priority,act now,True,False
+Karnataka,S3,2023,benchmark_median,median,on,5,2119.7032447531656,1.0,act now,act now,False,True
+Kerala,S3,2023,benchmark_median,median,on,5,1040.9733024307034,1.0,act now,watch: rising,True,True
+Madhya Pradesh,S3,2023,benchmark_median,median,on,5,0.0,0.0,watch: rising,watch: rising,False,True
+Maharashtra,S3,2023,benchmark_median,median,on,5,37.03025312784735,0.0,watch: rising,act now,True,True
 Manipur,S3,2023,benchmark_median,median,on,5,0.19251798119362115,0.0,lower priority,lower priority,False,False
 Meghalaya,S3,2023,benchmark_median,median,on,5,16.127707866276783,0.0,lower priority,lower priority,False,False
 Mizoram,S3,2023,benchmark_median,median,on,5,7.6878283301750345,0.0,lower priority,lower priority,False,False
@@ -356,30 +356,30 @@ Puducherry,S3,2023,benchmark_median,median,on,5,52.95428753794211,0.0,lower prio
 Punjab,S3,2023,benchmark_median,median,on,5,406.2822977968747,0.0055,lower priority,lower priority,False,False
 Rajasthan,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
 Sikkim,S3,2023,benchmark_median,median,on,5,0.7936922677905105,0.0,lower priority,lower priority,False,False
-Tamil Nadu,S3,2023,benchmark_median,median,on,5,1574.4616107792456,1.0,act now,act now,False,False
+Tamil Nadu,S3,2023,benchmark_median,median,on,5,1574.4616107792456,1.0,act now,act now,False,True
 Telangana,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
 Tripura,S3,2023,benchmark_median,median,on,5,52.490678799629116,0.0,lower priority,lower priority,False,False
 Uttar Pradesh,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
 Uttarakhand,S3,2023,benchmark_median,median,on,5,0.0,0.0,lower priority,lower priority,False,False
-West Bengal,S3,2023,benchmark_median,median,on,5,1013.1112467285061,1.0,act now,act now,False,False
+West Bengal,S3,2023,benchmark_median,median,on,5,1013.1112467285061,1.0,act now,act now,False,True
 Andaman and Nicobar Islands,S3,2023,benchmark_p90,p90,on,5,3.2471134271083026,0.0,lower priority,lower priority,False,False
 Andhra Pradesh,S3,2023,benchmark_p90,p90,on,5,0.0,0.0,lower priority,lower priority,False,False
 Arunachal Pradesh,S3,2023,benchmark_p90,p90,on,5,2.625153134634134,0.0,lower priority,lower priority,False,False
 Assam,S3,2023,benchmark_p90,p90,on,5,646.7479266275689,0.0,lower priority,lower priority,False,False
-Bihar,S3,2023,benchmark_p90,p90,on,5,1359.0965283100893,0.0,lower priority,lower priority,False,False
+Bihar,S3,2023,benchmark_p90,p90,on,5,1359.0965283100893,0.0,watch: rising,watch: rising,False,True
 Chandigarh,S3,2023,benchmark_p90,p90,on,5,62.7820379781432,0.0,lower priority,lower priority,False,False
-Chhattisgarh,S3,2023,benchmark_p90,p90,on,5,1191.4184712447156,0.0,lower priority,lower priority,False,False
-Delhi,S3,2023,benchmark_p90,p90,on,5,5.728627975404061,0.0,lower priority,lower priority,False,False
+Chhattisgarh,S3,2023,benchmark_p90,p90,on,5,1191.4184712447156,0.0,watch: rising,watch: rising,False,True
+Delhi,S3,2023,benchmark_p90,p90,on,5,5.728627975404061,0.0,watch: rising,watch: rising,False,True
 Goa,S3,2023,benchmark_p90,p90,on,5,119.81069174811694,0.0,lower priority,lower priority,False,False
 Gujarat,S3,2023,benchmark_p90,p90,on,5,2609.458545770662,0.9049,act now,act now,False,False
 Haryana,S3,2023,benchmark_p90,p90,on,5,1208.9040794964046,0.0,lower priority,lower priority,False,False
 Himachal Pradesh,S3,2023,benchmark_p90,p90,on,5,544.2088888934138,0.0,lower priority,lower priority,False,False
 Jammu and Kashmir,S3,2023,benchmark_p90,p90,on,5,168.0578946596339,0.0,lower priority,lower priority,False,False
 Jharkhand,S3,2023,benchmark_p90,p90,on,5,188.29311230880862,0.0,lower priority,lower priority,False,False
-Karnataka,S3,2023,benchmark_p90,p90,on,5,3328.5527879311962,1.0,act now,act now,False,False
-Kerala,S3,2023,benchmark_p90,p90,on,5,1405.9911023424286,0.0,lower priority,lower priority,False,False
-Madhya Pradesh,S3,2023,benchmark_p90,p90,on,5,2210.4976511498003,0.0,lower priority,lower priority,False,False
-Maharashtra,S3,2023,benchmark_p90,p90,on,5,3456.5752933601334,1.0,act now,act now,False,False
+Karnataka,S3,2023,benchmark_p90,p90,on,5,3328.5527879311962,1.0,act now,act now,False,True
+Kerala,S3,2023,benchmark_p90,p90,on,5,1405.9911023424286,0.0,watch: rising,watch: rising,False,True
+Madhya Pradesh,S3,2023,benchmark_p90,p90,on,5,2210.4976511498003,0.0,watch: rising,watch: rising,False,True
+Maharashtra,S3,2023,benchmark_p90,p90,on,5,3456.5752933601334,1.0,act now,act now,False,True
 Manipur,S3,2023,benchmark_p90,p90,on,5,25.099087976213468,0.0,lower priority,lower priority,False,False
 Meghalaya,S3,2023,benchmark_p90,p90,on,5,88.44155917858232,0.0,lower priority,lower priority,False,False
 Mizoram,S3,2023,benchmark_p90,p90,on,5,38.03998019281876,0.0,lower priority,lower priority,False,False
@@ -389,12 +389,12 @@ Puducherry,S3,2023,benchmark_p90,p90,on,5,76.3629692130549,0.0,lower priority,lo
 Punjab,S3,2023,benchmark_p90,p90,on,5,1310.6771084004076,0.0,lower priority,lower priority,False,False
 Rajasthan,S3,2023,benchmark_p90,p90,on,5,695.0696302984966,0.0,lower priority,lower priority,False,False
 Sikkim,S3,2023,benchmark_p90,p90,on,5,14.47616968165847,0.0,lower priority,lower priority,False,False
-Tamil Nadu,S3,2023,benchmark_p90,p90,on,5,3050.8164253557024,1.0,act now,act now,False,False
+Tamil Nadu,S3,2023,benchmark_p90,p90,on,5,3050.8164253557024,1.0,act now,act now,False,True
 Telangana,S3,2023,benchmark_p90,p90,on,5,14.235667349803881,0.0,lower priority,lower priority,False,False
 Tripura,S3,2023,benchmark_p90,p90,on,5,103.97401506287383,0.0,lower priority,lower priority,False,False
 Uttar Pradesh,S3,2023,benchmark_p90,p90,on,5,3002.9109198864244,1.0,act now,lower priority,True,False
 Uttarakhand,S3,2023,benchmark_p90,p90,on,5,300.2601076300929,0.0,lower priority,lower priority,False,False
-West Bengal,S3,2023,benchmark_p90,p90,on,5,2477.8641827104293,0.0951,lower priority,act now,True,False
+West Bengal,S3,2023,benchmark_p90,p90,on,5,2477.8641827104293,0.0951,watch: rising,act now,True,True
 Andaman and Nicobar Islands,S4,2023,k3,p75,on,3,7.967787031346347,0.0,lower priority,lower priority,False,False
 Andhra Pradesh,S4,2023,k3,p75,on,3,0.0,0.0,lower priority,lower priority,False,False
 Arunachal Pradesh,S4,2023,k3,p75,on,3,168.78004948751257,0.0,lower priority,lower priority,False,False

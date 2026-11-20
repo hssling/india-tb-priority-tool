@@ -24,9 +24,12 @@ sensitivity) and state_population.csv, and writes to outputs/:
 Each draw set (step, year, specification, basis) starts from a new
 numpy.random.default_rng(20261121) (§10.1). Reruns give byte-identical files.
 
-The rising flag comes from the main trend model (§6.5, §7). Until that model exists,
-``rising_flags`` returns False for every unit-step with ``trend_status`` "pending";
-main() computes it before any tier, so the trend can be plugged in there.
+- state_trend.csv: the trend of every unit and step (§7, §10.2): the main model's slope, SE,
+  95% CI, phi_s, years used and rising flag, with the sensitivity model's slope, CI and
+  flag (§7.3); S6 also on the registered S6 2022 basis (``basis`` = ``s6_2022_registered``,
+  §12.2). Tiers use the main model on the main basis only.
+
+The trend is computed first, and the rising flag (§6.5) is read from it before any tier.
 """
 from __future__ import annotations
 
@@ -40,7 +43,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if __package__ in (None, ""):
     sys.path.insert(0, str(ROOT))
 
-from src.tbprio import harm, panel, priority  # noqa: E402
+from src.tbprio import harm, panel, priority, trend  # noqa: E402
 
 EXTRACTED = ROOT / "data" / "extracted"
 PANEL_CSV = EXTRACTED / "state_panel.csv"
@@ -71,8 +74,13 @@ SUMMARY_COLS = ["basis", "step", "year", "benchmark", "shrinkage", "unit", "n_un
                 "prior_alpha", "prior_beta", "harm_averted_mean", "lo", "hi", "p_top3",
                 "p_top5", "p_top8", "small_far_behind", "no_harm", "flag"]
 NA_OUT_COLS = ["panel"] + panel.NA_COLS
-OUTPUT_FILES = ("state_priority.csv", "state_priority_sensitivity.csv",
+TREND_COLS = ["basis", "unit", "step", "trend_status", "years", "n_years", "indicator",
+              "slope", "se", "lo", "hi", "chi2", "df", "phi", "rising", "sens_model",
+              "sens_status", "sens_slope", "sens_lo", "sens_hi", "sens_rising",
+              "rising_differs"]
+OUTPUT_FILES = ("state_trend.csv", "state_priority.csv", "state_priority_sensitivity.csv",
                 "state_harm_draws_summary.csv", "na_cells.csv")
+STEPS = ("S1", "S2", "S3", "S4", "S5", "S6")
 
 
 def fmt(v) -> str:
@@ -97,13 +105,25 @@ def write_csv(path: Path, header: list[str], rows: list[dict]) -> None:
             w.writerow([fmt(r[h]) for h in header])
 
 
-def rising_flags(rows: list[dict]) -> dict[tuple[str, str], tuple[bool, str]]:
-    """(unit, step) -> (rising, trend_status) for the priority year (§6.5).
+def trends(rows: list[dict], registered: list[dict] | None = None) -> list[dict]:
+    """The trend rows of every unit and step (§7), main basis; and S6 on the registered
+    S6 2022 basis when ``registered`` (the panel with that basis swapped in) is given."""
+    units = sorted({r["unit"] for r in rows})
+    out = []
+    for step in STEPS:
+        res, _ = trend.step_trends(rows, step, units)
+        out += [{"basis": "main", **r} for r in res]
+    if registered is not None:
+        res, _ = trend.step_trends(registered, "S6", units)
+        out += [{"basis": REGISTERED_BASIS, **r} for r in res]
+    return out
 
-    The trend model (§7) is not implemented yet: every flag is False, status "pending".
-    """
-    return {(r["unit"], r["step"]): (False, "pending")
-            for r in rows if r["year"] == PRIORITY_YEAR}
+
+def rising_flags(trend_rows: list[dict]) -> dict[tuple[str, str], tuple[bool, str]]:
+    """(unit, step) -> (rising, trend_status) from the main model on the main basis
+    (§6.5, §7.2)."""
+    return {(r["unit"], r["step"]): (bool(r["rising"]), r["trend_status"])
+            for r in trend_rows if r["basis"] == "main"}
 
 
 def analyse(rows: list[dict], step: str, year: int, benchmark: str,
@@ -146,7 +166,8 @@ def main(out_dir: Path = OUTPUTS) -> int:
     reg_keys = {(r["step"], r["year"]) for r in registered}
     rows_registered = [r for r in rows if (r["step"], r["year"]) not in reg_keys] + registered
 
-    rising = rising_flags(rows)  # before any tier (§6.5)
+    trend_rows = trends(rows, rows_registered)  # first: the rising flag precedes tiers
+    rising = rising_flags(trend_rows)
 
     results: dict[tuple, dict] = {}
     summary: list[dict] = []
@@ -199,6 +220,7 @@ def main(out_dir: Path = OUTPUTS) -> int:
     na = [{"panel": PANEL_CSV.stem, **r} for r in panel.na_cells(rows)]
     na += [{"panel": REGISTERED_CSV.stem, **r} for r in panel.na_cells(registered)]
 
+    write_csv(out_dir / "state_trend.csv", TREND_COLS, trend_rows)
     write_csv(out_dir / "state_priority.csv", PRIORITY_COLS, prio)
     write_csv(out_dir / "state_priority_sensitivity.csv", SENSITIVITY_COLS, sens)
     write_csv(out_dir / "state_harm_draws_summary.csv", SUMMARY_COLS, summary)
@@ -206,6 +228,15 @@ def main(out_dir: Path = OUTPUTS) -> int:
     no_harm = sorted({(r["basis"], r["step"], r["year"]) for r in summary if r["no_harm"]})
     for b, s, y in no_harm:
         print(f"no harm to avert (m = 0): {b} {s} {y}")
+    for basis in ("main", REGISTERED_BASIS):
+        for step in STEPS:
+            tr = [r for r in trend_rows if r["basis"] == basis and r["step"] == step]
+            if not tr or tr[0]["phi"] is None or tr[0]["phi"] != tr[0]["phi"]:
+                continue
+            print(f"trend {basis} {step}: phi = {tr[0]['phi']:.4f}; rising "
+                  f"{sum(r['rising'] for r in tr)}; sensitivity rising "
+                  f"{sum(r['sens_rising'] for r in tr)}; flag differs "
+                  f"{sum(r['rising_differs'] for r in tr)}")
     for name in OUTPUT_FILES:
         print(f"wrote {(out_dir / name).as_posix()}")
     return 0
