@@ -15,7 +15,12 @@ used, §3.2) and writes:
   number notified (S1); ``denominator`` is the base of the step (S2-S6) or the
   target (S1). Where a step's count lost is printed as "base minus kept" (S2,
   S5, S6), it is formed here from the two printed counts; nothing else is
-  computed (no rate, harm or estimate);
+  computed (no rate, harm or estimate). The S6 2022 denominator is the ITR 2023
+  Annexure 1.6 notified count by sex (male + female + transgender), by the
+  plan §12.2 deviation;
+- data/extracted/state_panel_s6_2022_registered.csv: the S6 2022 rows on the
+  registered basis (ITR 2023 Annexure 1.2, plan §5.2), kept as a sensitivity
+  (plan §12.2); same columns as state_panel.csv;
 - data/extracted/state_population.csv: the ITR 2024 Annexure 1.1 population of
   each coarsened unit, in lakhs as printed (summed over merged rows) and
   multiplied by 100,000 (§5.2).
@@ -61,6 +66,7 @@ EXTRACTED = ROOT / "data" / "extracted"
 CELLS_CSV = EXTRACTED / "state_cells.csv"
 PANEL_CSV = EXTRACTED / "state_panel.csv"
 POP_CSV = EXTRACTED / "state_population.csv"
+S6_2022_REGISTERED_CSV = EXTRACTED / "state_panel_s6_2022_registered.csv"
 
 CELL_COLS = ["edition", "year", "table_key", "table_id", "pdf_page", "printed_name",
              "printed_unit", "unit", "field", "column_header", "cell_printed", "value"]
@@ -162,6 +168,11 @@ SPECS: dict[str, TableSpec] = {s.key: s for s in (
         F("notified", 5, "TB patients notified, n (% achievement against target): Total, "
                          "count part"),
     ), None, "Target TB patients expected"),
+    TableSpec("ITR2023_A1.6", "ITR 2023", "Annexure 1.6", (221, 222), 9, (
+        F("notified_male", 0, "TB Cases Notified: Male"),
+        F("notified_female", 1, "TB Cases Notified: Female"),
+        F("notified_transgender", 2, "TB Cases Notified: Trans Gender"),
+    ), "1.6 GENDER DISAGGREGATED DATA ON TOTAL TB NOTIFICATION", "TB Cases Notified"),
     TableSpec("ITR2023_A2.1", "ITR 2023", "Annexure 2.1", (225,), 3, (
         F("hiv_known", 2, "TB patients with known HIV status, n (%): Total, count part"),
     ), "2.1 SCREENING FOR HIV IN NOTIFIED TB", "TB patients with known HIV status, n (%)"),
@@ -254,10 +265,21 @@ RECIPES: tuple[Recipe, ...] = (
            (("ITR2020_A2.1", "hiv_known"),)),
     Recipe("S6", 2021, (("TBAR2022_A1.4", "net_notified"),), None,
            (("TBAR2022_A2.1", "hiv_known"),)),
-    Recipe("S6", 2022, (("ITR2023_A1.2", "notified"),), None, (("ITR2023_A2.1", "hiv_known"),),
-           ("denominator_diagnosing_PHI",)),
+    # Plan §12.2 (deviation, 21 Nov 2026): the denominator is the A1.6 notified
+    # count by sex (male + female + transgender), the basis of A2.1's own
+    # percentages. The registered A1.2 basis is SENSITIVITY_RECIPES below.
+    Recipe("S6", 2022, (("ITR2023_A1.6", "notified_male"), ("ITR2023_A1.6", "notified_female"),
+                        ("ITR2023_A1.6", "notified_transgender")), None,
+           (("ITR2023_A2.1", "hiv_known"),), ("denominator_A1.6_sex_sum_plan_12.2",)),
     Recipe("S6", 2023, (("ITR2024_A1.4", "net_notified"),), None,
            (("ITR2024_A2.1", "hiv_known"),)),
+)
+
+# The registered S6 2022 denominator (plan §5.2: ITR 2023 A1.2, diagnosing PHI),
+# kept as a sensitivity (plan §12.2); written to state_panel_s6_2022_registered.csv.
+SENSITIVITY_RECIPES: tuple[Recipe, ...] = (
+    Recipe("S6", 2022, (("ITR2023_A1.2", "notified"),), None, (("ITR2023_A2.1", "hiv_known"),),
+           ("denominator_diagnosing_PHI", "registered_basis_sensitivity_plan_12.2")),
 )
 
 # Printed-total differences found at extraction (plan §3.3): (table key, field)
@@ -429,9 +451,10 @@ def _sum(tables: dict[str, Table], refs, member: str) -> int | None:
     return sum(vals)  # type: ignore[arg-type]
 
 
-def panel_rows(tables: dict[str, Table]) -> list[dict]:
+def panel_rows(tables: dict[str, Table],
+               recipes: tuple[Recipe, ...] = RECIPES) -> list[dict]:
     out = []
-    for r in RECIPES:
+    for r in recipes:
         roles = [("base", r.base)] + [(n, x) for n, x in (("lost", r.lost), ("kept", r.kept))
                                       if x is not None]
         num_refs = r.lost if r.lost is not None else r.kept
@@ -520,16 +543,19 @@ def population_rows(tables: dict[str, Table]) -> list[dict]:
 
 def build(tables: dict[str, Table]) -> dict[str, list[dict]]:
     return {"cells": cell_rows(tables), "panel": panel_rows(tables),
+            "s6_2022_registered": panel_rows(tables, SENSITIVITY_RECIPES),
             "population": population_rows(tables)}
 
 
 def write_all(tables: dict[str, Table], out_dir: Path = EXTRACTED) -> dict[str, Path]:
     b = build(tables)
     paths = {"cells": out_dir / CELLS_CSV.name, "panel": out_dir / PANEL_CSV.name,
-             "population": out_dir / POP_CSV.name}
+             "population": out_dir / POP_CSV.name,
+             "s6_2022_registered": out_dir / S6_2022_REGISTERED_CSV.name}
     annex.write_csv(paths["cells"], CELL_COLS, b["cells"])
     annex.write_csv(paths["panel"], PANEL_COLS, b["panel"])
     annex.write_csv(paths["population"], POP_COLS, b["population"])
+    annex.write_csv(paths["s6_2022_registered"], PANEL_COLS, b["s6_2022_registered"])
     return paths
 
 

@@ -194,7 +194,9 @@ def test_panel_flags_follow_the_plan():
     rows = {(r["unit"], r["step"], int(r["year"])): r for r in _read("state_panel.csv")}
     flags = {k: set(r["flag"].split(";")) for k, r in rows.items()}
     assert all("public_plus_private" in flags[(u, "S3", 2018)] for u in crosswalk.UNITS)
-    assert all("denominator_diagnosing_PHI" in flags[(u, "S6", 2022)] for u in crosswalk.UNITS)
+    assert all("denominator_A1.6_sex_sum_plan_12.2" in flags[(u, "S6", 2022)]
+               for u in crosswalk.UNITS)
+    assert not any(f.startswith("NA:") for fs in flags.values() for f in fs)
     assert all("cohort_2022" in flags[(u, "S3", 2023)] for u in crosswalk.UNITS)
     # Lakshadweep prints "#N/A" in ITR 2024 Annexure 4.13 and no private-sector
     # deaths in ITR 2019 Annexure 1.4.a: it adds nothing to Kerala there.
@@ -202,6 +204,24 @@ def test_panel_flags_follow_the_plan():
     assert "member_missing:Lakshadweep" in flags[("Kerala", "S3", 2018)]
     missing = {k for k, f in flags.items() if any(x.startswith("member_missing") for x in f)}
     assert missing == {("Kerala", "S5", 2023), ("Kerala", "S3", 2018)}
+
+
+def test_s6_2022_registered_sensitivity_file():
+    rows = _read("state_panel_s6_2022_registered.csv")
+    assert list(rows[0]) == itr_state.PANEL_COLS
+    assert sorted(r["unit"] for r in rows) == sorted(crosswalk.UNITS)
+    assert {(r["step"], r["year"]) for r in rows} == {("S6", "2022")}
+    for r in rows:
+        assert r["table_id"] == "Annexure 2.1;Annexure 1.2", r
+        assert "denominator_diagnosing_PHI" in r["flag"].split(";"), r
+    na = sorted(r["unit"] for r in rows if "NA:loss_negative" in r["flag"].split(";"))
+    assert na == ["Andhra Pradesh", "Haryana", "Himachal Pradesh", "Mizoram", "Tripura"]
+
+
+def test_lakshwadeep_spelling_only_in_itr2019_a1_4a():
+    keys = {r["table_key"] for r in _read("state_cells.csv")
+            if r["printed_name"] == "Lakshwadeep"}
+    assert keys == {"ITR2019_A1.4.a"}
 
 
 def test_panel_and_population_rebuild_from_cells():

@@ -12,10 +12,12 @@ Run as: python -I verification/check_extraction_totals.py
    column, the sum of the 36 printed State/UT rows equals the printed India row,
    except the differences recorded with their size in itr_state.RECORDED_GAPS,
    which must be present exactly as recorded.
-2. data/extracted/state_panel.csv and state_population.csv (committed) equal
-   the panel and population rebuilt from state_cells.csv.
+2. data/extracted/state_panel.csv, state_panel_s6_2022_registered.csv and
+   state_population.csv (committed) equal the panel, the registered-basis S6
+   2022 sensitivity (plan §12.2) and the population rebuilt from
+   state_cells.csv.
 3. If the source PDFs are in data_raw/: the tables are extracted again, check 1
-   is repeated on the fresh extraction, and the three CSVs rebuilt from it are
+   is repeated on the fresh extraction, and the four CSVs rebuilt from it are
    byte-identical to the committed files. If any PDF is absent this step is
    reported as SKIPPED (run tools/fetch_sources.py) and does not fail.
 
@@ -74,10 +76,13 @@ def _written(rows: list[dict], cols: list[str]) -> bytes:
 def rebuild_problems() -> list[str]:
     """Check 2: panel and population rebuilt from the committed cells."""
     t = itr_state.tables_from_cells(itr_state.CELLS_CSV)
-    b = {"panel": itr_state.panel_rows(t), "population": itr_state.population_rows(t)}
+    b = {"panel": itr_state.panel_rows(t), "population": itr_state.population_rows(t),
+         "s6_2022_registered": itr_state.panel_rows(t, itr_state.SENSITIVITY_RECIPES)}
     out = []
     for name, cols, path in (("panel", itr_state.PANEL_COLS, itr_state.PANEL_CSV),
-                             ("population", itr_state.POP_COLS, itr_state.POP_CSV)):
+                             ("population", itr_state.POP_COLS, itr_state.POP_CSV),
+                             ("s6_2022_registered", itr_state.PANEL_COLS,
+                              itr_state.S6_2022_REGISTERED_CSV)):
         if _written(b[name], cols) != path.read_bytes():
             out.append(f"{path.name} differs from its rebuild from state_cells.csv")
     return out
@@ -90,7 +95,8 @@ def pdf_problems() -> list[str]:
     with tempfile.TemporaryDirectory() as d:
         paths = itr_state.write_all(tables, Path(d))
         for name, committed in (("cells", itr_state.CELLS_CSV), ("panel", itr_state.PANEL_CSV),
-                                ("population", itr_state.POP_CSV)):
+                                ("population", itr_state.POP_CSV),
+                                ("s6_2022_registered", itr_state.S6_2022_REGISTERED_CSV)):
             if paths[name].read_bytes() != committed.read_bytes():
                 out.append(f"{committed.name} differs from a fresh extraction from the PDFs")
     return out
@@ -100,7 +106,8 @@ def main() -> int:
     failed = 0
     for label, fn in (("printed totals (state_cells.csv)",
                        lambda: cell_total_problems(_read(itr_state.CELLS_CSV))),
-                      ("panel and population rebuilt from state_cells.csv", rebuild_problems)):
+                      ("panel, S6 2022 registered-basis sensitivity and population rebuilt from "
+                       "state_cells.csv", rebuild_problems)):
         try:
             bad = fn()
         except Exception as e:  # noqa: BLE001  any error is a failed check

@@ -1,0 +1,34 @@
+unit,year,step,numerator,denominator,source_file,pdf_page,table_id,flag
+Andaman and Nicobar Islands,2022,S6,6,534,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Andhra Pradesh,2022,S6,,,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2;NA:loss_negative
+Arunachal Pradesh,2022,S6,69,2863,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Assam,2022,S6,3565,47822,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Bihar,2022,S6,13712,161165,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Chandigarh,2022,S6,2395,6066,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Chhattisgarh,2022,S6,1056,38521,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Delhi,2022,S6,31234,106731,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Goa,2022,S6,94,2091,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Gujarat,2022,S6,7389,153311,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2;merged:Gujarat+Dadra and Nagar Haveli and Daman and Diu
+Haryana,2022,S6,,,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2;NA:loss_negative
+Himachal Pradesh,2022,S6,,,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2;NA:loss_negative
+Jammu and Kashmir,2022,S6,134,12124,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2;merged:Jammu and Kashmir+Ladakh
+Jharkhand,2022,S6,1845,57320,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Karnataka,2022,S6,3263,80416,data_raw/india_tb_report/ITR2023.pdf,213;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Kerala,2022,S6,1014,23399,data_raw/india_tb_report/ITR2023.pdf,213;214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2;merged:Kerala+Lakshadweep
+Madhya Pradesh,2022,S6,5589,186293,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Maharashtra,2022,S6,8141,234105,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Manipur,2022,S6,358,2554,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Meghalaya,2022,S6,862,4989,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Mizoram,2022,S6,,,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2;NA:loss_negative
+Nagaland,2022,S6,139,4125,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Odisha,2022,S6,762,60372,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Puducherry,2022,S6,2313,3835,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Punjab,2022,S6,597,55150,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Rajasthan,2022,S6,6393,169522,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Sikkim,2022,S6,9,1395,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Tamil Nadu,2022,S6,2076,93879,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Telangana,2022,S6,445,72941,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Tripura,2022,S6,,,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2;NA:loss_negative
+Uttar Pradesh,2022,S6,1219,522850,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+Uttarakhand,2022,S6,623,27553,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
+West Bengal,2022,S6,2407,100972,data_raw/india_tb_report/ITR2023.pdf,214;225,Annexure 2.1;Annexure 1.2,denominator_diagnosing_PHI;registered_basis_sensitivity_plan_12.2
