@@ -1,0 +1,25 @@
+Derived data licence
+
+The derived data in this repository, namely
+
+  - data/ (the source manifest and, from later tasks, the values extracted from
+    the source reports with their sources), and
+  - outputs/ (the results of the analyses),
+
+are licensed under the Creative Commons Attribution 4.0 International licence
+(CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+
+Attribution: Siddalingaiah H S, "Where to invest against TB in India: a State
+and district priority tool".
+
+The underlying figures come from Government of India publications: the India TB
+Reports and the TB Annual Report 2022 of the Central TB Division, Ministry of
+Health and Family Welfare; the report of the ICMR National TB Prevalence Survey
+in India 2019-2021 (Indian Council of Medical Research); and the answer to Lok
+Sabha Unstarred Question No. 802 of 7 February 2025 (data source: Ni-kshay).
+Those documents remain the property of their publishers; they are not
+redistributed in this repository and are not covered by this licence. Users of
+the derived data should also cite the source publications.
+
+The code (src/, tools/, tests/ and, from later tasks, verification/) is licensed
+separately under the MIT licence: see LICENSE.
