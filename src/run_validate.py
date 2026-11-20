@@ -12,7 +12,8 @@ numpy.random.default_rng(20261121) per draw set, §10.1), and writes to outputs/
   which carry no null and no label: the H1 top-5 overlap (per step and summed, out of 15),
   the rate-gap rho beside H1 (§10.4), the signed shortfall per 100,000 beside H2 (§8.3) and
   the H3 share of each step.
-- spec_curve.csv: every entry of the H1 and H2 grids (§8.5), the main entry included.
+- spec_curve.csv: every entry of the H1 and H2 grids (§8.5), the main entry included;
+  ``n`` is the entry's own count (H1: the unit-step pairs it uses; H2: NTPS units).
 - leave_one_out.csv: H1 and H2 with each unit left out (point estimates), and the 2023 tiers
   refitted with each unit removed (§8.7); ``extreme`` marks the minimum and maximum rho and
   the omitted unit that changes the most tiers.
@@ -147,6 +148,13 @@ def h1_values(results: dict, benchmark: str, shrinkage: bool, window: str,
     return pre, post
 
 
+def n_pairs(pre: dict, post: dict) -> int:
+    """The number of unit-step pairs an H1 entry uses: both values present (§8.2,
+    inclusion)."""
+    return sum(1 for k, v in pre.items()
+               if v is not None and v == v and post.get(k) is not None and post[k] == post[k])
+
+
 def h2_values(results: dict, rows: list[dict], population: dict, groups: dict,
               benchmark: str, shrinkage: bool, denominator: str) -> dict[str, float]:
     harm_mean = mean_harm(results[("S1", YEAR, benchmark, shrinkage)])
@@ -239,12 +247,15 @@ def main(out_dir: Path = OUTPUTS) -> int:
         for shrinkage in (True, False):
             for window in H1_WINDOWS:
                 key = (benchmark, shrinkage, window)
-                rho = (h1["rho"] if key == H1_MAIN
-                       else validate.h1_rho(*h1_values(results, *key)))
+                if key == H1_MAIN:
+                    rho, n = h1["rho"], h1["n_pairs"]
+                else:
+                    vals = h1_values(results, *key)
+                    rho, n = validate.h1_rho(*vals), n_pairs(*vals)
                 h1_grid.append(validate.sign(rho))
                 spec.append({"estimate": "H1", "benchmark": benchmark,
                              "shrinkage": onoff(shrinkage), "year_window": window,
-                             "denominator": "", "value": rho, "n": h1["n_pairs"],
+                             "denominator": "", "value": rho, "n": n,
                              "main": key == H1_MAIN,
                              "agrees": validate.sign(rho) == h1_main_sign
                              and h1_main_sign in (1, -1)})

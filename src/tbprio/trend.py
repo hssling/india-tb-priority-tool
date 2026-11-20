@@ -128,10 +128,12 @@ def interval(f: Fit, phi: float) -> tuple[float, float, float]:
     return se, f.slope - Z * se, f.slope + Z * se
 
 
-def slope(years, x, n, *, achievement: bool = False, indicator: bool | None = None,
-          phi: float = 1.0) -> tuple[float, float, float]:
-    """(slope, lo, hi) of one unit-step under the main-analysis rules (§7.2), with the
-    step's pooled phi passed in (1 by default). Raises NotEstimable with < 3 years."""
+def slope(years, x, n, *, phi: float, achievement: bool = False,
+          indicator: bool | None = None) -> tuple[float, float, float]:
+    """(slope, lo, hi) of one unit-step under the main-analysis rules (§7.2). ``phi`` is
+    the step's pooled phi_s (pooled_phi over the step's main fits); it is keyword-only and
+    has no default, so a caller cannot silently use an unscaled interval. Raises
+    NotEstimable with < 3 years."""
     f = fit(years, x, n, achievement=achievement, indicator=indicator)
     _, lo, hi = interval(f, phi)
     return f.slope, lo, hi

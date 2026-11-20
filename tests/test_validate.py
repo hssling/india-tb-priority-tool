@@ -55,18 +55,25 @@ def test_label_rule():
 
 def test_trend_requires_three_years():
     with pytest.raises(trend.NotEstimable):
-        trend.slope([2022, 2023], [100, 90], [1000, 1000])
+        trend.slope([2022, 2023], [100, 90], [1000, 1000], phi=1.0)
     # With the 2021 indicator fitted, 3 years other than 2021 are needed.
     with pytest.raises(trend.NotEstimable):
-        trend.slope([2019, 2021, 2023], [100, 90, 80], [1000, 1000, 1000])
+        trend.slope([2019, 2021, 2023], [100, 90, 80], [1000, 1000, 1000], phi=1.0)
     with pytest.raises(trend.NotEstimable):
-        trend.slope([2019, 2021, 2023], [1, 2, 3], [100, 100, 100], indicator=True)
+        trend.slope([2019, 2021, 2023], [1, 2, 3], [100, 100, 100], indicator=True,
+                    phi=1.0)
     # Three non-2021 years with 2021: estimable (S4 years).
-    s, lo, hi = trend.slope([2019, 2021, 2022, 2023], [100, 50, 90, 80], [1000] * 4)
+    s, lo, hi = trend.slope([2019, 2021, 2022, 2023], [100, 50, 90, 80], [1000] * 4, phi=1.0)
     assert lo < s < hi
     # S1: 3 years, no indicator.
-    s, lo, hi = trend.slope([2021, 2022, 2023], [900, 950, 990], [1000] * 3, achievement=True)
+    s, lo, hi = trend.slope([2021, 2022, 2023], [900, 950, 990], [1000] * 3, achievement=True,
+                           phi=1.0)
     assert lo < s < hi
+    # phi (the step's pooled phi_s) is keyword-only and has no default.
+    with pytest.raises(TypeError):
+        trend.slope([2021, 2022, 2023], [900, 950, 990], [1000] * 3, achievement=True)
+    with pytest.raises(TypeError):
+        trend.slope([2021, 2022, 2023], [900, 950, 990], [1000] * 3, 1.0)
 
     rows = [_row("A", "S3", y, 50 + y - 2018, 1000) for y in (2018, 2019, 2021, 2022, 2023)]
     rows += [_row("B", "S3", y, 40, 1000) for y in (2021, 2022, 2023)]
@@ -181,6 +188,16 @@ def test_top5_overlap_ties_alphabetical():
     pre = {(u, "S3"): v for u, v in zip("ABCDEFG", [7, 6, 5, 4, 3, 2, 1])}
     post = {(u, "S3"): v for u, v in zip("ABCDEFG", [1, 2, 3, 4, 5, 6, 7])}
     assert validate.h1_stability(pre, post)["top5_overlap"] == {"S3": 3}
+
+
+def test_h1_grid_entry_counts_its_own_pairs():
+    pre = {("A", "S3"): 1.0, ("B", "S3"): None, ("C", "S3"): float("nan"),
+           ("D", "S3"): 2.0}
+    post = {("A", "S3"): 3.0, ("B", "S3"): None, ("C", "S3"): 1.0, ("D", "S3"): None}
+    assert run_validate.n_pairs(pre, post) == 1
+    assert run_validate.n_pairs(pre, post) == validate.h1_stability(
+        {k: v for k, v in pre.items() if k != ("D", "S3")},
+        {k: v for k, v in post.items() if k != ("D", "S3")})["n_pairs"]
 
 
 # ---- H2 (plan §8.3) ------------------------------------------------------------------
