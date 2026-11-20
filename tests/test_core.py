@@ -139,6 +139,16 @@ def test_draws_reset_per_analysis_and_alphabetical(tmp_path):
         expect = rng.beta(est.alpha + x, est.beta + 2000 - x, size=harm.N_DRAWS)
         np.testing.assert_array_equal(est.rate_draws[u], expect)
 
+    # S1, shrinkage off: a_u ~ Gamma(1/2 + y, rate e), i.e. numpy's
+    # gamma(0.5 + y, 1/e, 10000), one call per unit in alphabetical order (§6.1, §10.1).
+    s1 = _loaded(tmp_path, [_row(u, "S1", 2023, y, e) for u, y, e in
+                            (("Zeta", 1900, 2000), ("Alpha", 800, 1000), ("Mu", 1300, 1500))])
+    est = harm.estimate(s1, "S1", 2023, "p75", False, np.random.default_rng(harm.SEED))
+    assert est.units == ["Alpha", "Mu", "Zeta"]
+    rng = np.random.default_rng(harm.SEED)
+    for u, y, e in (("Alpha", 800, 1000), ("Mu", 1300, 1500), ("Zeta", 1900, 2000)):
+        np.testing.assert_array_equal(est.rate_draws[u], rng.gamma(0.5 + y, 1 / e, 10000))
+
 
 # ---- missing cells (plan §6, §3.3) ---------------------------------------------------
 
@@ -190,6 +200,29 @@ def test_small_unit_cannot_dominate_tiers(tmp_path):
     gaps = {u: est.post_mean[u] - est.rate_bench for u in est.units}
     means = {u: float(h.mean()) for u, h in est.draws.items()}
     assert priority.flags(gaps, means)["Small UT"]["small_far_behind"] is True
+    # Shrinkage off (Jeffreys prior): the small unit still cannot reach "act now".
+    est = harm.estimate(loaded, "S5", 2023, "p75", False, np.random.default_rng(harm.SEED))
+    p = priority.p_topk(est.draws, 5)
+    assert priority.tier(p["Small UT"], False) != "act now"
+    assert p["Small UT"] < 0.2
+
+    # A mid-sized unit (n = 2,000) with the worst rate of all: its tier follows its harm
+    # averted, not its rate. Its harm (about 1,800) ranks below the five largest (about
+    # 2,500 and above), so it is not "act now"; the "act now" units are the top 5 by harm.
+    rows = [_row(f"Large {i:02d}", "S5", 2023, 3000 + 500 * i, 100000) for i in range(12)]
+    rows.append(_row("Mid", "S5", 2023, 1900, 2000))  # loss rate 0.95
+    loaded = _loaded(tmp_path, rows)
+    for shrinkage in (True, False):
+        est = harm.estimate(loaded, "S5", 2023, "p75", shrinkage,
+                            np.random.default_rng(harm.SEED))
+        assert est.post_mean["Mid"] == max(est.post_mean.values())
+        p = priority.p_topk(est.draws, 5)
+        means = {u: float(h.mean()) for u, h in est.draws.items()}
+        tiers = {u: priority.tier(p[u], False) for u in est.units}
+        assert tiers["Mid"] != "act now" and p["Mid"] < 0.2
+        top = sorted(means, key=lambda u: -means[u])[:5]
+        assert "Mid" not in top
+        assert {u for u, t in tiers.items() if t == "act now"} == set(top)
 
 
 def test_p_topk_zero_harm_scores_zero():
