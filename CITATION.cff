@@ -14,8 +14,7 @@ abstract: >-
   tables. Observational; no causal estimates.
 type: software
 version: "1.0.0"
-# PLACEHOLDER: the release date is set at release.
-date-released: "YYYY-MM-DD"
+date-released: "2026-11-21"
 authors:
   - family-names: "Siddalingaiah"
     given-names: "H S"
