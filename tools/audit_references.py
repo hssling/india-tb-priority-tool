@@ -131,10 +131,13 @@ def sha(path: Path) -> str:
 def non_doi_check(n: int, entry: str, root: Path) -> tuple[str, bool]:
     with open(root / "data" / "source_manifest.csv", newline="", encoding="utf-8") as f:
         man = list(csv.DictReader(f))
-    if entry.startswith("[software]"):
+    if entry.startswith(("[software]", "[dataset]")):
         ok = "[repository and DOI withheld for review]" in entry
-        return (f"| {n} | none | [software] the study's repository | anonymised placeholder; the title page names it "
+        kind = entry.split("]", 1)[0] + "]"
+        return (f"| {n} | none | {kind} the study's repository | anonymised placeholder; the title page names it "
                 f"| placeholder present: {'yes' if ok else 'NO'} | {'yes (placeholder)' if ok else 'NO'} |"), ok
+    if "Lok Sabha Unstarred Question No. 802" in entry:
+        return lok_sabha_check(n, entry, man, root)
     url = re.search(r"(https?://\S+) \(accessed (\d{1,2} \w+ \d{4})\)\.$", entry)
     if url:
         hit = [r for r in man if r["origin"].endswith("upstream " + url.group(1))]
@@ -147,7 +150,13 @@ def non_doi_check(n: int, entry: str, root: Path) -> tuple[str, bool]:
         ok = "DIFFERS" not in state
         return (f"| {n} | none | {Path(r['path']).name} | upstream URL in data/source_manifest.csv; local copy "
                 f"{state}; accessed {url.group(2)} | — | {'yes' if ok else 'NO'} |"), ok
-    if "Lok Sabha Unstarred Question No. 802" in entry:
+    return f"| {n} | none | {entry[:70]} | no DOI, no URL with an access date | — | NO |", False
+
+
+def lok_sabha_check(n: int, entry: str, man: list[dict], root: Path) -> tuple[str, bool]:
+    """The parliamentary answer: the local copy's digest and printed heading; the cited URL must name
+    the same file (AU802_LlE1Wb)."""
+    if True:
         r = next(x for x in man if x["path"].endswith("AU802_LlE1Wb.docx"))
         p = root / r["path"]
         ok, state = True, "local copy absent (digest not re-verified)"
@@ -161,8 +170,10 @@ def non_doi_check(n: int, entry: str, root: Path) -> tuple[str, bool]:
                 heading = "RISING OF CASES OF TUBERCULOSIS 7th FEBRUARY, 2025 UNSTARRED QUESTION No. 802"
             ok = ok and "RISING OF CASES OF TUBERCULOSIS" in heading and "7th FEBRUARY, 2025" in heading
             state = f"SHA-256 {'verified' if ok else 'DIFFERS or heading differs'}; heading 'Rising of cases of tuberculosis'"
+        url_ok = "AU802_LlE1Wb" in entry
+        ok = ok and url_ok
+        state += f"; cited URL names the same file: {'yes' if url_ok else 'NO'}"
         return f"| {n} | none | AU802_LlE1Wb.docx | {state} | — | {'yes' if ok else 'NO'} |", ok
-    return f"| {n} | none | {entry[:70]} | no DOI, no URL with an access date | — | NO |", False
 
 
 def main(argv: list[str] | None = None) -> int:

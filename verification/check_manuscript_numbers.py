@@ -54,6 +54,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import statistics
 import sys
 from functools import lru_cache
 from pathlib import Path
@@ -237,6 +238,39 @@ def catalogue(root: Path) -> dict[str, tuple[str, str]]:
         v = [float(x["value"]) for x in sp if x["estimate"] == e]
         put(f"{e}.grid_range", rng(rho(min(v)), rho(max(v))), f"outputs/spec_curve.csv: {e} min and max value")
 
+    for den, key in (("per population", "pop"), ("per target", "target")):
+        v = [float(x["value"]) for x in sp if x["estimate"] == "H2" and x["denominator"] == den]
+        put(f"H2.grid_{key}", rng(rho(min(v)), rho(max(v))), f"outputs/spec_curve.csv: H2 {den} min and max value")
+    put("p.near", f"{count(len(pr) - len(mid))} of {count(len(pr))}",
+        "outputs/state_priority.csv: p_top5 <= 0.02 or >= 0.98")
+
+    # ---- S3 benchmark and observed death rates by year (main, p75, shrinkage on) --------
+    dr = read_csv(root, "outputs/state_harm_draws_summary.csv")
+    s3 = [x for x in dr if (x["basis"], x["step"], x["benchmark"], x["shrinkage"]) == ("main", "S3", "p75", "on")]
+    for y in ("2018", "2022", "2023"):
+        put(f"S3.bench{y}", num({x["rate_bench"] for x in s3 if x["year"] == y}.pop(), 3),
+            f"outputs/state_harm_draws_summary.csv: main S3 {y} p75/on rate_bench")
+    obs = {y: {x["unit"]: float(x["rate_observed"]) for x in s3 if x["year"] == y and x["rate_observed"]}
+           for y in ("2018", "2022", "2023")}
+    put("S3.rose1822", f"{count(sum(obs['2022'][u] > obs['2018'][u] for u in obs['2018']))} of {count(len(obs['2018']))}",
+        "outputs/state_harm_draws_summary.csv: main S3 p75/on rate_observed 2022 > 2018")
+    put("S3.fell2223", f"{count(sum(obs['2023'][u] < obs['2022'][u] for u in obs['2022']))} of {count(len(obs['2022']))}",
+        "outputs/state_harm_draws_summary.csv: main S3 p75/on rate_observed 2023 < 2022")
+
+    # ---- tiers without shrinkage (2023, p75, shrinkage off; thresholds of §6.4) ----------
+    main_tier = {(x["unit"], x["step"]): x for x in pr}
+
+    def tier_of(p: float, rising: str) -> str:
+        t = ("act now" if p >= 0.80 else "probable priority" if p >= 0.50 else "uncertain" if p >= 0.20
+             else "lower priority")
+        return "watch: rising" if t in ("uncertain", "lower priority") and rising == "True" else t
+    off = [x for x in dr if (x["basis"], x["year"], x["benchmark"], x["shrinkage"]) == ("main", "2023", "p75", "off")
+           and x["p_top5"]]
+    n_ch = sum(tier_of(float(x["p_top5"]), main_tier[(x["unit"], x["step"])]["rising"])
+               != main_tier[(x["unit"], x["step"])]["tier"] for x in off)
+    put("sens.shrink_off", f"{count(n_ch)} of {count(len(off))}",
+        "outputs/state_harm_draws_summary.csv: main 2023 p75/off p_top5, tiered as in §6.4, against state_priority.csv tier")
+
     # ---- S6 2022 on the registered denominator (plan §12.2) --------------------------------
     dr = read_csv(root, "outputs/state_harm_draws_summary.csv")
     sel = [x for x in dr if x["step"] == "S6" and x["year"] == "2022" and x["benchmark"] == "p75"
@@ -262,6 +296,10 @@ def catalogue(root: Path) -> dict[str, tuple[str, str]]:
         put(f"{st}.below", count(sum(x["funnel_flag"] == "below State limits" for x in rs)),
             f"outputs/district_national_2018.csv: {st} below State limits")
         put(f"{st}.phi", num(rs[0]["phi"], 1), f"outputs/district_national_2018.csv: {st} phi")
+        up = [int(x["denominator"]) for x in rs if x["tier"] in ("act now", "probable priority", "uncertain")]
+        put(f"{st}.min_upper", count(min(up)), f"outputs/district_national_2018.csv: {st} smallest upper-tier denominator")
+        put(f"{st}.median_n", count(statistics.median(int(x["denominator"]) for x in rs)),
+            f"outputs/district_national_2018.csv: {st} median denominator")
     m = read_csv(root, "outputs/district_mp_mh.csv")
     for s, k in (("Madhya Pradesh", "mp"), ("Maharashtra", "mh")):
         rs = [x for x in m if x["state"] == s]
@@ -275,6 +313,12 @@ def catalogue(root: Path) -> dict[str, tuple[str, str]]:
         if rose:
             put(f"{k}.rose", and_list(rose), f"outputs/district_mp_mh.csv: {s} rose beyond adjusted limits")
             put(f"{k}.n_rose", count(len(rose)), f"outputs/district_mp_mh.csv: {s} rose (count)")
+        for d_, lab in (("fell", "add_fell"), ("rose", "add_rose")):
+            names = sorted(x["district"].replace("_", " ") for x in rs
+                           if x["additive_position_998"] == f"{d_} beyond adjusted limits")
+            if names:
+                put(f"{k}.{lab}", and_list(names),
+                    f"outputs/district_mp_mh.csv: {s} additive_position_998 {d_} beyond adjusted limits")
     ch = one(m, "Chhatarpur", district="Chhatarpur")
     put("mp.chhatarpur", pct(ch["rel_change"], 1), "outputs/district_mp_mh.csv: Chhatarpur rel_change")
     put("mpmh.flagged", count(sum("beyond" in x["flag"] for x in m)), "outputs/district_mp_mh.csv: flagged districts")
@@ -343,6 +387,11 @@ def claims(root: Path) -> list[str]:
     need({x["data_label"] for x in d} == {"2018 data (historical)"}, "the national district module is labelled 2018 (historical)")
     upper = [x for x in d if x["tier"] != "lower priority"]
     need(all(float(x["denominator"]) > 1000 for x in upper), "every upper-tier district has a denominator above 1,000")
+    tn = one(loo, "Tamil Nadu S2", analysis="tiers", omitted="Tamil Nadu", step="S2") if (
+        loo := read_csv(root, "outputs/leave_one_out.csv")) else {}
+    need("Uttar Pradesh: act now -> lower priority" in tn.get("changes", "")
+         and "Jharkhand: lower priority -> act now" in tn.get("changes", ""),
+         "without Tamil Nadu, Uttar Pradesh S2 drops from act now to lower priority and Jharkhand becomes act now")
     b3 = {x["year"]: float(x["rate_bench"]) for x in read_csv(root, "outputs/state_harm_draws_summary.csv")
           if (x["basis"], x["step"], x["benchmark"], x["shrinkage"]) == ("main", "S3", "p75", "on")}
     need(b3["2018"] < b3["2019"] < b3["2021"] < b3["2022"], "the S3 benchmark rose between 2018 and 2022")
@@ -383,6 +432,7 @@ FIXED: list[tuple[str, str]] = [
     ("step", r"\b[SD][1-6]\b(?:–[SD][1-6]\b)?"),
     ("hypothesis", r"\b[HQ][1-4]\b"),
     ("ci_level", r"\b95%"),
+    ("name", r"\bCOVID-19\b"),
     ("topk", r"\btop[- ](?:5|20|k|five)\b|\bP\(top-(?:5|20|k)\)"),
     ("per100k", r"\bper[- ]100,000\b"),
     ("section", r"\bSections? [2-7]\.\d{1,2}\b|### \d\.\d{1,2}\.|## \d\. "),
