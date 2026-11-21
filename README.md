@@ -5,8 +5,8 @@
 Code, extracted data, outputs and a pre-registered analysis plan for a tool that
 helps those who run India's National TB Elimination Programme (NTEP) decide
 where closing a gap in the TB care pathway would avert the most harm, at which
-step of the pathway, and how sure we can be. It also flags where a gap is
-widening. It uses only published, aggregate, official data.
+step of the pathway, and how sure one can be. It also flags where a unit's own
+loss rate is rising. It uses only published, aggregate, official data.
 
 It is not a league table. The official State TB Score asks how each State did
 on nine process indicators. This tool asks where closing a gap would prevent
@@ -25,7 +25,9 @@ questions (its §2):
   among the top five? The answer is harm averted with a 95% interval, the
   probability of being in the top five, P(top-5), and a tier.
 - **Q2. Trajectory.** For each unit and step with enough years, is the gap
-  widening? A widening gap is flagged as rising risk.
+  widening (the registered question)? The registered flag tracks the trend in
+  each unit's own loss rate, not its distance from the benchmark, so "rising
+  risk" means a rising rate, which may partly reflect better recording.
 - **Q3. Reliability.** Are the priorities stable over time (H1)? Are they
   associated with an independent measure of TB burden, the ICMR National TB
   Prevalence Survey (H2)? How concentrated is the harm that could be averted
