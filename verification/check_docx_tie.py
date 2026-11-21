@@ -340,6 +340,11 @@ def report_problems(sub: Path, root: Path) -> list[str]:
             if (sub / dst).exists() and (sub / dst).read_bytes() != (root / src).read_bytes()]
 
 
+# Optional uploads the submission system accepts beside the set (not required by the journal's
+# guide): a graphical abstract.
+OPTIONAL_FILES = {"14_graphical_abstract.tif", "14_graphical_abstract.pdf"}
+
+
 def problems(ms_dir: Path | None = None, root: Path = ROOT) -> list[str]:
     ms_dir = ms_dir or root / cmn.DEFAULT_MS_DIR
     sub = ms_dir / "submission"
@@ -347,7 +352,8 @@ def problems(ms_dir: Path | None = None, root: Path = ROOT) -> list[str]:
     marks = markers(ms_dir, root)
     units_of: dict[str, list[str]] = {}
     out += [f"EXTRA: {p.name} is not part of the submission set" for p in sorted(sub.iterdir())
-            if p.is_file() and p.name not in all_files() and not SUBMITTED.fullmatch(p.name)]
+            if p.is_file() and p.name not in all_files() and p.name not in OPTIONAL_FILES
+            and not SUBMITTED.fullmatch(p.name)]
     for name in SPEC:
         path = sub / name
         if not path.exists():
