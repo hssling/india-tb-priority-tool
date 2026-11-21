@@ -1,5 +1,7 @@
 # Where to invest against TB in India: a State and district priority tool
 
+**Archived release:** v1.0.1, doi:[10.5281/zenodo.24411057](https://doi.org/10.5281/zenodo.24411057) (concept DOI, always the latest version: [10.5281/zenodo.24411056](https://doi.org/10.5281/zenodo.24411056)).
+
 Code, extracted data, outputs and a pre-registered analysis plan for a tool that
 helps those who run India's National TB Elimination Programme (NTEP) decide
 where closing a gap in the TB care pathway would avert the most harm, at which
