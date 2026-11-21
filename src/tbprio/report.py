@@ -352,8 +352,9 @@ STATE_CAVEATS = [
     "so it is close to 0 or 1. The tiers therefore express little uncertainty beyond "
     "sampling (plan §10.4).",
     "Harm averted is an absolute count, so large States have large values at every step. "
-    "The temporal-stability estimate (H1, outputs/headline.csv) is largely driven by unit "
-    "size for the same reason (plan §10.4).",
+    "The plan expected the temporal-stability estimate (H1, outputs/headline.csv) to reflect "
+    "unit size (plan §10.4); the size-free rate-gap correlation was similar, so the stability "
+    "is not explained by size alone.",
     "The association of the S1 shortfall with the National TB Prevalence Survey (H2) may "
     "be circular if CTD targets were set from burden estimates that include the survey "
     "(plan §10.4).",

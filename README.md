@@ -79,15 +79,18 @@ are descriptive and carry no label.
 | **H2** external association: Spearman ρ between the 2023 S1 harm averted per 100,000 and NTPS prevalence | 0.330 (-0.146 to 0.682; Fisher-z with Fieller's variance) | 20 NTPS reporting units | 12 of 12 | **Not established** |
 | H3 concentration: share of the 2023 harm averted (S2-S5 summed) in each step's top-five units | 0.587 | 4 steps | (descriptive) | none |
 
-- H1 is largely driven by unit size: large units have large harm averted in
-  every year (plan §10.4). The correlation of rate gaps, which removes size, is
-  0.550 (descriptive). The top-five sets of the pre-period and 2023 share 11 of
-  15 places (S3 4, S4 4, S6 3).
+- The plan expected H1 to reflect unit size (plan §10.4); the size-free
+  rate-gap correlation was similar (0.550, descriptive), so the stability is
+  not explained by size alone. Across the H1 specification grid, H1 ranges
+  from 0.484 to 0.863 (`outputs/spec_curve.csv`). The top-five sets of the
+  pre-period and 2023 share 11 of 15 places (S3 4, S4 4, S6 3).
 - H2 is a test of association, not of validity: the survey describes
   2019-2021, and a CTD target is a programme goal, not an estimate of disease.
   It may be circular if targets were set from burden estimates that include
-  the survey. The interval includes 0, so H2 is not established, although
-  every grid entry is positive.
+  the survey. The interval includes 0, so H2 is not established. The
+  association is positive per population (0.138 to 0.411) but close to 0 per
+  target (0.057 to 0.095); shrinkage does not change S1, so the 12-entry grid
+  holds six distinct estimates.
 - Leave-one-out: H1 stays between 0.533 (without Delhi) and 0.653 (without
   Uttar Pradesh); H2 between 0.234 and 0.484.
 
@@ -116,8 +119,10 @@ the small-but-far-behind flag, is `outputs/state_priority.csv`; the report
 `outputs/report_state.html` shows it as a priority matrix with per-unit
 summaries, a plain-language legend and the caveats. Rising risk was found only
 for S3 (9 units; 4 of them are already "act now"). Sensitivities (k = 3 and 8,
-median and best-decile benchmarks, shrinkage off, leave-one-out) are in
-`outputs/state_priority_sensitivity.csv` and `outputs/leave_one_out.csv`.
+median and best-decile benchmarks, leave-one-out) are in
+`outputs/state_priority_sensitivity.csv` and `outputs/leave_one_out.csv`;
+P(top-5) with shrinkage off is in `outputs/state_harm_draws_summary.csv`
+(`shrinkage` = off).
 
 District modules (demonstrations of method, no current national district
 results):
@@ -235,7 +240,8 @@ page and table.
   patients, most P(top-5) values are close to 0 or 1 (9 of 198 State rows lie
   between 0.02 and 0.98). The tiers express little uncertainty beyond
   sampling; they do not include error in the reported figures.
-- **H1 is driven by unit size**; the rate-gap correlation is shown beside it.
+- **H1 was expected to reflect unit size**; the size-free rate-gap correlation
+  (0.550) is similar, so the stability is not explained by size alone.
 - **H2 may be circular**, and it compares 2023 programme data with a
   2019-2021 survey over 20 reporting units, some of them State groups.
 - **Cohorts lag.** S3 and S4 for data year 2023 are the 2022 treatment
