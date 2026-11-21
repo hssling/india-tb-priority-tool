@@ -13,7 +13,7 @@ abstract: >-
   National TB Prevalence Survey, and demonstrates the same functions on district
   tables. Observational; no causal estimates.
 type: software
-version: "1.0.0"
+version: "1.0.1"
 date-released: "2026-11-21"
 authors:
   - family-names: "Siddalingaiah"
